@@ -271,6 +271,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Settings`
+  String get settingsScreenTitle {
+    return Intl.message(
+      'Settings',
+      name: 'settingsScreenTitle',
+      desc: 'Sets the app bar title for the settings screen',
+      args: [],
+    );
+  }
+
+  /// `Common`
+  String get settingsScreenCommonEntry {
+    return Intl.message(
+      'Common',
+      name: 'settingsScreenCommonEntry',
+      desc: 'Sets the group title for the common settings screen',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get settingsScreenLanguageEntry {
+    return Intl.message(
+      'Language',
+      name: 'settingsScreenLanguageEntry',
+      desc: 'Sets the app bar title for the language entry',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

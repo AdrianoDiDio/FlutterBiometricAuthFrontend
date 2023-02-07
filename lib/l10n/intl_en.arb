@@ -97,5 +97,17 @@
     "refreshAccessTokenFailure": "Couldn't refresh access token...try to log-in again",
     "@refreshAccessTokenFailure": {
         "description":"Sets the error message when the application fails to refresh the access token"
+    },
+    "settingsScreenTitle": "Settings",
+    "@settingsScreenTitle": {
+        "description":"Sets the app bar title for the settings screen"
+    },
+    "settingsScreenCommonEntry": "Common",
+    "@settingsScreenCommonEntry": {
+        "description":"Sets the group title for the common settings screen"
+    },
+    "settingsScreenLanguageEntry": "Language",
+    "@settingsScreenLanguageEntry": {
+        "description":"Sets the app bar title for the language entry"
     }
   }

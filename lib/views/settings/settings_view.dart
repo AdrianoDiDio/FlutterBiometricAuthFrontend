@@ -13,19 +13,21 @@ class SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SettingsList(
       sections: [
-        SettingsSection(title: Text("Common"), tiles: [
-          SettingsTile.navigation(
-            leading: Icon(Icons.language),
-            title: Text("Language"),
-            value: Text(LocaleNames.of(context)!
-                .nameOf(Localizations.localeOf(context).toString())
-                .toString()),
-            onPressed: (context) {
-              Navigator.pushNamed(context, LanguageSettingsView.routeName);
-            },
-          ),
-          SettingsTile.navigation(title: Text("Theme"))
-        ])
+        SettingsSection(
+            title: Text(S.of(context).settingsScreenCommonEntry),
+            tiles: [
+              SettingsTile.navigation(
+                leading: Icon(Icons.language),
+                title: Text(S.of(context).settingsScreenLanguageEntry),
+                value: Text(LocaleNames.of(context)!
+                    .nameOf(Localizations.localeOf(context).toString())
+                    .toString()),
+                onPressed: (context) {
+                  Navigator.pushNamed(context, LanguageSettingsView.routeName);
+                },
+              ),
+              SettingsTile.navigation(title: Text("Theme"))
+            ])
       ],
     );
   }

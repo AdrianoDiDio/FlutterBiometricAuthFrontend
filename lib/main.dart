@@ -1,5 +1,6 @@
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
+import 'package:biometric_auth_frontend/providers/language_provider.dart';
 import 'package:biometric_auth_frontend/providers/theme_provider.dart';
 import 'package:biometric_auth_frontend/routes.dart';
 import 'package:biometric_auth_frontend/utils/storage_keys.dart';
@@ -21,34 +22,38 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-        lazy: false,
-        create: (_) => ThemeProvider(),
-        child: Consumer(builder: (context, ThemeProvider themeNotifier, child) {
-          return MaterialApp(
-            title: 'Biometric Auth Frontend',
-            theme: ThemeData(
-              useMaterial3: true,
-              colorSchemeSeed: Colors.blue,
-              brightness: Brightness.light,
-            ),
-            darkTheme: ThemeData(brightness: Brightness.dark),
-            themeMode: themeNotifier.themeMode,
-            debugShowCheckedModeBanner: false,
-            routes: routes,
-            initialRoute: LoginScreen.routeName,
-            localizationsDelegates: const [
-              LocaleNamesLocalizationsDelegate(),
-              S.delegate,
-              GlobalMaterialLocalizations.delegate,
-              GlobalWidgetsLocalizations.delegate,
-              GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: S.delegate.supportedLocales,
-          );
-        }));
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(lazy: false, create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(lazy: false, create: (_) => LanguageProvider())
+      ],
+      child: Consumer2(builder: (context, ThemeProvider themeNotifier,
+          LanguageProvider languageNotifier, child) {
+        return MaterialApp(
+          title: 'Biometric Auth Frontend',
+          theme: ThemeData(
+            useMaterial3: true,
+            colorSchemeSeed: Colors.blue,
+            brightness: Brightness.light,
+          ),
+          darkTheme: ThemeData(brightness: Brightness.dark),
+          themeMode: themeNotifier.themeMode,
+          locale: languageNotifier.locale,
+          debugShowCheckedModeBanner: false,
+          routes: routes,
+          initialRoute: LoginScreen.routeName,
+          localizationsDelegates: const [
+            LocaleNamesLocalizationsDelegate(),
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+        );
+      }),
+    );
   }
 }

@@ -19,5 +19,8 @@
     "passwordHint": "Password",
     "confirmPasswordHint": "Conferma Password",
     "unauthorizedError": "L'utente non è autorizzato",
-    "refreshAccessTokenFailure": "Non è stato possibile aggiornare l'access token...prova ad effettuare il login di nuovo"
+    "refreshAccessTokenFailure": "Non è stato possibile aggiornare l'access token...prova ad effettuare il login di nuovo",
+    "settingsScreenTitle": "Impostazioni",
+    "settingsScreenCommonEntry": "Comuni",
+    "settingsScreenLanguageEntry": "Lingua"
   }

@@ -53,6 +53,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "registrationDialogContent": m0,
         "registrationDialogTitle":
             MessageLookupByLibrary.simpleMessage("Registrazione"),
+        "settingsScreenCommonEntry":
+            MessageLookupByLibrary.simpleMessage("Comuni"),
+        "settingsScreenLanguageEntry":
+            MessageLookupByLibrary.simpleMessage("Lingua"),
+        "settingsScreenTitle":
+            MessageLookupByLibrary.simpleMessage("Impostazioni"),
         "unauthorizedError":
             MessageLookupByLibrary.simpleMessage("L\'utente non è autorizzato"),
         "usernameEmpty": MessageLookupByLibrary.simpleMessage(
