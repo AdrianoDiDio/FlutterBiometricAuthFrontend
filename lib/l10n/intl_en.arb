@@ -1,0 +1,101 @@
+{
+    "loginButton": "Login",
+    "@loginButton": {
+      "description": "Sets the title for the login button"
+    },
+    "registerButton": "Register",
+    "@registerButton": {
+      "description":"Sets the title for the register button"
+    },
+    "loginFailed": "Wrong Username or Password",
+    "@loginFailed": {
+        "description":"Sets the text for the error when login fails."
+    },
+    "emailAlreadyInUse": "Email is already registered",
+    "@emailAlreadyInUse": {
+        "description":"Sets the error text when trying to use an email already registered."
+    },
+    "usernameEmpty": "Username is empty",
+    "@usernameEmpty": {
+        "description":"Sets the error text when the user forget to set an username during registration."
+    },
+    "emailEmpty": "Email is empty",
+    "@emailEmpty": {
+        "description":"Sets the error text when the user forget to set an email during registration."
+    },
+    "invalidEmail": "Email is not valid",
+    "@invalidEmail": {
+        "description":"Sets the error text when the user writes an invalid email during registration."
+    },
+    "passwordEmpty": "Password is empty",
+    "@passwordEmpty": {
+        "description":"Sets the error text when the user forget to set a password during registration."
+    },
+    "passwordTooShort": "Password must have at least 8 characters",
+    "@passwordTooShort": {
+        "description":"Sets the error text when the user choose a short password."
+    },
+    "passwordDoesNotMatch": "The two password doesn't match",
+    "@passwordDoesNotMatch": {
+        "description":"Sets the error text when the two password doesn't match."
+    },
+    "passwordTooCommon": "Password is too common...please choose another one",
+    "@passwordTooCommon": {
+        "description":"Sets the error text when trying to use a password that is too common."
+    },
+    "usernameNotUnique": "Username is already taken...please choose another one",
+    "@usernameNotUnique": {
+        "description":"Sets the error text when trying to use a password that is too common."
+    },
+    "dialogOkButton": "Ok",
+    "@dialogOkButton": {
+        "description":"Sets the button text when an alert dialog is launched."
+    },
+    "registrationDialogTitle": "Registration",
+    "@registrationDialogTitle": {
+        "description":"Sets the alert dialog title after successfully registering."
+    },
+    "usernameHint": "Username",
+    "@usernameHint": {
+        "description":"Sets the hint for the username field."
+    },
+    "emailHint": "Email",
+    "@emailHint": {
+        "description":"Sets the hint for the email field."
+    },
+    "passwordHint": "Password",
+    "@passwordHint": {
+        "description":"Sets the hint for the password field."
+    },
+    "confirmPasswordHint": "Confirm Password",
+    "@confirmPasswordHint": {
+        "description":"Sets the hint for the confirm password field."
+    },
+    "registrationDialogContent": "Registration was successfull...Username: {username} Id: {id} Email:{email}",
+    "@registrationDialogContent": {
+        "description":"Sets the alert dialog content after successfully registering.",
+        "placeholders": {
+          "username": {
+            "type": "String",
+            "example": "user"
+          },
+          "id": {
+            "type": "int",
+            "format": "decimalPattern",
+            "example": "123"
+          },
+          "email": {
+            "type": "String",
+            "example": "user@mail.com"
+          }
+        }
+    },
+    "unauthorizedError": "User is not authorized",
+    "@unauthorizedError": {
+        "description":"Sets the error message when the user is not authorized"
+    },
+    "refreshAccessTokenFailure": "Couldn't refresh access token...try to log-in again",
+    "@refreshAccessTokenFailure": {
+        "description":"Sets the error message when the application fails to refresh the access token"
+    }
+  }

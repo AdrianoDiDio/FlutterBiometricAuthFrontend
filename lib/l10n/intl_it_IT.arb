@@ -1,0 +1,23 @@
+{
+    "loginButton": "Accedi",
+    "registerButton": "Registrati",
+    "loginFailed": "Username o Password errati",
+    "emailAlreadyInUse": "La mail è gia stata registrata",
+    "passwordTooCommon": "La password è troppo comune...perfavore scegli una nuova password",
+    "usernameNotUnique": "L'username è gia registrato...scegli un nuovo username",
+    "dialogOkButton": "Ok",
+    "registrationDialogTitle": "Registrazione",
+    "registrationDialogContent": "La registrazione è avvenuta correttamente...Username: {username} Id: {id} Email:{email}",
+    "usernameEmpty": "Il campo Nome Utente è vuoto",
+    "emailEmpty": "Il campo Email è vuoto",
+    "invalidEmail": "L'email non è valida",
+    "passwordEmpty": "Il campo password è vuoto",
+    "passwordTooShort": "La password deve contenere almeno 8 caratteri",
+    "passwordDoesNotMatch": "Le due password non coincidono",
+    "usernameHint": "Username",
+    "emailHint": "Email",
+    "passwordHint": "Password",
+    "confirmPasswordHint": "Conferma Password",
+    "unauthorizedError": "L'utente non è autorizzato",
+    "refreshAccessTokenFailure": "Non è stato possibile aggiornare l'access token...prova ad effettuare il login di nuovo"
+  }
