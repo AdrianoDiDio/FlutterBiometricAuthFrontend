@@ -1,5 +1,6 @@
 import 'package:biometric_auth_frontend/failures/error_object.dart';
 import 'package:biometric_auth_frontend/failures/failure.dart';
+import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/user_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/user_response.dart';
@@ -24,51 +25,105 @@ class HomeBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final userValue = ref.watch(userInfoProvider);
-    return RefreshIndicator(
-        onRefresh: () async {
-          ref.invalidate(userInfoProvider);
-        },
-        child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            child: userValue.when(data: (item) {
-              return item.fold((l) {
-                ErrorObject errorObject =
-                    ErrorObject.mapFailureToErrorObject(failure: l);
-                logger.d("Error....${errorObject.message}");
-                Future.microtask(() => Navigator.pushReplacementNamed(
-                    context, LoginScreen.routeName));
-                return Container();
-              }, (r) {
-                return SafeArea(
-                  child: Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: SizeConfig.blockSizeVertical * 8,
-                          horizontal: SizeConfig.blockSizeHorizontal * 16.0),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            Text("User Info",
-                                style: TextStyle(
-                                  fontSize: SizeConfig.blockSizeVertical * 8,
-                                  fontWeight: FontWeight.bold,
-                                )),
-                            Text("Id ${r.id}"),
-                            Text("Email ${r.email}"),
-                            Text("Username ${r.username}"),
-                          ],
-                        ),
-                      )),
-                );
-              });
-            }, loading: () {
-              logger.d("Loading");
-              return const Center(child: CircularProgressIndicator());
-            }, error: (e, st) {
-              logger.d("Unexpected error...");
-              Future.microtask(() => Navigator.pushReplacementNamed(
-                  context, LoginScreen.routeName));
+    return SafeArea(
+        child: LayoutBuilder(
+            builder: (context, constraints) => RefreshIndicator(
+                onRefresh: () async {
+                  ref.invalidate(userInfoProvider);
+                },
+                child: CustomScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: userValue.when(data: (item) {
+                          return item.fold((l) {
+                            ErrorObject errorObject =
+                                ErrorObject.mapFailureToErrorObject(failure: l);
+                            logger.d("Error....${errorObject.message}");
+                            Future.microtask(() =>
+                                Navigator.pushReplacementNamed(
+                                    context, LoginScreen.routeName));
+                            return Container();
+                          }, (r) {
+                            return ConstrainedBox(
+                              constraints: BoxConstraints(
+                                  minHeight: constraints.maxHeight),
+                              child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Column(
+                                      children: [
+                                        ListTile(
+                                            title: Text(
+                                          S.of(context).homeScreenUserInfoTitle,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              fontSize:
+                                                  SizeConfig.blockSizeVertical *
+                                                      8,
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                        const CircleAvatar(
+                                          child: Icon(Icons.person),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Column(
+                                          children: [
+                                            TextFormField(
+                                              initialValue: r.username,
+                                              readOnly: true,
+                                              decoration: const InputDecoration(
+                                                  labelText: "Username"),
+                                            ),
+                                            SizedBox(
+                                                height: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    5),
+                                            TextFormField(
+                                              initialValue: r.email,
+                                              readOnly: true,
+                                              decoration: const InputDecoration(
+                                                  labelText: "Email"),
+                                            ),
+                                            SizedBox(
+                                                height: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    5),
+                                            TextFormField(
+                                              initialValue: r.id.toString(),
+                                              readOnly: true,
+                                              decoration: const InputDecoration(
+                                                  labelText: "Id"),
+                                            ),
+                                            SizedBox(
+                                                height: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3),
+                                          ],
+                                        )),
+                                    ElevatedButton(
+                                      child: Text("Logout"),
+                                      onPressed: () {},
+                                    ),
+                                  ]),
+                            );
+                          });
+                        }, loading: () {
+                          logger.d("Loading");
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        }, error: (e, st) {
+                          logger.d("Unexpected error...");
+                          Future.microtask(() => Navigator.pushReplacementNamed(
+                              context, LoginScreen.routeName));
 
-              return Container();
-            })));
+                          return Container();
+                        }))
+                  ],
+                ))));
   }
 }

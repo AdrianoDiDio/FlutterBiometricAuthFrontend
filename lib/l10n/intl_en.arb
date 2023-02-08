@@ -98,9 +98,21 @@
     "@refreshAccessTokenFailure": {
         "description":"Sets the error message when the application fails to refresh the access token"
     },
+    "homeScreenTitle": "User Info",
+    "@homeScreenTitle": {
+        "description":"Sets the app bar title for the home screen"
+    },
     "settingsScreenTitle": "Settings",
     "@settingsScreenTitle": {
         "description":"Sets the app bar title for the settings screen"
+    },
+    "homeScreenUserInfoEntry": "User",
+    "@homeScreenUserInfoEntry": {
+        "description":"Sets the navigation bar entry for the home screen user screen"
+    },
+    "homeScreenSettingsEntry": "Settings",
+    "@homeScreenSettingsEntry": {
+        "description":"Sets the navigation bar entry for the home screen settings screen"
     },
     "settingsScreenCommonEntry": "General",
     "@settingsScreenCommonEntry": {
@@ -116,14 +128,19 @@
     },
     "settingsScreenThemeSystemEntry": "Use system theme",
     "@settingsScreenThemeSystemEntry": {
-        "description":"Describe the system theme entry"
+        "description":"Describes the system theme entry"
     },
     "settingsScreenThemeLightEntry": "Use light theme",
     "@settingsScreenThemeLightEntry": {
-        "description":"Describe the light theme entry"
+        "description":"Describes the light theme entry"
     },
     "settingsScreenThemeDarkEntry": "Use dark theme",
     "@settingsScreenThemeDarkEntry": {
-        "description":"Describe the dark theme entry"
+        "description":"Describes the dark theme entry"
+    },
+    "homeScreenUserInfoTitle": "User Info",
+    "@homeScreenUserInfoTitle": {
+        "description":"Sets the title for the user info page"
     }
+
   }

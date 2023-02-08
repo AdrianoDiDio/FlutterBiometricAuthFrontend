@@ -20,12 +20,15 @@
     "confirmPasswordHint": "Conferma Password",
     "unauthorizedError": "L'utente non è autorizzato",
     "refreshAccessTokenFailure": "Non è stato possibile aggiornare l'access token...prova ad effettuare il login di nuovo",
+    "homeScreenTitle": "Utente",
     "settingsScreenTitle": "Impostazioni",
     "settingsScreenCommonEntry": "Generale",
     "settingsScreenLanguageEntry": "Lingua",
     "settingsScreenThemeEntry": "Tema",
     "settingsScreenThemeSystemEntry": "Usa il tema di sistema",
     "settingsScreenThemeLightEntry": "Usa il tema chiaro",
-    "settingsScreenThemeDarkEntry": "Usa il tema scuro"
-
+    "settingsScreenThemeDarkEntry": "Usa il tema scuro",
+    "homeScreenUserInfoEntry": "Utente",
+    "homeScreenSettingsEntry": "Impostazioni",
+    "homeScreenUserInfoTitle": "Informazioni Utente"
   }

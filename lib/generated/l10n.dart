@@ -272,12 +272,42 @@ class S {
     );
   }
 
+  /// `User Info`
+  String get homeScreenTitle {
+    return Intl.message(
+      'User Info',
+      name: 'homeScreenTitle',
+      desc: 'Sets the app bar title for the home screen',
+      args: [],
+    );
+  }
+
   /// `Settings`
   String get settingsScreenTitle {
     return Intl.message(
       'Settings',
       name: 'settingsScreenTitle',
       desc: 'Sets the app bar title for the settings screen',
+      args: [],
+    );
+  }
+
+  /// `User`
+  String get homeScreenUserInfoEntry {
+    return Intl.message(
+      'User',
+      name: 'homeScreenUserInfoEntry',
+      desc: 'Sets the navigation bar entry for the home screen user screen',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get homeScreenSettingsEntry {
+    return Intl.message(
+      'Settings',
+      name: 'homeScreenSettingsEntry',
+      desc: 'Sets the navigation bar entry for the home screen settings screen',
       args: [],
     );
   }
@@ -317,7 +347,7 @@ class S {
     return Intl.message(
       'Use system theme',
       name: 'settingsScreenThemeSystemEntry',
-      desc: 'Describe the system theme entry',
+      desc: 'Describes the system theme entry',
       args: [],
     );
   }
@@ -327,7 +357,7 @@ class S {
     return Intl.message(
       'Use light theme',
       name: 'settingsScreenThemeLightEntry',
-      desc: 'Describe the light theme entry',
+      desc: 'Describes the light theme entry',
       args: [],
     );
   }
@@ -337,7 +367,17 @@ class S {
     return Intl.message(
       'Use dark theme',
       name: 'settingsScreenThemeDarkEntry',
-      desc: 'Describe the dark theme entry',
+      desc: 'Describes the dark theme entry',
+      args: [],
+    );
+  }
+
+  /// `User Info`
+  String get homeScreenUserInfoTitle {
+    return Intl.message(
+      'User Info',
+      name: 'homeScreenUserInfoTitle',
+      desc: 'Sets the title for the user info page',
       args: [],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/views/home/home_body.dart';
 import 'package:biometric_auth_frontend/views/settings/settings_view.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +25,10 @@ class HomeScreen extends StatefulWidget {
  */
 class HomeScreenState extends State<HomeScreen> {
   int _currentPageIndex = 0;
-  String _currentPageTitle = "User Info";
+  String _currentPageTitle = S.current.homeScreenTitle;
   static final Map<String, Widget> _pages = {
-    "User Info": HomeBody(),
-    "Settings": SettingsView()
+    S.current.homeScreenTitle: const HomeBody(),
+    S.current.settingsScreenTitle: const SettingsView()
   };
   @override
   Widget build(BuildContext context) {

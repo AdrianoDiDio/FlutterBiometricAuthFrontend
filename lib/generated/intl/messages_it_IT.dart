@@ -33,6 +33,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailEmpty":
             MessageLookupByLibrary.simpleMessage("Il campo Email è vuoto"),
         "emailHint": MessageLookupByLibrary.simpleMessage("Email"),
+        "homeScreenSettingsEntry":
+            MessageLookupByLibrary.simpleMessage("Impostazioni"),
+        "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Utente"),
+        "homeScreenUserInfoEntry":
+            MessageLookupByLibrary.simpleMessage("Utente"),
+        "homeScreenUserInfoTitle":
+            MessageLookupByLibrary.simpleMessage("Informazioni Utente"),
         "invalidEmail":
             MessageLookupByLibrary.simpleMessage("L\'email non è valida"),
         "loginButton": MessageLookupByLibrary.simpleMessage("Accedi"),
