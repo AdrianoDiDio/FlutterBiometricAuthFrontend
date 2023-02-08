@@ -53,9 +53,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "registrationDialogTitle":
             MessageLookupByLibrary.simpleMessage("Registration"),
         "settingsScreenCommonEntry":
-            MessageLookupByLibrary.simpleMessage("Common"),
+            MessageLookupByLibrary.simpleMessage("General"),
         "settingsScreenLanguageEntry":
             MessageLookupByLibrary.simpleMessage("Language"),
+        "settingsScreenThemeDarkEntry":
+            MessageLookupByLibrary.simpleMessage("Use dark theme"),
+        "settingsScreenThemeEntry":
+            MessageLookupByLibrary.simpleMessage("Theme"),
+        "settingsScreenThemeLightEntry":
+            MessageLookupByLibrary.simpleMessage("Use light theme"),
+        "settingsScreenThemeSystemEntry":
+            MessageLookupByLibrary.simpleMessage("Use system theme"),
         "settingsScreenTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "unauthorizedError":
             MessageLookupByLibrary.simpleMessage("User is not authorized"),

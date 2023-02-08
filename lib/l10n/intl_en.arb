@@ -102,12 +102,28 @@
     "@settingsScreenTitle": {
         "description":"Sets the app bar title for the settings screen"
     },
-    "settingsScreenCommonEntry": "Common",
+    "settingsScreenCommonEntry": "General",
     "@settingsScreenCommonEntry": {
         "description":"Sets the group title for the common settings screen"
     },
     "settingsScreenLanguageEntry": "Language",
     "@settingsScreenLanguageEntry": {
         "description":"Sets the app bar title for the language entry"
+    },
+    "settingsScreenThemeEntry": "Theme",
+    "@settingsScreenThemeEntry": {
+        "description":"Sets the settings title for the theme entry"
+    },
+    "settingsScreenThemeSystemEntry": "Use system theme",
+    "@settingsScreenThemeSystemEntry": {
+        "description":"Describe the system theme entry"
+    },
+    "settingsScreenThemeLightEntry": "Use light theme",
+    "@settingsScreenThemeLightEntry": {
+        "description":"Describe the light theme entry"
+    },
+    "settingsScreenThemeDarkEntry": "Use dark theme",
+    "@settingsScreenThemeDarkEntry": {
+        "description":"Describe the dark theme entry"
     }
   }

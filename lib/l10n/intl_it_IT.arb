@@ -21,6 +21,11 @@
     "unauthorizedError": "L'utente non è autorizzato",
     "refreshAccessTokenFailure": "Non è stato possibile aggiornare l'access token...prova ad effettuare il login di nuovo",
     "settingsScreenTitle": "Impostazioni",
-    "settingsScreenCommonEntry": "Comuni",
-    "settingsScreenLanguageEntry": "Lingua"
+    "settingsScreenCommonEntry": "Generale",
+    "settingsScreenLanguageEntry": "Lingua",
+    "settingsScreenThemeEntry": "Tema",
+    "settingsScreenThemeSystemEntry": "Usa il tema di sistema",
+    "settingsScreenThemeLightEntry": "Usa il tema chiaro",
+    "settingsScreenThemeDarkEntry": "Usa il tema scuro"
+
   }

@@ -21,17 +21,10 @@ class LanguageSettingsView extends StatefulWidget {
 class LanguageSettingsViewState extends State<LanguageSettingsView> {
   String? _selectedLanguage;
   @override
-  void initState() {
-    super.initState();
-    logger.d("Init locale list...");
-    logger.d(S.delegate.supportedLocales);
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(S.of(context).settingsScreenTitle),
+          title: Text(S.of(context).settingsScreenLanguageEntry),
         ),
         body: SafeArea(child: Column(children: _initLanguageTiles())));
   }

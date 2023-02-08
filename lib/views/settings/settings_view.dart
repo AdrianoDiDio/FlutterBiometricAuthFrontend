@@ -1,8 +1,11 @@
 import 'dart:io';
 
 import 'package:biometric_auth_frontend/generated/l10n.dart';
-import 'package:biometric_auth_frontend/views/settings/language_setting_view.dart';
+import 'package:biometric_auth_frontend/providers/theme_provider.dart';
+import 'package:biometric_auth_frontend/views/settings/language_settings_view.dart';
+import 'package:biometric_auth_frontend/views/settings/theme_settings_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 
@@ -17,7 +20,7 @@ class SettingsView extends StatelessWidget {
             title: Text(S.of(context).settingsScreenCommonEntry),
             tiles: [
               SettingsTile.navigation(
-                leading: Icon(Icons.language),
+                leading: const Icon(Icons.language_rounded),
                 title: Text(S.of(context).settingsScreenLanguageEntry),
                 value: Text(LocaleNames.of(context)!
                     .nameOf(Localizations.localeOf(context).toString())
@@ -26,7 +29,14 @@ class SettingsView extends StatelessWidget {
                   Navigator.pushNamed(context, LanguageSettingsView.routeName);
                 },
               ),
-              SettingsTile.navigation(title: Text("Theme"))
+              SettingsTile.navigation(
+                leading: const Icon(Icons.format_paint_rounded),
+                title: Text(S.of(context).settingsScreenThemeEntry),
+                value: Text(Provider.of<ThemeProvider>(context).themeModeName),
+                onPressed: (context) {
+                  Navigator.pushNamed(context, ThemeSettingsView.routeName);
+                },
+              )
             ])
       ],
     );

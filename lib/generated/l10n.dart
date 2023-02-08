@@ -282,10 +282,10 @@ class S {
     );
   }
 
-  /// `Common`
+  /// `General`
   String get settingsScreenCommonEntry {
     return Intl.message(
-      'Common',
+      'General',
       name: 'settingsScreenCommonEntry',
       desc: 'Sets the group title for the common settings screen',
       args: [],
@@ -298,6 +298,46 @@ class S {
       'Language',
       name: 'settingsScreenLanguageEntry',
       desc: 'Sets the app bar title for the language entry',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get settingsScreenThemeEntry {
+    return Intl.message(
+      'Theme',
+      name: 'settingsScreenThemeEntry',
+      desc: 'Sets the settings title for the theme entry',
+      args: [],
+    );
+  }
+
+  /// `Use system theme`
+  String get settingsScreenThemeSystemEntry {
+    return Intl.message(
+      'Use system theme',
+      name: 'settingsScreenThemeSystemEntry',
+      desc: 'Describe the system theme entry',
+      args: [],
+    );
+  }
+
+  /// `Use light theme`
+  String get settingsScreenThemeLightEntry {
+    return Intl.message(
+      'Use light theme',
+      name: 'settingsScreenThemeLightEntry',
+      desc: 'Describe the light theme entry',
+      args: [],
+    );
+  }
+
+  /// `Use dark theme`
+  String get settingsScreenThemeDarkEntry {
+    return Intl.message(
+      'Use dark theme',
+      name: 'settingsScreenThemeDarkEntry',
+      desc: 'Describe the dark theme entry',
       args: [],
     );
   }
