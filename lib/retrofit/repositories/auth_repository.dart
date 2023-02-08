@@ -10,6 +10,7 @@ abstract class AuthRepository {
       String username, String password);
   Future<Either<Failure, RefreshAccessTokenResponse>> refreshAccessToken(
       String refreshToken);
+  Future<Either<Failure, bool>> logout(String refreshToken);
 }
 
 class AuthRepositoryImplementation extends BaseRepository
@@ -41,6 +42,21 @@ class AuthRepositoryImplementation extends BaseRepository
     } on DioError catch (e) {
       if (e.response!.statusCode == 401) {
         return const Left(Failure.refreshAccessTokenFailure());
+      }
+    } catch (e) {
+      return const Left(Failure.serverFailure());
+    }
+    return const Left(Failure.unknownFailure());
+  }
+
+  @override
+  Future<Either<Failure, bool>> logout(String refreshToken) async {
+    try {
+      await restClient.logout(refreshToken);
+      return const Right(true);
+    } on DioError catch (e) {
+      if (e.response!.statusCode == 400) {
+        return const Left(Failure.logoutFailure());
       }
     } catch (e) {
       return const Left(Failure.serverFailure());

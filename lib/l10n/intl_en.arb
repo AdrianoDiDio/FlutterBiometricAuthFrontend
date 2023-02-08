@@ -141,6 +141,14 @@
     "homeScreenUserInfoTitle": "User Info",
     "@homeScreenUserInfoTitle": {
         "description":"Sets the title for the user info page"
+    },
+    "logoutFailure": "Failed to perform logout...token may have been revoked",
+    "@logoutFailure": {
+        "description":"Sets the error message when logging out fails"
+    },
+    "logoutButtonTextEntry": "Logout",
+    "@logoutButtonTextEntry": {
+        "description":"Sets the text for the logout button"
     }
 
   }

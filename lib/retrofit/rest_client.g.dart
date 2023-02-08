@@ -12,9 +12,7 @@ class _RestClient implements RestClient {
   _RestClient(
     this._dio, {
     this.baseUrl,
-  }) {
-    baseUrl ??= 'https://adrianodd.pythonanywhere.com/api/';
-  }
+  });
 
   final Dio _dio;
 
@@ -48,6 +46,27 @@ class _RestClient implements RestClient {
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = LoginResponse.fromJson(_result.data!);
     return value;
+  }
+
+  @override
+  Future<void> logout(refreshToken) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {'refresh': refreshToken};
+    await _dio.fetch<void>(_setStreamType<void>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'logout',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    return null;
   }
 
   @override
@@ -122,7 +141,7 @@ class _RestClient implements RestClient {
     )
             .compose(
               _dio.options,
-              '/login/refresh',
+              'login/refresh',
               queryParameters: queryParameters,
               data: _data,
             )

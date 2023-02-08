@@ -43,6 +43,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
         "loginFailed":
             MessageLookupByLibrary.simpleMessage("Wrong Username or Password"),
+        "logoutButtonTextEntry": MessageLookupByLibrary.simpleMessage("Logout"),
+        "logoutFailure": MessageLookupByLibrary.simpleMessage(
+            "Failed to perform logout...token may have been revoked"),
         "passwordDoesNotMatch": MessageLookupByLibrary.simpleMessage(
             "The two password doesn\'t match"),
         "passwordEmpty":

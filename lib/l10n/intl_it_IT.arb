@@ -30,5 +30,7 @@
     "settingsScreenThemeDarkEntry": "Usa il tema scuro",
     "homeScreenUserInfoEntry": "Utente",
     "homeScreenSettingsEntry": "Impostazioni",
-    "homeScreenUserInfoTitle": "Informazioni Utente"
+    "homeScreenUserInfoTitle": "Informazioni Utente",
+    "logoutFailure": "Impossibile effettuare il logout...il token potrebbe essere stato inserito in blacklist",
+    "logoutButtonTextEntry": "Esci"
   }

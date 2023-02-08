@@ -25,6 +25,7 @@ class LoginScreenBody extends StatelessWidget {
                     )),
                 SizedBox(height: SizeConfig.blockSizeHorizontal * 10),
                 const LoginForm(),
+                SizedBox(height: SizeConfig.blockSizeHorizontal * 4),
                 OutlinedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, RegisterScreen.routeName);

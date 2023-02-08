@@ -35,6 +35,8 @@ class ErrorObject {
       refreshAccessTokenFailure: () => ErrorObject(
           title: "Error Code: REFRESH_ACCESS_TOKEN_FAILURE",
           message: S.current.refreshAccessTokenFailure),
+      logoutFailure: () => ErrorObject(
+          title: "Error Code: LOGOUT_FAILED", message: S.current.logoutFailure),
       noConnectionFailure: () => ErrorObject(
         title: 'Error Code: NO_CONNECTIVITY',
         message: 'It seems that your device is not connected to the network, '

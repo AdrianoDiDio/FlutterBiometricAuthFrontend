@@ -38,7 +38,10 @@ class MyApp extends StatelessWidget {
             colorSchemeSeed: Colors.blue,
             brightness: Brightness.light,
           ),
-          darkTheme: ThemeData(brightness: Brightness.dark),
+          darkTheme: ThemeData(
+              brightness: Brightness.dark,
+              useMaterial3: true,
+              colorSchemeSeed: Colors.blue),
           themeMode: themeNotifier.themeMode,
           locale: languageNotifier.locale,
           debugShowCheckedModeBanner: false,

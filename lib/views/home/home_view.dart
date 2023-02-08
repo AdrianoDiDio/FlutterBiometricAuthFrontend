@@ -45,11 +45,13 @@ class HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentPageIndex,
           onTap: _onItemTapped,
-          items: const [
+          items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.person_rounded), label: "User"),
+                icon: const Icon(Icons.person_rounded),
+                label: S.of(context).homeScreenUserInfoEntry),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings_rounded), label: "Settings")
+                icon: const Icon(Icons.settings_rounded),
+                label: S.of(context).homeScreenSettingsEntry)
           ]),
     );
   }

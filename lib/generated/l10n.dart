@@ -381,6 +381,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to perform logout...token may have been revoked`
+  String get logoutFailure {
+    return Intl.message(
+      'Failed to perform logout...token may have been revoked',
+      name: 'logoutFailure',
+      desc: 'Sets the error message when logging out fails',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logoutButtonTextEntry {
+    return Intl.message(
+      'Logout',
+      name: 'logoutButtonTextEntry',
+      desc: 'Sets the text for the logout button',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -20,6 +20,7 @@ mixin _$Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -33,6 +34,7 @@ mixin _$Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -46,6 +48,7 @@ mixin _$Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -60,6 +63,7 @@ mixin _$Failure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -77,6 +81,7 @@ mixin _$Failure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -93,6 +98,7 @@ mixin _$Failure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -165,6 +171,7 @@ class _$ServerFailure extends ServerFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -181,6 +188,7 @@ class _$ServerFailure extends ServerFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -197,6 +205,7 @@ class _$ServerFailure extends ServerFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -217,6 +226,7 @@ class _$ServerFailure extends ServerFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -237,6 +247,7 @@ class _$ServerFailure extends ServerFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -256,6 +267,7 @@ class _$ServerFailure extends ServerFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -320,6 +332,7 @@ class _$LoginFailure extends LoginFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -336,6 +349,7 @@ class _$LoginFailure extends LoginFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -352,6 +366,7 @@ class _$LoginFailure extends LoginFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -372,6 +387,7 @@ class _$LoginFailure extends LoginFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -392,6 +408,7 @@ class _$LoginFailure extends LoginFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -411,6 +428,7 @@ class _$LoginFailure extends LoginFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -433,6 +451,167 @@ class _$LoginFailure extends LoginFailure {
 abstract class LoginFailure extends Failure {
   const factory LoginFailure() = _$LoginFailure;
   const LoginFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$$LogoutFailureCopyWith<$Res> {
+  factory _$$LogoutFailureCopyWith(
+          _$LogoutFailure value, $Res Function(_$LogoutFailure) then) =
+      __$$LogoutFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LogoutFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$LogoutFailure>
+    implements _$$LogoutFailureCopyWith<$Res> {
+  __$$LogoutFailureCopyWithImpl(
+      _$LogoutFailure _value, $Res Function(_$LogoutFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LogoutFailure extends LogoutFailure {
+  const _$LogoutFailure() : super._();
+
+  @override
+  String toString() {
+    return 'Failure.logoutFailure()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LogoutFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverFailure,
+    required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
+    required TResult Function() refreshAccessTokenFailure,
+    required TResult Function() registrationEmailFailure,
+    required TResult Function() registrationPasswordFailure,
+    required TResult Function() registrationUsernameFailure,
+    required TResult Function() unauthorizedFailure,
+    required TResult Function() unknownFailure,
+    required TResult Function() noConnectionFailure,
+  }) {
+    return logoutFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? serverFailure,
+    TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
+    TResult? Function()? refreshAccessTokenFailure,
+    TResult? Function()? registrationEmailFailure,
+    TResult? Function()? registrationPasswordFailure,
+    TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? unauthorizedFailure,
+    TResult? Function()? unknownFailure,
+    TResult? Function()? noConnectionFailure,
+  }) {
+    return logoutFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverFailure,
+    TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
+    TResult Function()? refreshAccessTokenFailure,
+    TResult Function()? registrationEmailFailure,
+    TResult Function()? registrationPasswordFailure,
+    TResult Function()? registrationUsernameFailure,
+    TResult Function()? unauthorizedFailure,
+    TResult Function()? unknownFailure,
+    TResult Function()? noConnectionFailure,
+    required TResult orElse(),
+  }) {
+    if (logoutFailure != null) {
+      return logoutFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerFailure value) serverFailure,
+    required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
+    required TResult Function(RefreshAccessTokenFailure value)
+        refreshAccessTokenFailure,
+    required TResult Function(RegistrationEmailFailure value)
+        registrationEmailFailure,
+    required TResult Function(RegistrationPasswordFailure value)
+        registrationPasswordFailure,
+    required TResult Function(RegistrationUsernameFailure value)
+        registrationUsernameFailure,
+    required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
+    required TResult Function(UnknownFailure value) unknownFailure,
+    required TResult Function(NoConnectionFailure value) noConnectionFailure,
+  }) {
+    return logoutFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerFailure value)? serverFailure,
+    TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
+    TResult? Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult? Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult? Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult? Function(UnknownFailure value)? unknownFailure,
+    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
+  }) {
+    return logoutFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerFailure value)? serverFailure,
+    TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
+    TResult Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult Function(UnknownFailure value)? unknownFailure,
+    TResult Function(NoConnectionFailure value)? noConnectionFailure,
+    required TResult orElse(),
+  }) {
+    if (logoutFailure != null) {
+      return logoutFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LogoutFailure extends Failure {
+  const factory LogoutFailure() = _$LogoutFailure;
+  const LogoutFailure._() : super._();
 }
 
 /// @nodoc
@@ -477,6 +656,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -493,6 +673,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -509,6 +690,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -529,6 +711,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -549,6 +732,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -568,6 +752,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -633,6 +818,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -649,6 +835,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -665,6 +852,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -685,6 +873,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -705,6 +894,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -724,6 +914,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -791,6 +982,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -807,6 +999,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -823,6 +1016,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -843,6 +1037,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -863,6 +1058,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -882,6 +1078,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -949,6 +1146,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -965,6 +1163,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -981,6 +1180,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -1001,6 +1201,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -1021,6 +1222,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -1040,6 +1242,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -1104,6 +1307,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -1120,6 +1324,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -1136,6 +1341,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -1156,6 +1362,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -1176,6 +1383,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -1195,6 +1403,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -1259,6 +1468,7 @@ class _$UnknownFailure extends UnknownFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -1275,6 +1485,7 @@ class _$UnknownFailure extends UnknownFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -1291,6 +1502,7 @@ class _$UnknownFailure extends UnknownFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -1311,6 +1523,7 @@ class _$UnknownFailure extends UnknownFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -1331,6 +1544,7 @@ class _$UnknownFailure extends UnknownFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -1350,6 +1564,7 @@ class _$UnknownFailure extends UnknownFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -1414,6 +1629,7 @@ class _$NoConnectionFailure extends NoConnectionFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() serverFailure,
     required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
     required TResult Function() refreshAccessTokenFailure,
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
@@ -1430,6 +1646,7 @@ class _$NoConnectionFailure extends NoConnectionFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? serverFailure,
     TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
     TResult? Function()? refreshAccessTokenFailure,
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
@@ -1446,6 +1663,7 @@ class _$NoConnectionFailure extends NoConnectionFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? serverFailure,
     TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
     TResult Function()? refreshAccessTokenFailure,
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
@@ -1466,6 +1684,7 @@ class _$NoConnectionFailure extends NoConnectionFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(ServerFailure value) serverFailure,
     required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
     required TResult Function(RefreshAccessTokenFailure value)
         refreshAccessTokenFailure,
     required TResult Function(RegistrationEmailFailure value)
@@ -1486,6 +1705,7 @@ class _$NoConnectionFailure extends NoConnectionFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ServerFailure value)? serverFailure,
     TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
     TResult? Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
@@ -1505,6 +1725,7 @@ class _$NoConnectionFailure extends NoConnectionFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ServerFailure value)? serverFailure,
     TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
     TResult Function(RefreshAccessTokenFailure value)?
         refreshAccessTokenFailure,
     TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,

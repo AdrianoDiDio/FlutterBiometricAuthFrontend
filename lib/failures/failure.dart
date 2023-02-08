@@ -7,6 +7,7 @@ class Failure with _$Failure {
   const Failure._();
   const factory Failure.serverFailure() = ServerFailure;
   const factory Failure.loginFailure() = LoginFailure;
+  const factory Failure.logoutFailure() = LogoutFailure;
   const factory Failure.refreshAccessTokenFailure() = RefreshAccessTokenFailure;
   const factory Failure.registrationEmailFailure() = RegistrationEmailFailure;
   const factory Failure.registrationPasswordFailure() =

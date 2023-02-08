@@ -21,15 +21,21 @@ abstract class RestClient implements AuthService, UserService {
       @Field("username") String username, @Field("password") String password);
 
   @override
+  @POST(RestEndpoints.logout)
+  Future<void> logout(@Field("refresh") String refreshToken);
+
+  @override
   @POST(RestEndpoints.register)
   @FormUrlEncoded()
   @Headers(<String, dynamic>{"No-Authentication": "true"})
   Future<RegisterResponse> register(@Field("username") String username,
       @Field("email") String email, @Field("password") String password);
 
+  @override
   @GET(RestEndpoints.userDetails)
   Future<UserResponse> getUserDetails();
 
+  @override
   @POST(RestEndpoints.refreshAccessToken)
   @FormUrlEncoded()
   @Headers(<String, dynamic>{"No-Authentication": "true"})
