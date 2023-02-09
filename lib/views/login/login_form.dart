@@ -1,6 +1,7 @@
 import 'package:biometric_auth_frontend/failures/error_object.dart';
 import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/localizations_ext.dart';
+import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/auth_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/login_response.dart';
@@ -49,9 +50,12 @@ class LoginFormState extends State<LoginForm> {
           errorMessage = errorObject.message;
         });
       }, (r) {
-        StorageUtils storageUtils = StorageUtils();
-        storageUtils.write(StorageKeys.accessToken, r.accessToken);
-        storageUtils.write(StorageKeys.refreshToken, r.refreshToken);
+        serviceLocator
+            .get<StorageUtils>()
+            .write(StorageKeys.accessToken, r.accessToken);
+        serviceLocator
+            .get<StorageUtils>()
+            .write(StorageKeys.refreshToken, r.refreshToken);
         Navigator.pushReplacementNamed(context, HomeScreen.routeName);
         setState(() {
           errorMessage = null;

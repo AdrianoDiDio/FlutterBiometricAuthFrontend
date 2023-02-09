@@ -32,5 +32,7 @@
     "homeScreenSettingsEntry": "Impostazioni",
     "homeScreenUserInfoTitle": "Informazioni Utente",
     "logoutFailure": "Impossibile effettuare il logout...il token potrebbe essere stato inserito in blacklist",
-    "logoutButtonTextEntry": "Esci"
+    "logoutButtonTextEntry": "Esci",
+    "loginScreenTitle": "Accedi",
+    "registerScreenTitle": "Registrati"
   }

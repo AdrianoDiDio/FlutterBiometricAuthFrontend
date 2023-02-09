@@ -149,6 +149,14 @@
     "logoutButtonTextEntry": "Logout",
     "@logoutButtonTextEntry": {
         "description":"Sets the text for the logout button"
+    },
+    "loginScreenTitle": "Login",
+    "@loginScreenTitle": {
+        "description":"Sets the title for the login screen"
+    },
+    "registerScreenTitle": "Register",
+    "@registerScreenTitle": {
+        "description":"Sets the title for the register screen"
     }
 
   }

@@ -18,7 +18,7 @@ class LoginScreenBody extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Text("Login",
+                Text(S.of(context).loginScreenTitle,
                     style: TextStyle(
                       fontSize: SizeConfig.blockSizeVertical * 8,
                       fontWeight: FontWeight.bold,
@@ -26,7 +26,7 @@ class LoginScreenBody extends StatelessWidget {
                 SizedBox(height: SizeConfig.blockSizeHorizontal * 10),
                 const LoginForm(),
                 SizedBox(height: SizeConfig.blockSizeHorizontal * 4),
-                OutlinedButton(
+                ElevatedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, RegisterScreen.routeName);
                     },

@@ -401,6 +401,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Login`
+  String get loginScreenTitle {
+    return Intl.message(
+      'Login',
+      name: 'loginScreenTitle',
+      desc: 'Sets the title for the login screen',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get registerScreenTitle {
+    return Intl.message(
+      'Register',
+      name: 'registerScreenTitle',
+      desc: 'Sets the title for the register screen',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

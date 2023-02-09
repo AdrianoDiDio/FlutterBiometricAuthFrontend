@@ -1,3 +1,4 @@
+import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/views/register/register_body.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +11,8 @@ class RegisterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Register",
+        title: Text(
+          S.of(context).registerScreenTitle,
         ),
       ),
       body: const RegisterBody(),

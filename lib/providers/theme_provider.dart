@@ -4,6 +4,8 @@ import 'package:biometric_auth_frontend/utils/storage_keys.dart';
 import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:flutter/material.dart';
 
+import '../locator.dart';
+
 class ThemeProvider with ChangeNotifier {
   late ThemeMode _themeMode;
 
@@ -33,21 +35,24 @@ class ThemeProvider with ChangeNotifier {
   }
 
   _init() async {
-    StorageUtils storageUtils = StorageUtils();
-    String? result = await storageUtils.read(StorageKeys.themeMode);
+    String? result =
+        await serviceLocator.get<StorageUtils>().read(StorageKeys.themeMode);
     if (result != null) {
       logger.d(result);
       _themeMode = ThemeMode.values.byName(result);
     } else {
-      storageUtils.write(StorageKeys.themeMode, _themeMode.name);
+      serviceLocator
+          .get<StorageUtils>()
+          .write(StorageKeys.themeMode, _themeMode.name);
     }
     notifyListeners();
   }
 
   set themeMode(ThemeMode themeMode) {
     _themeMode = themeMode;
-    StorageUtils storageUtils = StorageUtils();
-    storageUtils.write(StorageKeys.themeMode, _themeMode.name);
+    serviceLocator
+        .get<StorageUtils>()
+        .write(StorageKeys.themeMode, _themeMode.name);
     notifyListeners();
   }
 }

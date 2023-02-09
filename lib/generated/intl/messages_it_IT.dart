@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginButton": MessageLookupByLibrary.simpleMessage("Accedi"),
         "loginFailed":
             MessageLookupByLibrary.simpleMessage("Username o Password errati"),
+        "loginScreenTitle": MessageLookupByLibrary.simpleMessage("Accedi"),
         "logoutButtonTextEntry": MessageLookupByLibrary.simpleMessage("Esci"),
         "logoutFailure": MessageLookupByLibrary.simpleMessage(
             "Impossibile effettuare il logout...il token potrebbe essere stato inserito in blacklist"),
@@ -60,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "refreshAccessTokenFailure": MessageLookupByLibrary.simpleMessage(
             "Non è stato possibile aggiornare l\'access token...prova ad effettuare il login di nuovo"),
         "registerButton": MessageLookupByLibrary.simpleMessage("Registrati"),
+        "registerScreenTitle":
+            MessageLookupByLibrary.simpleMessage("Registrati"),
         "registrationDialogContent": m0,
         "registrationDialogTitle":
             MessageLookupByLibrary.simpleMessage("Registrazione"),

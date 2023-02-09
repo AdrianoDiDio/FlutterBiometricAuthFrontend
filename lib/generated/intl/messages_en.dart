@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginButton": MessageLookupByLibrary.simpleMessage("Login"),
         "loginFailed":
             MessageLookupByLibrary.simpleMessage("Wrong Username or Password"),
+        "loginScreenTitle": MessageLookupByLibrary.simpleMessage("Login"),
         "logoutButtonTextEntry": MessageLookupByLibrary.simpleMessage("Logout"),
         "logoutFailure": MessageLookupByLibrary.simpleMessage(
             "Failed to perform logout...token may have been revoked"),
@@ -58,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "refreshAccessTokenFailure": MessageLookupByLibrary.simpleMessage(
             "Couldn\'t refresh access token...try to log-in again"),
         "registerButton": MessageLookupByLibrary.simpleMessage("Register"),
+        "registerScreenTitle": MessageLookupByLibrary.simpleMessage("Register"),
         "registrationDialogContent": m0,
         "registrationDialogTitle":
             MessageLookupByLibrary.simpleMessage("Registration"),

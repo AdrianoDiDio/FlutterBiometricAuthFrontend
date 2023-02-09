@@ -1,6 +1,7 @@
 import 'package:biometric_auth_frontend/failures/error_object.dart';
 import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/generated/l10n.dart';
+import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/auth_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/user_repository.dart';
@@ -26,16 +27,15 @@ class HomeBody extends ConsumerWidget {
   const HomeBody({super.key});
 
   void _logout(BuildContext context) async {
-    StorageUtils storageUtils = StorageUtils();
-    String? refreshToken = await storageUtils.read(StorageKeys.refreshToken);
+    String? refreshToken =
+        await serviceLocator.get<StorageUtils>().read(StorageKeys.refreshToken);
     if (refreshToken != null) {
       AuthRepositoryImplementation authRepository =
           AuthRepositoryImplementation();
       Either<Failure, bool> result =
           await authRepository.logout(refreshToken).whenComplete(() {
-        StorageUtils storageUtils = StorageUtils();
-        storageUtils.delete(StorageKeys.accessToken);
-        storageUtils.delete(StorageKeys.refreshToken);
+        serviceLocator.get<StorageUtils>().delete(StorageKeys.accessToken);
+        serviceLocator.get<StorageUtils>().delete(StorageKeys.refreshToken);
         Navigator.pushReplacementNamed(context, LoginScreen.routeName);
       });
       result.fold((l) {

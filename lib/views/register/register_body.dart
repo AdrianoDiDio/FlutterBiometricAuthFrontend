@@ -1,3 +1,4 @@
+import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/views/register/register_form.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class RegisterBody extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Text("Register",
+                Text(S.of(context).registerScreenTitle,
                     style: TextStyle(
                       fontSize: SizeConfig.blockSizeVertical * 8,
                       fontWeight: FontWeight.bold,
