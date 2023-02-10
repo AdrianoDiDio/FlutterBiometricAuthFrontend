@@ -32,8 +32,9 @@ class MyApp extends StatelessWidget {
       ],
       child: Consumer2(builder: (context, ThemeProvider themeNotifier,
           LanguageProvider languageNotifier, child) {
-        return MaterialApp(
+        return MaterialApp.router(
           title: 'Biometric Auth Frontend',
+          routerConfig: goRouter,
           theme: ThemeData(
             useMaterial3: true,
             colorSchemeSeed: Colors.blue,
@@ -46,8 +47,6 @@ class MyApp extends StatelessWidget {
           themeMode: themeNotifier.themeMode,
           locale: languageNotifier.locale,
           debugShowCheckedModeBanner: false,
-          routes: routes,
-          initialRoute: LoginScreen.routeName,
           localizationsDelegates: const [
             LocaleNamesLocalizationsDelegate(),
             S.delegate,

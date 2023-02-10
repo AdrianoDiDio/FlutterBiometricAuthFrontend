@@ -13,6 +13,7 @@ import 'package:biometric_auth_frontend/views/login/login_view.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 final userInfoProvider = FutureProvider.autoDispose((ref) async {
   UserRepositoryImplementation userRepositoryImplementation =
@@ -36,7 +37,7 @@ class HomeBody extends ConsumerWidget {
           await authRepository.logout(refreshToken).whenComplete(() {
         serviceLocator.get<StorageUtils>().delete(StorageKeys.accessToken);
         serviceLocator.get<StorageUtils>().delete(StorageKeys.refreshToken);
-        Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+        context.go(LoginScreen.routeName);
       });
       result.fold((l) {
         ErrorObject errorObject =
@@ -67,9 +68,8 @@ class HomeBody extends ConsumerWidget {
                             ErrorObject errorObject =
                                 ErrorObject.mapFailureToErrorObject(failure: l);
                             logger.d("Error....${errorObject.message}");
-                            Future.microtask(() =>
-                                Navigator.pushReplacementNamed(
-                                    context, LoginScreen.routeName));
+                            Future.microtask(
+                                () => context.go(LoginScreen.routeName));
                             return Container();
                           }, (r) {
                             return ConstrainedBox(
@@ -147,8 +147,8 @@ class HomeBody extends ConsumerWidget {
                               child: CircularProgressIndicator());
                         }, error: (e, st) {
                           logger.d("Unexpected error...");
-                          Future.microtask(() => Navigator.pushReplacementNamed(
-                              context, LoginScreen.routeName));
+                          Future.microtask(
+                              () => context.go(LoginScreen.routeName));
 
                           return Container();
                         }))

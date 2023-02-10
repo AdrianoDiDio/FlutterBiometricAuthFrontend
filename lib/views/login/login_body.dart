@@ -3,6 +3,7 @@ import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:biometric_auth_frontend/views/login/login_form.dart';
 import 'package:biometric_auth_frontend/views/register/register_view.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreenBody extends StatelessWidget {
   const LoginScreenBody({super.key});
@@ -28,7 +29,7 @@ class LoginScreenBody extends StatelessWidget {
                 SizedBox(height: SizeConfig.blockSizeHorizontal * 4),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, RegisterScreen.routeName);
+                      context.push(RegisterScreen.routeName);
                     },
                     child: Text(S.of(context).registerButton)),
               ],

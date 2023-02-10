@@ -8,6 +8,7 @@ import 'package:biometric_auth_frontend/views/settings/biometric_settings_view.d
 import 'package:biometric_auth_frontend/views/settings/language_settings_view.dart';
 import 'package:biometric_auth_frontend/views/settings/theme_settings_view.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
@@ -29,7 +30,7 @@ class SettingsView extends StatelessWidget {
                     .nameOf(Localizations.localeOf(context).toString())
                     .toString()),
                 onPressed: (context) {
-                  Navigator.pushNamed(context, LanguageSettingsView.routeName);
+                  context.push(LanguageSettingsView.routeName);
                 },
               ),
               SettingsTile.navigation(
@@ -37,7 +38,7 @@ class SettingsView extends StatelessWidget {
                 title: Text(S.of(context).settingsScreenThemeEntry),
                 value: Text(Provider.of<ThemeProvider>(context).themeModeName),
                 onPressed: (context) {
-                  Navigator.pushNamed(context, ThemeSettingsView.routeName);
+                  context.push(ThemeSettingsView.routeName);
                 },
               ),
               SettingsTile.navigation(
@@ -46,7 +47,7 @@ class SettingsView extends StatelessWidget {
                     serviceLocator.get<BiometricUtils>().biometricSupported,
                 title: Text(S.of(context).settingsScreenBiometricEntry),
                 onPressed: (context) {
-                  Navigator.pushNamed(context, BiometricSettingsView.routeName);
+                  context.push(BiometricSettingsView.routeName);
                 },
               )
             ])

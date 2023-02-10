@@ -8,6 +8,7 @@ import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:biometric_auth_frontend/views/login/login_view.dart';
 import 'package:dartz/dartz.dart' hide State;
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({super.key});
@@ -39,7 +40,7 @@ class RegisterFormState extends State<RegisterForm> {
       Either<Failure, RegisterResponse> result = await userRepository
           .register(usernameController.text, emailController.text,
               passwordController.text)
-          .whenComplete(() => Navigator.of(context).pop());
+          .whenComplete(() => context.pop());
       result.fold((l) {
         setState(() {
           errorMessage =
@@ -58,8 +59,7 @@ class RegisterFormState extends State<RegisterForm> {
                   actions: [
                     TextButton(
                         onPressed: () {
-                          Navigator.of(context).pop();
-                          Navigator.pushNamed(context, LoginScreen.routeName);
+                          context.go(LoginScreen.routeName);
                         },
                         child: Text(S.of(context).dialogOkButton))
                   ],

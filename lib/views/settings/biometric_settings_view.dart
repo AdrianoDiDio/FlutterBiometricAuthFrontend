@@ -7,7 +7,7 @@ import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:flutter/material.dart';
 
 class BiometricSettingsView extends StatefulWidget {
-  static String routeName = "/settings/language";
+  static String routeName = "/settings/biometrics";
 
   const BiometricSettingsView({super.key});
 

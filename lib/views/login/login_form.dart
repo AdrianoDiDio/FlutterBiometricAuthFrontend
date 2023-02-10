@@ -11,6 +11,7 @@ import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:biometric_auth_frontend/views/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:dartz/dartz.dart' hide State;
+import 'package:go_router/go_router.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -41,7 +42,7 @@ class LoginFormState extends State<LoginForm> {
           AuthRepositoryImplementation();
       Either<Failure, LoginResponse> result = await authRepository
           .login(emailController.text.trim(), passwordController.text.trim())
-          .whenComplete(() => Navigator.of(context).pop());
+          .whenComplete(() => context.pop());
       result.fold((l) {
         ErrorObject errorObject =
             ErrorObject.mapFailureToErrorObject(failure: l);
@@ -56,7 +57,7 @@ class LoginFormState extends State<LoginForm> {
         serviceLocator
             .get<StorageUtils>()
             .write(StorageKeys.refreshToken, r.refreshToken);
-        Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+        context.go(HomeScreen.routeName);
         setState(() {
           errorMessage = null;
         });
