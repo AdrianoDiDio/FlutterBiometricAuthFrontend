@@ -8,6 +8,7 @@ import 'package:biometric_auth_frontend/retrofit/responses/login_response.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:biometric_auth_frontend/utils/storage_keys.dart';
 import 'package:biometric_auth_frontend/utils/storage_utils.dart';
+import 'package:biometric_auth_frontend/views/home/home_screen_shell_view.dart';
 import 'package:biometric_auth_frontend/views/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:dartz/dartz.dart' hide State;
@@ -57,7 +58,7 @@ class LoginFormState extends State<LoginForm> {
         serviceLocator
             .get<StorageUtils>()
             .write(StorageKeys.refreshToken, r.refreshToken);
-        context.go(HomeScreen.routeName);
+        context.go(HomeView.routeName);
         setState(() {
           errorMessage = null;
         });

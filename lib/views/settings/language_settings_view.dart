@@ -8,7 +8,7 @@ import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'package:provider/provider.dart';
 
 class LanguageSettingsView extends StatefulWidget {
-  static String routeName = "/settings/language";
+  static String routeName = "language";
 
   const LanguageSettingsView({super.key});
 

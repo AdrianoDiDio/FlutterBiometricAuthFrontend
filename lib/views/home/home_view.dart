@@ -1,65 +1,159 @@
+import 'package:biometric_auth_frontend/failures/error_object.dart';
+import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/generated/l10n.dart';
-import 'package:biometric_auth_frontend/views/home/home_body.dart';
-import 'package:biometric_auth_frontend/views/settings/settings_view.dart';
+import 'package:biometric_auth_frontend/locator.dart';
+import 'package:biometric_auth_frontend/logger.dart';
+import 'package:biometric_auth_frontend/retrofit/repositories/auth_repository.dart';
+import 'package:biometric_auth_frontend/retrofit/repositories/user_repository.dart';
+import 'package:biometric_auth_frontend/retrofit/responses/user_response.dart';
+import 'package:biometric_auth_frontend/size_config.dart';
+import 'package:biometric_auth_frontend/utils/storage_keys.dart';
+import 'package:biometric_auth_frontend/utils/storage_utils.dart';
+import 'package:biometric_auth_frontend/views/login/login_view.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-class HomeScreen extends StatefulWidget {
-  static String routeName = "/home";
+final userInfoProvider = FutureProvider.autoDispose((ref) async {
+  UserRepositoryImplementation userRepositoryImplementation =
+      UserRepositoryImplementation();
+  logger.d("Future provider launched...awaiting results");
+  Either<Failure, UserResponse> result =
+      await userRepositoryImplementation.getUserDetails();
+  return result;
+});
 
-  const HomeScreen({super.key});
+class HomeView extends ConsumerWidget {
+  static String routeName = "/home/userInfo";
+  const HomeView({super.key});
 
-  @override
-  State<StatefulWidget> createState() {
-    return HomeScreenState();
-  }
-}
-
-/*
-  TODO:
-  Setting Screen using settings_ui
-
-  Language    => Open a new window containing the available languages
-  Theme       => Open a new window containing three radio buttons (System,Light,Dark).
-
-  System UI => Add two navigation tiles.
- */
-class HomeScreenState extends State<HomeScreen> {
-  int _currentPageIndex = 0;
-  String _currentPageTitle = S.current.homeScreenTitle;
-  static final Map<String, Widget> _pages = {
-    S.current.homeScreenTitle: const HomeBody(),
-    S.current.settingsScreenTitle: const SettingsView()
-  };
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          _currentPageTitle,
-        ),
-      ),
-      body: IndexedStack(
-        index: _currentPageIndex,
-        children: _pages.values.toList(),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentPageIndex,
-          onTap: _onItemTapped,
-          items: [
-            BottomNavigationBarItem(
-                icon: const Icon(Icons.person_rounded),
-                label: S.of(context).homeScreenUserInfoEntry),
-            BottomNavigationBarItem(
-                icon: const Icon(Icons.settings_rounded),
-                label: S.of(context).homeScreenSettingsEntry)
-          ]),
-    );
+  void _logout(BuildContext context) async {
+    String? refreshToken =
+        await serviceLocator.get<StorageUtils>().read(StorageKeys.refreshToken);
+    if (refreshToken != null) {
+      AuthRepositoryImplementation authRepository =
+          AuthRepositoryImplementation();
+      Either<Failure, bool> result =
+          await authRepository.logout(refreshToken).whenComplete(() {
+        serviceLocator.get<StorageUtils>().delete(StorageKeys.accessToken);
+        serviceLocator.get<StorageUtils>().delete(StorageKeys.refreshToken);
+        context.go(LoginScreen.routeName);
+      });
+      result.fold((l) {
+        ErrorObject errorObject =
+            ErrorObject.mapFailureToErrorObject(failure: l);
+        logger.d("Error: ${errorObject.title} ${errorObject.message}");
+      }, (r) {
+        logger.d("Logout completed without any error...");
+      });
+    }
   }
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _currentPageIndex = index;
-      _currentPageTitle = _pages.keys.elementAt(index);
-    });
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final userValue = ref.watch(userInfoProvider);
+    return SafeArea(
+        child: LayoutBuilder(
+            builder: (context, constraints) => RefreshIndicator(
+                onRefresh: () async {
+                  ref.invalidate(userInfoProvider);
+                },
+                child: CustomScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  slivers: [
+                    SliverFillRemaining(
+                        hasScrollBody: false,
+                        child: userValue.when(data: (item) {
+                          return item.fold((l) {
+                            ErrorObject errorObject =
+                                ErrorObject.mapFailureToErrorObject(failure: l);
+                            logger.d("Error....${errorObject.message}");
+                            Future.microtask(
+                                () => context.go(LoginScreen.routeName));
+                            return Container();
+                          }, (r) {
+                            return ConstrainedBox(
+                              constraints: BoxConstraints(
+                                  minHeight: constraints.maxHeight),
+                              child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Column(
+                                      children: [
+                                        ListTile(
+                                            title: Text(
+                                          S.of(context).homeScreenUserInfoTitle,
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                              fontSize:
+                                                  SizeConfig.blockSizeVertical *
+                                                      8,
+                                              fontWeight: FontWeight.bold),
+                                        )),
+                                        const CircleAvatar(
+                                          child: Icon(Icons.person),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Column(
+                                          children: [
+                                            TextFormField(
+                                              initialValue: r.username,
+                                              readOnly: true,
+                                              decoration: const InputDecoration(
+                                                  labelText: "Username"),
+                                            ),
+                                            SizedBox(
+                                                height: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    5),
+                                            TextFormField(
+                                              initialValue: r.email,
+                                              readOnly: true,
+                                              decoration: const InputDecoration(
+                                                  labelText: "Email"),
+                                            ),
+                                            SizedBox(
+                                                height: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    5),
+                                            TextFormField(
+                                              initialValue: r.id.toString(),
+                                              readOnly: true,
+                                              decoration: const InputDecoration(
+                                                  labelText: "Id"),
+                                            ),
+                                            SizedBox(
+                                                height: SizeConfig
+                                                        .blockSizeHorizontal *
+                                                    3),
+                                          ],
+                                        )),
+                                    ElevatedButton(
+                                      child: Text(
+                                          S.of(context).logoutButtonTextEntry),
+                                      onPressed: () {
+                                        _logout(context);
+                                      },
+                                    ),
+                                  ]),
+                            );
+                          });
+                        }, loading: () {
+                          logger.d("Loading");
+                          return const Center(
+                              child: CircularProgressIndicator());
+                        }, error: (e, st) {
+                          logger.d("Unexpected error...");
+                          Future.microtask(
+                              () => context.go(LoginScreen.routeName));
+
+                          return Container();
+                        }))
+                  ],
+                ))));
   }
 }

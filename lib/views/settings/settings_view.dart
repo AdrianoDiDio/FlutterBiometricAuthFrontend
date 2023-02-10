@@ -14,6 +14,7 @@ import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 
 class SettingsView extends StatelessWidget {
+  static String routeName = "/home/settings";
   const SettingsView({super.key});
 
   @override
@@ -30,7 +31,8 @@ class SettingsView extends StatelessWidget {
                     .nameOf(Localizations.localeOf(context).toString())
                     .toString()),
                 onPressed: (context) {
-                  context.push(LanguageSettingsView.routeName);
+                  context.push(
+                      '${GoRouterState.of(context).location}/${LanguageSettingsView.routeName}');
                 },
               ),
               SettingsTile.navigation(
@@ -38,7 +40,8 @@ class SettingsView extends StatelessWidget {
                 title: Text(S.of(context).settingsScreenThemeEntry),
                 value: Text(Provider.of<ThemeProvider>(context).themeModeName),
                 onPressed: (context) {
-                  context.push(ThemeSettingsView.routeName);
+                  context.push(
+                      '${GoRouterState.of(context).location}/${ThemeSettingsView.routeName}');
                 },
               ),
               SettingsTile.navigation(
@@ -47,7 +50,8 @@ class SettingsView extends StatelessWidget {
                     serviceLocator.get<BiometricUtils>().biometricSupported,
                 title: Text(S.of(context).settingsScreenBiometricEntry),
                 onPressed: (context) {
-                  context.push(BiometricSettingsView.routeName);
+                  context.push(
+                      '${GoRouterState.of(context).location}/${BiometricSettingsView.routeName}');
                 },
               )
             ])

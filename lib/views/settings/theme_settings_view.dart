@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ThemeSettingsView extends StatefulWidget {
-  static String routeName = "/settings/theme";
+  static String routeName = "theme";
 
   const ThemeSettingsView({super.key});
 
