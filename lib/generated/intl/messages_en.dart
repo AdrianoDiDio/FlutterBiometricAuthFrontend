@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "biometricsScreenTitle":
+            MessageLookupByLibrary.simpleMessage("Biometrics"),
         "confirmPasswordHint":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "dialogOkButton": MessageLookupByLibrary.simpleMessage("Ok"),
@@ -63,6 +65,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "registrationDialogContent": m0,
         "registrationDialogTitle":
             MessageLookupByLibrary.simpleMessage("Registration"),
+        "serverFailure": MessageLookupByLibrary.simpleMessage(
+            "Server isn\'t reachable at the moment...check your connection or try later"),
+        "settingsScreenBiometricEntry":
+            MessageLookupByLibrary.simpleMessage("Use Fingerprint to login"),
         "settingsScreenCommonEntry":
             MessageLookupByLibrary.simpleMessage("General"),
         "settingsScreenLanguageEntry":
@@ -78,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "settingsScreenTitle": MessageLookupByLibrary.simpleMessage("Settings"),
         "unauthorizedError":
             MessageLookupByLibrary.simpleMessage("User is not authorized"),
+        "unknownError": MessageLookupByLibrary.simpleMessage(
+            "An unknown error has occurred...try later or contact support"),
         "usernameEmpty":
             MessageLookupByLibrary.simpleMessage("Username is empty"),
         "usernameHint": MessageLookupByLibrary.simpleMessage("Username"),

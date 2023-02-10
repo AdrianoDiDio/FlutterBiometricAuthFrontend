@@ -10,9 +10,7 @@ class ErrorObject {
     return failure.when(
       serverFailure: () => ErrorObject(
         title: 'Error Code: INTERNAL_SERVER_FAILURE',
-        message: 'It seems that the server is not reachable at the moment, try '
-            'again later, should the issue persist please reach out to the '
-            'developer at a@b.com',
+        message: S.current.serverFailure,
       ),
       loginFailure: () => ErrorObject(
           title: 'Error Code: WRONG_ACCOUNT_CREDENTIALS',
@@ -27,8 +25,7 @@ class ErrorObject {
           title: 'REGISTRATION_USERNAME_NOT_UNIQUE',
           message: S.current.usernameNotUnique),
       unknownFailure: () => ErrorObject(
-          title: "Error Code: UNKNOWN_ERROR",
-          message: 'An unknown error has occurred.'),
+          title: "Error Code: UNKNOWN_ERROR", message: S.current.unknownError),
       unauthorizedFailure: () => ErrorObject(
           title: "Error Code: UNAUTHORIZED_ERROR",
           message: S.current.unauthorizedError),
@@ -37,11 +34,6 @@ class ErrorObject {
           message: S.current.refreshAccessTokenFailure),
       logoutFailure: () => ErrorObject(
           title: "Error Code: LOGOUT_FAILED", message: S.current.logoutFailure),
-      noConnectionFailure: () => ErrorObject(
-        title: 'Error Code: NO_CONNECTIVITY',
-        message: 'It seems that your device is not connected to the network, '
-            'please check your internet connectivity or try again later.',
-      ),
     );
   }
 }

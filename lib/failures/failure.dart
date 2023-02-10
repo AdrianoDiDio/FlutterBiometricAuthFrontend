@@ -16,5 +16,4 @@ class Failure with _$Failure {
       RegistrationUsernameFailure;
   const factory Failure.unauthorizedFailure() = UnauthorizedFailure;
   const factory Failure.unknownFailure() = UnknownFailure;
-  const factory Failure.noConnectionFailure() = NoConnectionFailure;
 }

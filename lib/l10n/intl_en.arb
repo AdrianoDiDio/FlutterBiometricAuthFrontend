@@ -157,6 +157,21 @@
     "registerScreenTitle": "Register",
     "@registerScreenTitle": {
         "description":"Sets the title for the register screen"
+    },
+    "settingsScreenBiometricEntry": "Use Fingerprint to login",
+    "@settingsScreenBiometricEntry": {
+        "description":"Sets the settings title for the biometric entry"
+    },
+    "biometricsScreenTitle": "Biometrics",
+    "@biometricsScreenTitle": {
+        "description":"Sets the title for the biometric screen"
+    },
+    "serverFailure": "Server isn't reachable at the moment...check your connection or try later",
+    "@serverFailure": {
+        "description": "Sets the error message when the server could not be reached"
+    },
+    "unknownError": "An unknown error has occurred...try later or contact support",
+    "@unknownError": {
+        "description": "Unknown error...try later or contact support"
     }
-
   }

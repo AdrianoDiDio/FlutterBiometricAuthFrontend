@@ -25,6 +25,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "biometricsScreenTitle":
+            MessageLookupByLibrary.simpleMessage("Biometrico"),
         "confirmPasswordHint":
             MessageLookupByLibrary.simpleMessage("Conferma Password"),
         "dialogOkButton": MessageLookupByLibrary.simpleMessage("Ok"),
@@ -66,6 +68,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "registrationDialogContent": m0,
         "registrationDialogTitle":
             MessageLookupByLibrary.simpleMessage("Registrazione"),
+        "serverFailure": MessageLookupByLibrary.simpleMessage(
+            "Il server non è raggiungibile al momento...controlla la tua connessione o riprova più tardi"),
+        "settingsScreenBiometricEntry": MessageLookupByLibrary.simpleMessage(
+            "Usa l\'impronta digitale per effettuare il login"),
         "settingsScreenCommonEntry":
             MessageLookupByLibrary.simpleMessage("Generale"),
         "settingsScreenLanguageEntry":
@@ -82,6 +88,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Impostazioni"),
         "unauthorizedError":
             MessageLookupByLibrary.simpleMessage("L\'utente non è autorizzato"),
+        "unknownError": MessageLookupByLibrary.simpleMessage(
+            "Errore sconosciuto...riprova più tardi o contatta il supporto"),
         "usernameEmpty": MessageLookupByLibrary.simpleMessage(
             "Il campo Nome Utente è vuoto"),
         "usernameHint": MessageLookupByLibrary.simpleMessage("Username"),

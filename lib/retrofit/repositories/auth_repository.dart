@@ -24,13 +24,13 @@ class AuthRepositoryImplementation extends BaseRepository
       final response = await restClient.login(username, password);
       return Right(response);
     } on DioError catch (e) {
-      if (e.response!.statusCode == 401) {
+      if (e.response != null && e.response!.statusCode == 401) {
         return const Left(Failure.loginFailure());
       }
-    } catch (e) {
       return const Left(Failure.serverFailure());
+    } catch (e) {
+      return const Left(Failure.unknownFailure());
     }
-    return const Left(Failure.unknownFailure());
   }
 
   @override
@@ -40,13 +40,13 @@ class AuthRepositoryImplementation extends BaseRepository
       final response = await restClient.refreshAccessToken(refreshToken);
       return Right(response);
     } on DioError catch (e) {
-      if (e.response!.statusCode == 401) {
+      if (e.response != null && e.response!.statusCode == 401) {
         return const Left(Failure.refreshAccessTokenFailure());
       }
-    } catch (e) {
       return const Left(Failure.serverFailure());
+    } catch (e) {
+      return const Left(Failure.unknownFailure());
     }
-    return const Left(Failure.unknownFailure());
   }
 
   @override
@@ -55,12 +55,12 @@ class AuthRepositoryImplementation extends BaseRepository
       await restClient.logout(refreshToken);
       return const Right(true);
     } on DioError catch (e) {
-      if (e.response!.statusCode == 400) {
+      if (e.response != null && e.response!.statusCode == 400) {
         return const Left(Failure.logoutFailure());
       }
-    } catch (e) {
       return const Left(Failure.serverFailure());
+    } catch (e) {
+      return const Left(Failure.unknownFailure());
     }
-    return const Left(Failure.unknownFailure());
   }
 }

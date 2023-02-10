@@ -110,7 +110,8 @@ class LoginFormState extends State<LoginForm> {
                     },
                   ),
                   prefixIcon: const Icon(Icons.password_rounded),
-                  errorText: errorMessage),
+                  errorText: errorMessage,
+                  errorMaxLines: 3),
               obscureText: !showPassword,
               validator: (value) {
                 if (value == null || value.isEmpty) {

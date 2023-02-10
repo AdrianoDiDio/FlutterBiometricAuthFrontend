@@ -15,6 +15,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   setUpLazySingletons();
   runApp(const ProviderScope(child: MyApp()));
 }

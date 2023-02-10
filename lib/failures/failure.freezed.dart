@@ -27,7 +27,6 @@ mixin _$Failure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,7 +40,6 @@ mixin _$Failure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,7 +53,6 @@ mixin _$Failure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,7 +71,6 @@ mixin _$Failure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,7 +87,6 @@ mixin _$Failure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,7 +103,6 @@ mixin _$Failure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -178,7 +172,6 @@ class _$ServerFailure extends ServerFailure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) {
     return serverFailure();
   }
@@ -195,7 +188,6 @@ class _$ServerFailure extends ServerFailure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) {
     return serverFailure?.call();
   }
@@ -212,7 +204,6 @@ class _$ServerFailure extends ServerFailure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -237,7 +228,6 @@ class _$ServerFailure extends ServerFailure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) {
     return serverFailure(this);
   }
@@ -257,7 +247,6 @@ class _$ServerFailure extends ServerFailure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) {
     return serverFailure?.call(this);
   }
@@ -277,7 +266,6 @@ class _$ServerFailure extends ServerFailure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (serverFailure != null) {
@@ -339,7 +327,6 @@ class _$LoginFailure extends LoginFailure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) {
     return loginFailure();
   }
@@ -356,7 +343,6 @@ class _$LoginFailure extends LoginFailure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) {
     return loginFailure?.call();
   }
@@ -373,7 +359,6 @@ class _$LoginFailure extends LoginFailure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (loginFailure != null) {
@@ -398,7 +383,6 @@ class _$LoginFailure extends LoginFailure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) {
     return loginFailure(this);
   }
@@ -418,7 +402,6 @@ class _$LoginFailure extends LoginFailure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) {
     return loginFailure?.call(this);
   }
@@ -438,7 +421,6 @@ class _$LoginFailure extends LoginFailure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (loginFailure != null) {
@@ -500,7 +482,6 @@ class _$LogoutFailure extends LogoutFailure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) {
     return logoutFailure();
   }
@@ -517,7 +498,6 @@ class _$LogoutFailure extends LogoutFailure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) {
     return logoutFailure?.call();
   }
@@ -534,7 +514,6 @@ class _$LogoutFailure extends LogoutFailure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (logoutFailure != null) {
@@ -559,7 +538,6 @@ class _$LogoutFailure extends LogoutFailure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) {
     return logoutFailure(this);
   }
@@ -579,7 +557,6 @@ class _$LogoutFailure extends LogoutFailure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) {
     return logoutFailure?.call(this);
   }
@@ -599,7 +576,6 @@ class _$LogoutFailure extends LogoutFailure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (logoutFailure != null) {
@@ -663,7 +639,6 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) {
     return refreshAccessTokenFailure();
   }
@@ -680,7 +655,6 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) {
     return refreshAccessTokenFailure?.call();
   }
@@ -697,7 +671,6 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (refreshAccessTokenFailure != null) {
@@ -722,7 +695,6 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) {
     return refreshAccessTokenFailure(this);
   }
@@ -742,7 +714,6 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) {
     return refreshAccessTokenFailure?.call(this);
   }
@@ -762,7 +733,6 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (refreshAccessTokenFailure != null) {
@@ -825,7 +795,6 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) {
     return registrationEmailFailure();
   }
@@ -842,7 +811,6 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) {
     return registrationEmailFailure?.call();
   }
@@ -859,7 +827,6 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (registrationEmailFailure != null) {
@@ -884,7 +851,6 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) {
     return registrationEmailFailure(this);
   }
@@ -904,7 +870,6 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) {
     return registrationEmailFailure?.call(this);
   }
@@ -924,7 +889,6 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (registrationEmailFailure != null) {
@@ -989,7 +953,6 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) {
     return registrationPasswordFailure();
   }
@@ -1006,7 +969,6 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) {
     return registrationPasswordFailure?.call();
   }
@@ -1023,7 +985,6 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (registrationPasswordFailure != null) {
@@ -1048,7 +1009,6 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) {
     return registrationPasswordFailure(this);
   }
@@ -1068,7 +1028,6 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) {
     return registrationPasswordFailure?.call(this);
   }
@@ -1088,7 +1047,6 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (registrationPasswordFailure != null) {
@@ -1153,7 +1111,6 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) {
     return registrationUsernameFailure();
   }
@@ -1170,7 +1127,6 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) {
     return registrationUsernameFailure?.call();
   }
@@ -1187,7 +1143,6 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (registrationUsernameFailure != null) {
@@ -1212,7 +1167,6 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) {
     return registrationUsernameFailure(this);
   }
@@ -1232,7 +1186,6 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) {
     return registrationUsernameFailure?.call(this);
   }
@@ -1252,7 +1205,6 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (registrationUsernameFailure != null) {
@@ -1314,7 +1266,6 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) {
     return unauthorizedFailure();
   }
@@ -1331,7 +1282,6 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) {
     return unauthorizedFailure?.call();
   }
@@ -1348,7 +1298,6 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (unauthorizedFailure != null) {
@@ -1373,7 +1322,6 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) {
     return unauthorizedFailure(this);
   }
@@ -1393,7 +1341,6 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) {
     return unauthorizedFailure?.call(this);
   }
@@ -1413,7 +1360,6 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (unauthorizedFailure != null) {
@@ -1475,7 +1421,6 @@ class _$UnknownFailure extends UnknownFailure {
     required TResult Function() registrationUsernameFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
   }) {
     return unknownFailure();
   }
@@ -1492,7 +1437,6 @@ class _$UnknownFailure extends UnknownFailure {
     TResult? Function()? registrationUsernameFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
   }) {
     return unknownFailure?.call();
   }
@@ -1509,7 +1453,6 @@ class _$UnknownFailure extends UnknownFailure {
     TResult Function()? registrationUsernameFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (unknownFailure != null) {
@@ -1534,7 +1477,6 @@ class _$UnknownFailure extends UnknownFailure {
         registrationUsernameFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
   }) {
     return unknownFailure(this);
   }
@@ -1554,7 +1496,6 @@ class _$UnknownFailure extends UnknownFailure {
         registrationUsernameFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
   }) {
     return unknownFailure?.call(this);
   }
@@ -1574,7 +1515,6 @@ class _$UnknownFailure extends UnknownFailure {
         registrationUsernameFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
     required TResult orElse(),
   }) {
     if (unknownFailure != null) {
@@ -1587,165 +1527,4 @@ class _$UnknownFailure extends UnknownFailure {
 abstract class UnknownFailure extends Failure {
   const factory UnknownFailure() = _$UnknownFailure;
   const UnknownFailure._() : super._();
-}
-
-/// @nodoc
-abstract class _$$NoConnectionFailureCopyWith<$Res> {
-  factory _$$NoConnectionFailureCopyWith(_$NoConnectionFailure value,
-          $Res Function(_$NoConnectionFailure) then) =
-      __$$NoConnectionFailureCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NoConnectionFailureCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res, _$NoConnectionFailure>
-    implements _$$NoConnectionFailureCopyWith<$Res> {
-  __$$NoConnectionFailureCopyWithImpl(
-      _$NoConnectionFailure _value, $Res Function(_$NoConnectionFailure) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$NoConnectionFailure extends NoConnectionFailure {
-  const _$NoConnectionFailure() : super._();
-
-  @override
-  String toString() {
-    return 'Failure.noConnectionFailure()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NoConnectionFailure);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() serverFailure,
-    required TResult Function() loginFailure,
-    required TResult Function() logoutFailure,
-    required TResult Function() refreshAccessTokenFailure,
-    required TResult Function() registrationEmailFailure,
-    required TResult Function() registrationPasswordFailure,
-    required TResult Function() registrationUsernameFailure,
-    required TResult Function() unauthorizedFailure,
-    required TResult Function() unknownFailure,
-    required TResult Function() noConnectionFailure,
-  }) {
-    return noConnectionFailure();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? serverFailure,
-    TResult? Function()? loginFailure,
-    TResult? Function()? logoutFailure,
-    TResult? Function()? refreshAccessTokenFailure,
-    TResult? Function()? registrationEmailFailure,
-    TResult? Function()? registrationPasswordFailure,
-    TResult? Function()? registrationUsernameFailure,
-    TResult? Function()? unauthorizedFailure,
-    TResult? Function()? unknownFailure,
-    TResult? Function()? noConnectionFailure,
-  }) {
-    return noConnectionFailure?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? serverFailure,
-    TResult Function()? loginFailure,
-    TResult Function()? logoutFailure,
-    TResult Function()? refreshAccessTokenFailure,
-    TResult Function()? registrationEmailFailure,
-    TResult Function()? registrationPasswordFailure,
-    TResult Function()? registrationUsernameFailure,
-    TResult Function()? unauthorizedFailure,
-    TResult Function()? unknownFailure,
-    TResult Function()? noConnectionFailure,
-    required TResult orElse(),
-  }) {
-    if (noConnectionFailure != null) {
-      return noConnectionFailure();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ServerFailure value) serverFailure,
-    required TResult Function(LoginFailure value) loginFailure,
-    required TResult Function(LogoutFailure value) logoutFailure,
-    required TResult Function(RefreshAccessTokenFailure value)
-        refreshAccessTokenFailure,
-    required TResult Function(RegistrationEmailFailure value)
-        registrationEmailFailure,
-    required TResult Function(RegistrationPasswordFailure value)
-        registrationPasswordFailure,
-    required TResult Function(RegistrationUsernameFailure value)
-        registrationUsernameFailure,
-    required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
-    required TResult Function(UnknownFailure value) unknownFailure,
-    required TResult Function(NoConnectionFailure value) noConnectionFailure,
-  }) {
-    return noConnectionFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(ServerFailure value)? serverFailure,
-    TResult? Function(LoginFailure value)? loginFailure,
-    TResult? Function(LogoutFailure value)? logoutFailure,
-    TResult? Function(RefreshAccessTokenFailure value)?
-        refreshAccessTokenFailure,
-    TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
-    TResult? Function(RegistrationPasswordFailure value)?
-        registrationPasswordFailure,
-    TResult? Function(RegistrationUsernameFailure value)?
-        registrationUsernameFailure,
-    TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
-    TResult? Function(UnknownFailure value)? unknownFailure,
-    TResult? Function(NoConnectionFailure value)? noConnectionFailure,
-  }) {
-    return noConnectionFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ServerFailure value)? serverFailure,
-    TResult Function(LoginFailure value)? loginFailure,
-    TResult Function(LogoutFailure value)? logoutFailure,
-    TResult Function(RefreshAccessTokenFailure value)?
-        refreshAccessTokenFailure,
-    TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
-    TResult Function(RegistrationPasswordFailure value)?
-        registrationPasswordFailure,
-    TResult Function(RegistrationUsernameFailure value)?
-        registrationUsernameFailure,
-    TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
-    TResult Function(UnknownFailure value)? unknownFailure,
-    TResult Function(NoConnectionFailure value)? noConnectionFailure,
-    required TResult orElse(),
-  }) {
-    if (noConnectionFailure != null) {
-      return noConnectionFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NoConnectionFailure extends Failure {
-  const factory NoConnectionFailure() = _$NoConnectionFailure;
-  const NoConnectionFailure._() : super._();
 }

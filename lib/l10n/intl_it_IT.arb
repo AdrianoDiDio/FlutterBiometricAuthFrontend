@@ -34,5 +34,9 @@
     "logoutFailure": "Impossibile effettuare il logout...il token potrebbe essere stato inserito in blacklist",
     "logoutButtonTextEntry": "Esci",
     "loginScreenTitle": "Accedi",
-    "registerScreenTitle": "Registrati"
+    "registerScreenTitle": "Registrati",
+    "settingsScreenBiometricEntry": "Usa l'impronta digitale per effettuare il login",
+    "biometricsScreenTitle": "Biometrico",
+    "serverFailure": "Il server non è raggiungibile al momento...controlla la tua connessione o riprova più tardi",
+    "unknownError": "Errore sconosciuto...riprova più tardi o contatta il supporto"
   }

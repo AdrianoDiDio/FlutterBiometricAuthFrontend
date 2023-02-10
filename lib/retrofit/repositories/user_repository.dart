@@ -23,7 +23,7 @@ class UserRepositoryImplementation extends BaseRepository
       final response = await restClient.register(username, email, password);
       return Right(response);
     } on DioError catch (e) {
-      if (e.response!.statusCode == 400) {
+      if (e.response != null && e.response!.statusCode == 400) {
         RegisterFailureResponse registerResponse =
             RegisterFailureResponse.fromJson(e.response!.data);
         if (registerResponse.email != null) {
@@ -36,10 +36,10 @@ class UserRepositoryImplementation extends BaseRepository
           return const Left(ServerFailure());
         }
       }
-    } catch (e) {
       return const Left(ServerFailure());
+    } catch (e) {
+      return const Left(UnknownFailure());
     }
-    return const Left(UnknownFailure());
   }
 
   @override
@@ -48,11 +48,10 @@ class UserRepositoryImplementation extends BaseRepository
       final response = await restClient.getUserDetails();
       return Right(response);
     } on DioError catch (e) {
-      if (e.response!.statusCode == 401) {
+      if (e.response != null && e.response!.statusCode == 401) {
         return const Left(UnauthorizedFailure());
-      } else {
-        return const Left(ServerFailure());
       }
+      return const Left(ServerFailure());
     } catch (e) {
       return const Left(UnknownFailure());
     }

@@ -1,3 +1,4 @@
+import 'package:biometric_auth_frontend/biometrics/biometrics_utils.dart';
 import 'package:biometric_auth_frontend/interceptors/bearer_token_interceptor.dart';
 import 'package:biometric_auth_frontend/retrofit/rest_client.dart';
 import 'package:biometric_auth_frontend/retrofit/rest_endpoints.dart';
@@ -21,4 +22,5 @@ void setUpLazySingletons() {
   ]);
   serviceLocator.registerLazySingleton<RestClient>(() => RestClient(dio));
   serviceLocator.registerLazySingleton<StorageUtils>(() => StorageUtils());
+  serviceLocator.registerSingleton<BiometricUtils>(BiometricUtils());
 }

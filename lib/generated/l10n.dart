@@ -421,6 +421,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Use Fingerprint to login`
+  String get settingsScreenBiometricEntry {
+    return Intl.message(
+      'Use Fingerprint to login',
+      name: 'settingsScreenBiometricEntry',
+      desc: 'Sets the settings title for the biometric entry',
+      args: [],
+    );
+  }
+
+  /// `Biometrics`
+  String get biometricsScreenTitle {
+    return Intl.message(
+      'Biometrics',
+      name: 'biometricsScreenTitle',
+      desc: 'Sets the title for the biometric screen',
+      args: [],
+    );
+  }
+
+  /// `Server isn't reachable at the moment...check your connection or try later`
+  String get serverFailure {
+    return Intl.message(
+      'Server isn\'t reachable at the moment...check your connection or try later',
+      name: 'serverFailure',
+      desc: 'Sets the error message when the server could not be reached',
+      args: [],
+    );
+  }
+
+  /// `An unknown error has occurred...try later or contact support`
+  String get unknownError {
+    return Intl.message(
+      'An unknown error has occurred...try later or contact support',
+      name: 'unknownError',
+      desc: 'Unknown error...try later or contact support',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
