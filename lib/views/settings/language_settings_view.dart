@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 
 class LanguageSettingsView extends StatefulWidget {
   static String routeName = "language";
+  static String routePath = "language";
 
   const LanguageSettingsView({super.key});
 

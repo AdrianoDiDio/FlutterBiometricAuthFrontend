@@ -3,6 +3,7 @@ import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/providers/language_provider.dart';
 import 'package:biometric_auth_frontend/providers/theme_provider.dart';
 import 'package:biometric_auth_frontend/routes.dart';
+import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:biometric_auth_frontend/utils/storage_keys.dart';
 import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:biometric_auth_frontend/views/login/login_view.dart';
@@ -17,6 +18,7 @@ import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setUpLazySingletons();
+  SizeConfig().init();
   runApp(const ProviderScope(child: MyApp()));
 }
 

@@ -24,11 +24,11 @@ class HomeScreenShellViewState extends State<HomeScreenShellView> {
     HomeScreenItem(
         title: S.current.homeScreenTitle,
         widget: const HomeView(),
-        route: HomeView.routeName),
+        routeName: HomeView.routeName),
     HomeScreenItem(
         title: S.current.settingsScreenTitle,
         widget: const SettingsView(),
-        route: SettingsView.routeName),
+        routeName: SettingsView.routeName),
   ];
 
   @override
@@ -55,11 +55,14 @@ class HomeScreenShellViewState extends State<HomeScreenShellView> {
   }
 
   void _onItemTapped(BuildContext context, int index) {
+    if (index == _currentPageIndex) {
+      return;
+    }
     setState(() {
       _currentPageIndex = index;
       _currentPageTitle = _pages.elementAt(index).title;
     });
-    logger.d("Going to ${_pages.elementAt(index).route}");
-    context.push(_pages.elementAt(index).route);
+    logger.d("Going to ${_pages.elementAt(index).routeName}");
+    context.pushNamed(_pages.elementAt(index).routeName);
   }
 }

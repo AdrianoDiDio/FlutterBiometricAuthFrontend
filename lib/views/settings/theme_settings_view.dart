@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 class ThemeSettingsView extends StatefulWidget {
   static String routeName = "theme";
+  static String routePath = "theme";
 
   const ThemeSettingsView({super.key});
 

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 
 class BiometricSettingsView extends StatefulWidget {
   static String routeName = "biometrics";
+  static String routePath = "biometrics";
 
   const BiometricSettingsView({super.key});
 

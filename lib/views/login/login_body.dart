@@ -29,7 +29,7 @@ class LoginScreenBody extends StatelessWidget {
                 SizedBox(height: SizeConfig.blockSizeHorizontal * 4),
                 ElevatedButton(
                     onPressed: () {
-                      context.push(RegisterScreen.routeName);
+                      context.pushNamed(RegisterScreen.routeName);
                     },
                     child: Text(S.of(context).registerButton)),
               ],

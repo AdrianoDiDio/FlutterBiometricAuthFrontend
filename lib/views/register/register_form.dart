@@ -59,7 +59,7 @@ class RegisterFormState extends State<RegisterForm> {
                   actions: [
                     TextButton(
                         onPressed: () {
-                          context.go(LoginScreen.routeName);
+                          context.goNamed(LoginScreen.routeName);
                         },
                         child: Text(S.of(context).dialogOkButton))
                   ],

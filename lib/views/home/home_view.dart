@@ -25,7 +25,9 @@ final userInfoProvider = FutureProvider.autoDispose((ref) async {
 });
 
 class HomeView extends ConsumerWidget {
-  static String routeName = "/home/userInfo";
+  static String routeName = "userInfo";
+  static String routePath = "/home/userInfo";
+
   const HomeView({super.key});
 
   void _logout(BuildContext context) async {
@@ -38,7 +40,7 @@ class HomeView extends ConsumerWidget {
           await authRepository.logout(refreshToken).whenComplete(() {
         serviceLocator.get<StorageUtils>().delete(StorageKeys.accessToken);
         serviceLocator.get<StorageUtils>().delete(StorageKeys.refreshToken);
-        context.go(LoginScreen.routeName);
+        context.goNamed(LoginScreen.routeName);
       });
       result.fold((l) {
         ErrorObject errorObject =
@@ -70,7 +72,7 @@ class HomeView extends ConsumerWidget {
                                 ErrorObject.mapFailureToErrorObject(failure: l);
                             logger.d("Error....${errorObject.message}");
                             Future.microtask(
-                                () => context.go(LoginScreen.routeName));
+                                () => context.goNamed(LoginScreen.routeName));
                             return Container();
                           }, (r) {
                             return ConstrainedBox(
@@ -149,7 +151,7 @@ class HomeView extends ConsumerWidget {
                         }, error: (e, st) {
                           logger.d("Unexpected error...");
                           Future.microtask(
-                              () => context.go(LoginScreen.routeName));
+                              () => context.goNamed(LoginScreen.routeName));
 
                           return Container();
                         }))

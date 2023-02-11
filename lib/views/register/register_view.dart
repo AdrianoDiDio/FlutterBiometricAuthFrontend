@@ -3,7 +3,8 @@ import 'package:biometric_auth_frontend/views/register/register_body.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatelessWidget {
-  static String routeName = "/register";
+  static String routeName = "register";
+  static String routePath = "/register";
 
   const RegisterScreen({super.key});
 

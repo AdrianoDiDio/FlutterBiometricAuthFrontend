@@ -30,6 +30,7 @@ class LoginFormState extends State<LoginForm> {
 
   bool showPassword = false;
   String? errorMessage;
+  FocusNode emailFocusNode = FocusNode();
 
   Future<void> submitIfValid() async {
     if (formKey.currentState!.validate()) {
@@ -58,7 +59,7 @@ class LoginFormState extends State<LoginForm> {
         serviceLocator
             .get<StorageUtils>()
             .write(StorageKeys.refreshToken, r.refreshToken);
-        context.go(HomeView.routeName);
+        context.goNamed(HomeView.routeName);
         setState(() {
           errorMessage = null;
         });
@@ -69,6 +70,12 @@ class LoginFormState extends State<LoginForm> {
   @override
   void initState() {
     super.initState();
+    emailFocusNode.addListener(() {
+      logger.d("called");
+      if (!emailFocusNode.hasFocus) {
+        emailController.text = emailController.text.trim();
+      }
+    });
     showPassword = false;
   }
 
@@ -79,6 +86,7 @@ class LoginFormState extends State<LoginForm> {
         child: Column(
           children: [
             TextFormField(
+                focusNode: emailFocusNode,
                 controller: emailController,
                 keyboardType: TextInputType.name,
                 autofillHints: const [AutofillHints.username],
