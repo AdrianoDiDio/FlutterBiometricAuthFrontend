@@ -19,38 +19,29 @@ class HomeScreenShellView extends StatefulWidget {
 
 class HomeScreenShellViewState extends State<HomeScreenShellView> {
   int _currentPageIndex = 0;
-  String _currentPageTitle = S.current.homeScreenTitle;
   static final List<HomeScreenItem> _pages = [
     HomeScreenItem(
-        title: S.current.homeScreenTitle,
         widget: const HomeView(),
-        routeName: HomeView.routeName),
+        routeName: HomeView.routeName,
+        bottomNavigationBarItem: BottomNavigationBarItem(
+            icon: const Icon(Icons.person_rounded),
+            label: S.current.homeScreenUserInfoEntry)),
     HomeScreenItem(
-        title: S.current.settingsScreenTitle,
         widget: const SettingsView(),
-        routeName: SettingsView.routeName),
+        routeName: SettingsView.routeName,
+        bottomNavigationBarItem: BottomNavigationBarItem(
+            icon: const Icon(Icons.settings_rounded),
+            label: S.current.homeScreenSettingsEntry)),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          _currentPageTitle,
-        ),
-      ),
       body: widget.child,
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentPageIndex,
           onTap: (value) => _onItemTapped(context, value),
-          items: [
-            BottomNavigationBarItem(
-                icon: const Icon(Icons.person_rounded),
-                label: S.of(context).homeScreenUserInfoEntry),
-            BottomNavigationBarItem(
-                icon: const Icon(Icons.settings_rounded),
-                label: S.of(context).homeScreenSettingsEntry)
-          ]),
+          items: _pages.map((e) => e.bottomNavigationBarItem).toList()),
     );
   }
 
@@ -60,9 +51,12 @@ class HomeScreenShellViewState extends State<HomeScreenShellView> {
     }
     setState(() {
       _currentPageIndex = index;
-      _currentPageTitle = _pages.elementAt(index).title;
     });
     logger.d("Going to ${_pages.elementAt(index).routeName}");
-    context.pushNamed(_pages.elementAt(index).routeName);
+    //NOTE(Adriano): We need to use go since we don't want to push it onto the
+    // stack...however we need a way to preserve the state of the page because
+    // right now every time we tap on a item it will cause a rebuild.
+    // Issue tracking: https://github.com/flutter/flutter/issues/99124
+    context.goNamed(_pages.elementAt(index).routeName);
   }
 }

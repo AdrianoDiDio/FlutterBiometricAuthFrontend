@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class HomeScreenItem {
-  String title;
   Widget widget;
   String routeName;
+  BottomNavigationBarItem bottomNavigationBarItem;
 
   HomeScreenItem(
-      {required this.title, required this.widget, required this.routeName});
+      {required this.widget,
+      required this.routeName,
+      required this.bottomNavigationBarItem});
 }

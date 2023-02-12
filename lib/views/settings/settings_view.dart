@@ -21,40 +21,47 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SettingsList(
-      sections: [
-        SettingsSection(
-            title: Text(S.of(context).settingsScreenCommonEntry),
-            tiles: [
-              SettingsTile.navigation(
-                leading: const Icon(Icons.language_rounded),
-                title: Text(S.of(context).settingsScreenLanguageEntry),
-                value: Text(LocaleNames.of(context)!
-                    .nameOf(Localizations.localeOf(context).toString())
-                    .toString()),
-                onPressed: (context) {
-                  context.pushNamed(LanguageSettingsView.routeName);
-                },
-              ),
-              SettingsTile.navigation(
-                leading: const Icon(Icons.format_paint_rounded),
-                title: Text(S.of(context).settingsScreenThemeEntry),
-                value: Text(Provider.of<ThemeProvider>(context).themeModeName),
-                onPressed: (context) {
-                  context.pushNamed(ThemeSettingsView.routeName);
-                },
-              ),
-              SettingsTile.navigation(
-                leading: const Icon(Icons.lock),
-                enabled:
-                    serviceLocator.get<BiometricUtils>().biometricSupported,
-                title: Text(S.of(context).settingsScreenBiometricEntry),
-                onPressed: (context) {
-                  context.pushNamed(BiometricSettingsView.routeName);
-                },
-              )
-            ])
-      ],
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(
+            S.of(context).settingsScreenTitle,
+          ),
+        ),
+        body: SettingsList(
+          sections: [
+            SettingsSection(
+                title: Text(S.of(context).settingsScreenCommonEntry),
+                tiles: [
+                  SettingsTile.navigation(
+                    leading: const Icon(Icons.language_rounded),
+                    title: Text(S.of(context).settingsScreenLanguageEntry),
+                    value: Text(LocaleNames.of(context)!
+                        .nameOf(Localizations.localeOf(context).toString())
+                        .toString()),
+                    onPressed: (context) {
+                      context.pushNamed(LanguageSettingsView.routeName);
+                    },
+                  ),
+                  SettingsTile.navigation(
+                    leading: const Icon(Icons.format_paint_rounded),
+                    title: Text(S.of(context).settingsScreenThemeEntry),
+                    value:
+                        Text(Provider.of<ThemeProvider>(context).themeModeName),
+                    onPressed: (context) {
+                      context.pushNamed(ThemeSettingsView.routeName);
+                    },
+                  ),
+                  SettingsTile.navigation(
+                    leading: const Icon(Icons.lock),
+                    enabled:
+                        serviceLocator.get<BiometricUtils>().biometricSupported,
+                    title: Text(S.of(context).settingsScreenBiometricEntry),
+                    onPressed: (context) {
+                      context.pushNamed(BiometricSettingsView.routeName);
+                    },
+                  )
+                ])
+          ],
+        ));
   }
 }
