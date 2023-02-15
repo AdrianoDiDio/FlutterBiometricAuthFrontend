@@ -6,6 +6,7 @@ import 'package:biometric_auth_frontend/failures/error_object.dart';
 import 'package:biometric_auth_frontend/localizations_ext.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
+import 'package:biometric_auth_frontend/providers/auth_provider.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/biometric_repository.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:biometric_auth_frontend/utils/storage_keys.dart';
@@ -17,6 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pointycastle/asn1.dart';
 import 'package:pointycastle/export.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreenBody extends StatelessWidget {
   const LoginScreenBody({super.key});
@@ -150,13 +152,8 @@ class LoginScreenBody extends StatelessWidget {
                     .d(ErrorObject.mapFailureToErrorObject(failure: l).message)
               }, (r) {
         logger.d("Login successful...${r.accessToken}");
-        serviceLocator
-            .get<StorageUtils>()
-            .write(StorageKeys.accessToken, r.accessToken);
-        serviceLocator
-            .get<StorageUtils>()
-            .write(StorageKeys.refreshToken, r.refreshToken);
-        context.goNamed(HomeView.routeName);
+        Provider.of<AuthProvider>(context, listen: false)
+            .login(r.accessToken, r.refreshToken);
       });
     }
   }

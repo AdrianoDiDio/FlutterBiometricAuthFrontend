@@ -3,6 +3,7 @@ import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/localizations_ext.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
+import 'package:biometric_auth_frontend/providers/auth_provider.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/auth_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/login_response.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
@@ -13,6 +14,7 @@ import 'package:biometric_auth_frontend/views/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:dartz/dartz.dart' hide State;
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -53,13 +55,8 @@ class LoginFormState extends State<LoginForm> {
           errorMessage = errorObject.message;
         });
       }, (r) {
-        serviceLocator
-            .get<StorageUtils>()
-            .write(StorageKeys.accessToken, r.accessToken);
-        serviceLocator
-            .get<StorageUtils>()
-            .write(StorageKeys.refreshToken, r.refreshToken);
-        context.goNamed(HomeView.routeName);
+        Provider.of<AuthProvider>(context, listen: false)
+            .login(r.accessToken, r.refreshToken);
         setState(() {
           errorMessage = null;
         });

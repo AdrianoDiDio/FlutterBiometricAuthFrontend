@@ -3,6 +3,7 @@ import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
+import 'package:biometric_auth_frontend/providers/auth_provider.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/auth_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/user_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/user_response.dart';
@@ -12,8 +13,9 @@ import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:biometric_auth_frontend/views/login/login_view.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart' hide Provider;
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart' hide FutureProvider;
 
 final userInfoProvider = FutureProvider.autoDispose((ref) async {
   UserRepositoryImplementation userRepositoryImplementation =
@@ -38,9 +40,7 @@ class HomeView extends ConsumerWidget {
           AuthRepositoryImplementation();
       Either<Failure, bool> result =
           await authRepository.logout(refreshToken).whenComplete(() {
-        serviceLocator.get<StorageUtils>().delete(StorageKeys.accessToken);
-        serviceLocator.get<StorageUtils>().delete(StorageKeys.refreshToken);
-        context.goNamed(LoginScreen.routeName);
+        Provider.of<AuthProvider>(context, listen: false).logout();
       });
       result.fold((l) {
         ErrorObject errorObject =
