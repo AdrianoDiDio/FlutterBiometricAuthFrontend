@@ -173,5 +173,9 @@
     "unknownError": "An unknown error has occurred...try later or contact support",
     "@unknownError": {
         "description": "Unknown error...try later or contact support"
+    },
+    "getBiometricTokenFailure": "Couldn't generate a biometric token...try later...",
+    "@getBiometricTokenFailure": {
+        "description": "Sets the error message when the server is unable to generate a biometric token."
     }
   }

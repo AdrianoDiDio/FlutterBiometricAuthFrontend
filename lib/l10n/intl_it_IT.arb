@@ -38,5 +38,6 @@
     "settingsScreenBiometricEntry": "Usa l'impronta digitale per effettuare il login",
     "biometricsScreenTitle": "Biometrico",
     "serverFailure": "Il server non è raggiungibile al momento...controlla la tua connessione o riprova più tardi",
-    "unknownError": "Errore sconosciuto...riprova più tardi o contatta il supporto"
+    "unknownError": "Errore sconosciuto...riprova più tardi o contatta il supporto",
+    "getBiometricTokenFailure": "Non è stato possibile generare il token biometrico...riprova più tardi"
   }

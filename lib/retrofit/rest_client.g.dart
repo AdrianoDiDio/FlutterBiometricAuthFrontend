@@ -49,6 +49,36 @@ class _RestClient implements RestClient {
   }
 
   @override
+  Future<LoginResponse> biometricLogin(
+    userId,
+    biometricToken,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'No-Authentication': 'true'};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = {
+      'userId': userId,
+      'biometricToken': biometricToken,
+    };
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'biometricLogin',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = LoginResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
   Future<void> logout(refreshToken) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -147,6 +177,61 @@ class _RestClient implements RestClient {
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = RefreshAccessTokenResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<BiometricTokenResponse> getBiometricToken(
+    signedBiometricChallenge,
+    nonce,
+    publicKey,
+  ) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {
+      'signedBiometricChallenge': signedBiometricChallenge,
+      'nonce': nonce,
+      'publicKey': publicKey,
+    };
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<BiometricTokenResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+            .compose(
+              _dio.options,
+              'getBiometricToken',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = BiometricTokenResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<BiometricTokenChallengeResponse> getBiometricChallenge() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<BiometricTokenChallengeResponse>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'getBiometricChallenge',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = BiometricTokenChallengeResponse.fromJson(_result.data!);
     return value;
   }
 

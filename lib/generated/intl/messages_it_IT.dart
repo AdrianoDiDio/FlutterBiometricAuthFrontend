@@ -35,6 +35,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailEmpty":
             MessageLookupByLibrary.simpleMessage("Il campo Email è vuoto"),
         "emailHint": MessageLookupByLibrary.simpleMessage("Email"),
+        "getBiometricTokenFailure": MessageLookupByLibrary.simpleMessage(
+            "Non è stato possibile generare il token biometrico...riprova più tardi"),
         "homeScreenSettingsEntry":
             MessageLookupByLibrary.simpleMessage("Impostazioni"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage("Utente"),

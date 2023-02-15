@@ -25,6 +25,7 @@ mixin _$Failure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) =>
@@ -38,6 +39,7 @@ mixin _$Failure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) =>
@@ -51,6 +53,7 @@ mixin _$Failure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -69,6 +72,8 @@ mixin _$Failure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) =>
@@ -85,6 +90,7 @@ mixin _$Failure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) =>
@@ -101,6 +107,7 @@ mixin _$Failure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
@@ -170,6 +177,7 @@ class _$ServerFailure extends ServerFailure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) {
@@ -186,6 +194,7 @@ class _$ServerFailure extends ServerFailure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) {
@@ -202,6 +211,7 @@ class _$ServerFailure extends ServerFailure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -226,6 +236,8 @@ class _$ServerFailure extends ServerFailure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
@@ -245,6 +257,7 @@ class _$ServerFailure extends ServerFailure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
@@ -264,6 +277,7 @@ class _$ServerFailure extends ServerFailure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
@@ -325,6 +339,7 @@ class _$LoginFailure extends LoginFailure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) {
@@ -341,6 +356,7 @@ class _$LoginFailure extends LoginFailure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) {
@@ -357,6 +373,7 @@ class _$LoginFailure extends LoginFailure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -381,6 +398,8 @@ class _$LoginFailure extends LoginFailure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
@@ -400,6 +419,7 @@ class _$LoginFailure extends LoginFailure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
@@ -419,6 +439,7 @@ class _$LoginFailure extends LoginFailure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
@@ -480,6 +501,7 @@ class _$LogoutFailure extends LogoutFailure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) {
@@ -496,6 +518,7 @@ class _$LogoutFailure extends LogoutFailure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) {
@@ -512,6 +535,7 @@ class _$LogoutFailure extends LogoutFailure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -536,6 +560,8 @@ class _$LogoutFailure extends LogoutFailure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
@@ -555,6 +581,7 @@ class _$LogoutFailure extends LogoutFailure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
@@ -574,6 +601,7 @@ class _$LogoutFailure extends LogoutFailure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
@@ -637,6 +665,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) {
@@ -653,6 +682,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) {
@@ -669,6 +699,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -693,6 +724,8 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
@@ -712,6 +745,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
@@ -731,6 +765,7 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
@@ -793,6 +828,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) {
@@ -809,6 +845,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) {
@@ -825,6 +862,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -849,6 +887,8 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
@@ -868,6 +908,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
@@ -887,6 +928,7 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
@@ -951,6 +993,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) {
@@ -967,6 +1010,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) {
@@ -983,6 +1027,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -1007,6 +1052,8 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
@@ -1026,6 +1073,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
@@ -1045,6 +1093,7 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
@@ -1109,6 +1158,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) {
@@ -1125,6 +1175,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) {
@@ -1141,6 +1192,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -1165,6 +1217,8 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
@@ -1184,6 +1238,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
@@ -1203,6 +1258,7 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
@@ -1217,6 +1273,169 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
 abstract class RegistrationUsernameFailure extends Failure {
   const factory RegistrationUsernameFailure() = _$RegistrationUsernameFailure;
   const RegistrationUsernameFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$$GetBiometricTokenFailureCopyWith<$Res> {
+  factory _$$GetBiometricTokenFailureCopyWith(_$GetBiometricTokenFailure value,
+          $Res Function(_$GetBiometricTokenFailure) then) =
+      __$$GetBiometricTokenFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetBiometricTokenFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$GetBiometricTokenFailure>
+    implements _$$GetBiometricTokenFailureCopyWith<$Res> {
+  __$$GetBiometricTokenFailureCopyWithImpl(_$GetBiometricTokenFailure _value,
+      $Res Function(_$GetBiometricTokenFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetBiometricTokenFailure extends GetBiometricTokenFailure {
+  const _$GetBiometricTokenFailure() : super._();
+
+  @override
+  String toString() {
+    return 'Failure.getBiometricTokenFailure()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetBiometricTokenFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverFailure,
+    required TResult Function() loginFailure,
+    required TResult Function() logoutFailure,
+    required TResult Function() refreshAccessTokenFailure,
+    required TResult Function() registrationEmailFailure,
+    required TResult Function() registrationPasswordFailure,
+    required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
+    required TResult Function() unauthorizedFailure,
+    required TResult Function() unknownFailure,
+  }) {
+    return getBiometricTokenFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? serverFailure,
+    TResult? Function()? loginFailure,
+    TResult? Function()? logoutFailure,
+    TResult? Function()? refreshAccessTokenFailure,
+    TResult? Function()? registrationEmailFailure,
+    TResult? Function()? registrationPasswordFailure,
+    TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
+    TResult? Function()? unauthorizedFailure,
+    TResult? Function()? unknownFailure,
+  }) {
+    return getBiometricTokenFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverFailure,
+    TResult Function()? loginFailure,
+    TResult Function()? logoutFailure,
+    TResult Function()? refreshAccessTokenFailure,
+    TResult Function()? registrationEmailFailure,
+    TResult Function()? registrationPasswordFailure,
+    TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
+    TResult Function()? unauthorizedFailure,
+    TResult Function()? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (getBiometricTokenFailure != null) {
+      return getBiometricTokenFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerFailure value) serverFailure,
+    required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
+    required TResult Function(RefreshAccessTokenFailure value)
+        refreshAccessTokenFailure,
+    required TResult Function(RegistrationEmailFailure value)
+        registrationEmailFailure,
+    required TResult Function(RegistrationPasswordFailure value)
+        registrationPasswordFailure,
+    required TResult Function(RegistrationUsernameFailure value)
+        registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
+    required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
+    required TResult Function(UnknownFailure value) unknownFailure,
+  }) {
+    return getBiometricTokenFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerFailure value)? serverFailure,
+    TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
+    TResult? Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult? Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult? Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult? Function(UnknownFailure value)? unknownFailure,
+  }) {
+    return getBiometricTokenFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerFailure value)? serverFailure,
+    TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
+    TResult Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult Function(UnknownFailure value)? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (getBiometricTokenFailure != null) {
+      return getBiometricTokenFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetBiometricTokenFailure extends Failure {
+  const factory GetBiometricTokenFailure() = _$GetBiometricTokenFailure;
+  const GetBiometricTokenFailure._() : super._();
 }
 
 /// @nodoc
@@ -1264,6 +1483,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) {
@@ -1280,6 +1500,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) {
@@ -1296,6 +1517,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -1320,6 +1542,8 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
@@ -1339,6 +1563,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
@@ -1358,6 +1583,7 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
@@ -1419,6 +1645,7 @@ class _$UnknownFailure extends UnknownFailure {
     required TResult Function() registrationEmailFailure,
     required TResult Function() registrationPasswordFailure,
     required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() unknownFailure,
   }) {
@@ -1435,6 +1662,7 @@ class _$UnknownFailure extends UnknownFailure {
     TResult? Function()? registrationEmailFailure,
     TResult? Function()? registrationPasswordFailure,
     TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? unknownFailure,
   }) {
@@ -1451,6 +1679,7 @@ class _$UnknownFailure extends UnknownFailure {
     TResult Function()? registrationEmailFailure,
     TResult Function()? registrationPasswordFailure,
     TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? unknownFailure,
     required TResult orElse(),
@@ -1475,6 +1704,8 @@ class _$UnknownFailure extends UnknownFailure {
         registrationPasswordFailure,
     required TResult Function(RegistrationUsernameFailure value)
         registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
@@ -1494,6 +1725,7 @@ class _$UnknownFailure extends UnknownFailure {
         registrationPasswordFailure,
     TResult? Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
@@ -1513,6 +1745,7 @@ class _$UnknownFailure extends UnknownFailure {
         registrationPasswordFailure,
     TResult Function(RegistrationUsernameFailure value)?
         registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),

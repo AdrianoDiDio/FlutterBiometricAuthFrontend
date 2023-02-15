@@ -29,6 +29,9 @@ class ErrorObject {
       unauthorizedFailure: () => ErrorObject(
           title: "Error Code: UNAUTHORIZED_ERROR",
           message: S.current.unauthorizedError),
+      getBiometricTokenFailure: () => ErrorObject(
+          title: "Error Code: GENERATE_BIOMETRIC_TOKEN_FAILURE",
+          message: S.current.getBiometricTokenFailure),
       refreshAccessTokenFailure: () => ErrorObject(
           title: "Error Code: REFRESH_ACCESS_TOKEN_FAILURE",
           message: S.current.refreshAccessTokenFailure),

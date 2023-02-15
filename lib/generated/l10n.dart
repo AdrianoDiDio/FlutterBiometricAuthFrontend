@@ -461,6 +461,17 @@ class S {
       args: [],
     );
   }
+
+  /// `Couldn't generate a biometric token...try later...`
+  String get getBiometricTokenFailure {
+    return Intl.message(
+      'Couldn\'t generate a biometric token...try later...',
+      name: 'getBiometricTokenFailure',
+      desc:
+          'Sets the error message when the server is unable to generate a biometric token.',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

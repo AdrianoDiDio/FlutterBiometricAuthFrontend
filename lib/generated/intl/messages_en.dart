@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Email is already registered"),
         "emailEmpty": MessageLookupByLibrary.simpleMessage("Email is empty"),
         "emailHint": MessageLookupByLibrary.simpleMessage("Email"),
+        "getBiometricTokenFailure": MessageLookupByLibrary.simpleMessage(
+            "Couldn\'t generate a biometric token...try later..."),
         "homeScreenSettingsEntry":
             MessageLookupByLibrary.simpleMessage("Settings"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage("User Info"),

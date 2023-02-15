@@ -14,6 +14,7 @@ class Failure with _$Failure {
       RegistrationPasswordFailure;
   const factory Failure.registrationUsernameFailure() =
       RegistrationUsernameFailure;
+  const factory Failure.getBiometricTokenFailure() = GetBiometricTokenFailure;
   const factory Failure.unauthorizedFailure() = UnauthorizedFailure;
   const factory Failure.unknownFailure() = UnknownFailure;
 }
