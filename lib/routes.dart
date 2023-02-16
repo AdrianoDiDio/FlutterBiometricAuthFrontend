@@ -13,11 +13,11 @@ import 'package:biometric_auth_frontend/views/settings/language_settings_view.da
 import 'package:biometric_auth_frontend/views/settings/settings_view.dart';
 import 'package:biometric_auth_frontend/views/settings/theme_settings_view.dart';
 import 'package:go_router/go_router.dart';
-import 'package:provider/provider.dart';
 
-class MainRouter {
+class MainRouterProvider {
   final AuthProvider authProvider;
-  MainRouter(this.authProvider);
+  MainRouterProvider(this.authProvider);
+
   late final GoRouter goRouter = GoRouter(
       initialLocation: LoginScreen.routePath,
       debugLogDiagnostics: true,

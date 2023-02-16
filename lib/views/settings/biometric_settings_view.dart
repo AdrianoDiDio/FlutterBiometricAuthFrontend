@@ -8,6 +8,7 @@ import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
+import 'package:biometric_auth_frontend/providers/biometric_provider.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/biometric_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/biometric_challenge_response.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
@@ -18,6 +19,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pointycastle/asn1.dart';
 import 'package:pointycastle/export.dart' hide State, Padding;
+import 'package:provider/provider.dart';
 
 AsymmetricKeyPair<PublicKey, PrivateKey> generateRSAKeyPair(
     SecureRandom secureRandom) {
@@ -46,7 +48,7 @@ class BiometricSettingsViewState extends State<BiometricSettingsView> {
   void _init() async {
     String? biometricEnrolled = await serviceLocator
         .get<StorageUtils>()
-        .read(StorageKeys.biometricsEnrolled);
+        .read(StorageKeys.biometricsToken);
     setState(() {
       _biometricStatus = biometricEnrolled != null ? true : false;
     });
@@ -79,12 +81,9 @@ class BiometricSettingsViewState extends State<BiometricSettingsView> {
                           onChanged: (value) {
                             if (!value) {
                               logger.d("Removing biometric data...");
-                              serviceLocator
-                                  .get<StorageUtils>()
-                                  .delete(StorageKeys.biometricsEnrolled);
-                              serviceLocator
-                                  .get<StorageUtils>()
-                                  .delete(StorageKeys.biometricsUserId);
+                              Provider.of<BiometricProvider>(context,
+                                      listen: false)
+                                  .cancel();
                               setState(() {
                                 _biometricStatus = false;
                               });
@@ -221,15 +220,10 @@ class BiometricSettingsViewState extends State<BiometricSettingsView> {
           logger.d(
               "Error:${ErrorObject.mapFailureToErrorObject(failure: l).message}");
         }, (r) {
-          serviceLocator
-              .get<StorageUtils>()
-              .write(StorageKeys.biometricsEnrolled, r.biometricToken);
-          serviceLocator
-              .get<StorageUtils>()
-              .write(StorageKeys.biometricsUserId, r.userId);
-          serviceLocator.get<StorageUtils>().write(
-              StorageKeys.biometricsPrivateKey,
-              encodePrivateKeyToPemPKCS1(value.privateKey as RSAPrivateKey));
+          Provider.of<BiometricProvider>(context, listen: false).enroll(
+              r.biometricToken,
+              encodePrivateKeyToPemPKCS1(value.privateKey as RSAPrivateKey),
+              r.userId);
           setState(() {
             _biometricStatus = true;
           });

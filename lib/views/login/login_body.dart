@@ -7,6 +7,7 @@ import 'package:biometric_auth_frontend/localizations_ext.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/providers/auth_provider.dart';
+import 'package:biometric_auth_frontend/providers/biometric_provider.dart';
 import 'package:biometric_auth_frontend/retrofit/repositories/biometric_repository.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:biometric_auth_frontend/utils/storage_keys.dart';
@@ -17,7 +18,7 @@ import 'package:biometric_auth_frontend/views/register/register_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pointycastle/asn1.dart';
-import 'package:pointycastle/export.dart';
+import 'package:pointycastle/export.dart' hide State;
 import 'package:provider/provider.dart';
 
 class LoginScreenBody extends StatelessWidget {
@@ -41,13 +42,17 @@ class LoginScreenBody extends StatelessWidget {
                     )),
                 SizedBox(height: SizeConfig.blockSizeHorizontal * 10),
                 const LoginForm(),
-                SizedBox(height: SizeConfig.blockSizeHorizontal * 4),
-                ElevatedButton.icon(
-                    icon: const Icon(Icons.fingerprint_rounded),
-                    onPressed: () {
-                      _attemptBiometricLogin(context);
-                    },
-                    label: const Text("Login using biometrics")),
+                SizedBox(height: SizeConfig.blockSizeHorizontal * 2),
+                Visibility(
+                    visible: Provider.of<BiometricProvider>(context)
+                        .areBiometricsEnrolled,
+                    child: ElevatedButton.icon(
+                        icon: const Icon(Icons.fingerprint_rounded),
+                        onPressed: () {
+                          _attemptBiometricLogin(context);
+                        },
+                        label: const Text("Login using biometrics"))),
+                SizedBox(height: SizeConfig.blockSizeHorizontal * 2),
                 ElevatedButton(
                     onPressed: () {
                       context.pushNamed(RegisterScreen.routeName);
@@ -117,7 +122,7 @@ class LoginScreenBody extends StatelessWidget {
   void _attemptBiometricLogin(BuildContext context) async {
     StorageUtils storageUtils = serviceLocator.get<StorageUtils>();
     String? biometricToken =
-        await storageUtils.read(StorageKeys.biometricsEnrolled);
+        await storageUtils.read(StorageKeys.biometricsToken);
     String? biometricUserId =
         await storageUtils.read(StorageKeys.biometricsUserId);
     String? biometricPrivateKey =

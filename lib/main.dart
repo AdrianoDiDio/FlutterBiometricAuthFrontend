@@ -1,6 +1,7 @@
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/providers/auth_provider.dart';
+import 'package:biometric_auth_frontend/providers/biometric_provider.dart';
 import 'package:biometric_auth_frontend/providers/language_provider.dart';
 import 'package:biometric_auth_frontend/providers/theme_provider.dart';
 import 'package:biometric_auth_frontend/routes.dart';
@@ -20,30 +21,32 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setUpLazySingletons();
   SizeConfig().init();
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final AuthProvider authProvider = AuthProvider();
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    AuthProvider authProvider = AuthProvider();
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(lazy: false, create: (_) => ThemeProvider()),
         ChangeNotifierProvider(lazy: false, create: (_) => LanguageProvider()),
         ChangeNotifierProvider(lazy: false, create: (_) => authProvider),
-        Provider<MainRouter>(
+        ChangeNotifierProvider(lazy: false, create: (_) => BiometricProvider()),
+        Provider<MainRouterProvider>(
           lazy: false,
-          create: (BuildContext createContext) => MainRouter(authProvider),
+          create: (BuildContext createContext) =>
+              MainRouterProvider(authProvider),
         ),
       ],
       child: Consumer4(builder: (context,
-          ThemeProvider themeNotifier,
-          LanguageProvider languageNotifier,
+          ThemeProvider themeProvider,
+          LanguageProvider languageProvider,
           AuthProvider authProvider,
-          MainRouter mainRouterProvider,
+          MainRouterProvider mainRouterProvider,
           child) {
         return MaterialApp.router(
           title: 'Biometric Auth Frontend',
@@ -57,8 +60,8 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.dark,
               useMaterial3: true,
               colorSchemeSeed: Colors.blue),
-          themeMode: themeNotifier.themeMode,
-          locale: languageNotifier.locale,
+          themeMode: themeProvider.themeMode,
+          locale: languageProvider.locale,
           debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             LocaleNamesLocalizationsDelegate(),
