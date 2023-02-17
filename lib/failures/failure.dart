@@ -7,6 +7,8 @@ class Failure with _$Failure {
   const Failure._();
   const factory Failure.serverFailure() = ServerFailure;
   const factory Failure.loginFailure() = LoginFailure;
+  const factory Failure.biometricTokenLoginFailure() =
+      BiometricTokenLoginFailure;
   const factory Failure.logoutFailure() = LogoutFailure;
   const factory Failure.refreshAccessTokenFailure() = RefreshAccessTokenFailure;
   const factory Failure.registrationEmailFailure() = RegistrationEmailFailure;
@@ -16,5 +18,6 @@ class Failure with _$Failure {
       RegistrationUsernameFailure;
   const factory Failure.getBiometricTokenFailure() = GetBiometricTokenFailure;
   const factory Failure.unauthorizedFailure() = UnauthorizedFailure;
+  const factory Failure.decryptRSAFailure() = DecryptRSAFailure;
   const factory Failure.unknownFailure() = UnknownFailure;
 }

@@ -1,3 +1,4 @@
 {
-    "dart.flutterSdkPath": "/home/adriano/snap/flutter/common/flutter"
+    "dart.flutterSdkPath": "/home/adriano/snap/flutter/common/flutter",
+    "cmake.configureOnOpen": false
 }

@@ -25,16 +25,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "biometricLoginText": MessageLookupByLibrary.simpleMessage(
+            "Accedi utilizzando i dati biometrici"),
         "biometricsScreenTitle":
-            MessageLookupByLibrary.simpleMessage("Biometrico"),
+            MessageLookupByLibrary.simpleMessage("Autenticazione Biometrica"),
         "confirmPasswordHint":
             MessageLookupByLibrary.simpleMessage("Conferma Password"),
+        "decryptRSAFailure": MessageLookupByLibrary.simpleMessage(
+            "Non è stato possibile decifrare il token biometrico...perfavore effettua il log-in usando username/password ed effettua nuovamente il processo di attivazione biometrico"),
+        "dialogErrorTitle": MessageLookupByLibrary.simpleMessage("Errore"),
         "dialogOkButton": MessageLookupByLibrary.simpleMessage("Ok"),
         "emailAlreadyInUse": MessageLookupByLibrary.simpleMessage(
             "La mail è gia stata registrata"),
         "emailEmpty":
             MessageLookupByLibrary.simpleMessage("Il campo Email è vuoto"),
         "emailHint": MessageLookupByLibrary.simpleMessage("Email"),
+        "enableBiometricAuthenticationEntry":
+            MessageLookupByLibrary.simpleMessage(
+                "Abilita autenticazione biometrica"),
         "getBiometricTokenFailure": MessageLookupByLibrary.simpleMessage(
             "Non è stato possibile generare il token biometrico...riprova più tardi"),
         "homeScreenSettingsEntry":
@@ -44,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Utente"),
         "homeScreenUserInfoTitle":
             MessageLookupByLibrary.simpleMessage("Informazioni Utente"),
+        "invalidBiometricToken": MessageLookupByLibrary.simpleMessage(
+            "Il token biometrico non è valido...perfavore effettua il log-in usando username/password ed effettua nuovamente il processo di attivazione biometrico"),
         "invalidEmail":
             MessageLookupByLibrary.simpleMessage("L\'email non è valida"),
         "loginButton": MessageLookupByLibrary.simpleMessage("Accedi"),

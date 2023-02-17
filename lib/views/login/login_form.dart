@@ -37,6 +37,7 @@ class LoginFormState extends State<LoginForm> {
   Future<void> submitIfValid() async {
     if (formKey.currentState!.validate()) {
       showDialog(
+          barrierDismissible: false,
           context: context,
           builder: (context) {
             return const Center(

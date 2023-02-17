@@ -36,8 +36,13 @@
     "loginScreenTitle": "Accedi",
     "registerScreenTitle": "Registrati",
     "settingsScreenBiometricEntry": "Usa l'impronta digitale per effettuare il login",
-    "biometricsScreenTitle": "Biometrico",
+    "biometricsScreenTitle": "Autenticazione Biometrica",
     "serverFailure": "Il server non è raggiungibile al momento...controlla la tua connessione o riprova più tardi",
     "unknownError": "Errore sconosciuto...riprova più tardi o contatta il supporto",
-    "getBiometricTokenFailure": "Non è stato possibile generare il token biometrico...riprova più tardi"
+    "getBiometricTokenFailure": "Non è stato possibile generare il token biometrico...riprova più tardi",
+    "decryptRSAFailure": "Non è stato possibile decifrare il token biometrico...perfavore effettua il log-in usando username/password ed effettua nuovamente il processo di attivazione biometrico",
+    "dialogErrorTitle": "Errore",
+    "invalidBiometricToken": "Il token biometrico non è valido...perfavore effettua il log-in usando username/password ed effettua nuovamente il processo di attivazione biometrico",
+    "enableBiometricAuthenticationEntry": "Abilita autenticazione biometrica",
+    "biometricLoginText": "Accedi utilizzando i dati biometrici"
   }

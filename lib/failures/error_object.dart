@@ -29,12 +29,18 @@ class ErrorObject {
       unauthorizedFailure: () => ErrorObject(
           title: "Error Code: UNAUTHORIZED_ERROR",
           message: S.current.unauthorizedError),
+      biometricTokenLoginFailure: () => ErrorObject(
+          title: "Error Code: INVALID_BIOMETRIC_TOKEN",
+          message: S.current.invalidBiometricToken),
       getBiometricTokenFailure: () => ErrorObject(
           title: "Error Code: GENERATE_BIOMETRIC_TOKEN_FAILURE",
           message: S.current.getBiometricTokenFailure),
       refreshAccessTokenFailure: () => ErrorObject(
           title: "Error Code: REFRESH_ACCESS_TOKEN_FAILURE",
           message: S.current.refreshAccessTokenFailure),
+      decryptRSAFailure: () => ErrorObject(
+          title: "Error Code: RSA_DECRIPTION_FAILURE",
+          message: S.current.decryptRSAFailure),
       logoutFailure: () => ErrorObject(
           title: "Error Code: LOGOUT_FAILED", message: S.current.logoutFailure),
     );

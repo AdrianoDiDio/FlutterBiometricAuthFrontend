@@ -51,6 +51,10 @@
     "@dialogOkButton": {
         "description":"Sets the button text when an alert dialog is launched."
     },
+    "dialogErrorTitle": "Error",
+    "@dialogErrorTitle": {
+        "description":"Sets the alert dialog title in case of error."
+    },
     "registrationDialogTitle": "Registration",
     "@registrationDialogTitle": {
         "description":"Sets the alert dialog title after successfully registering."
@@ -162,7 +166,7 @@
     "@settingsScreenBiometricEntry": {
         "description":"Sets the settings title for the biometric entry"
     },
-    "biometricsScreenTitle": "Biometrics",
+    "biometricsScreenTitle": "Biometric Authentication",
     "@biometricsScreenTitle": {
         "description":"Sets the title for the biometric screen"
     },
@@ -177,5 +181,22 @@
     "getBiometricTokenFailure": "Couldn't generate a biometric token...try later...",
     "@getBiometricTokenFailure": {
         "description": "Sets the error message when the server is unable to generate a biometric token."
-    }
+    },
+    
+    "decryptRSAFailure": "Failed to decrypt biometric token...please log-in using username/password and try to enroll again",
+    "@decryptRSAFailure": {
+        "description": "Sets the error message when the RSA decryption fails"
+    },
+    "invalidBiometricToken": "Biometric token is not valid...please log-in using username/password and try to enroll again",
+    "@invalidBiometricToken": {
+        "description": "Sets the error message when the biometric token is not valid"
+    },
+    "enableBiometricAuthenticationEntry": "Enable biometric authentication",
+    "@enableBiometricAuthenticationEntry": {
+     "description":   "Sets the text for the biometric's settings entry"
+    },
+    "biometricLoginText": "Login using biometrics",
+    "@biometricLoginText": {
+        "description":   "Sets the text for the biometric's login button"
+       }
   }

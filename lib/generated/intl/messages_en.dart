@@ -25,15 +25,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "biometricLoginText":
+            MessageLookupByLibrary.simpleMessage("Login using biometrics"),
         "biometricsScreenTitle":
-            MessageLookupByLibrary.simpleMessage("Biometrics"),
+            MessageLookupByLibrary.simpleMessage("Biometric Authentication"),
         "confirmPasswordHint":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "decryptRSAFailure": MessageLookupByLibrary.simpleMessage(
+            "Failed to decrypt biometric token...please log-in using username/password and try to enroll again"),
+        "dialogErrorTitle": MessageLookupByLibrary.simpleMessage("Error"),
         "dialogOkButton": MessageLookupByLibrary.simpleMessage("Ok"),
         "emailAlreadyInUse":
             MessageLookupByLibrary.simpleMessage("Email is already registered"),
         "emailEmpty": MessageLookupByLibrary.simpleMessage("Email is empty"),
         "emailHint": MessageLookupByLibrary.simpleMessage("Email"),
+        "enableBiometricAuthenticationEntry":
+            MessageLookupByLibrary.simpleMessage(
+                "Enable biometric authentication"),
         "getBiometricTokenFailure": MessageLookupByLibrary.simpleMessage(
             "Couldn\'t generate a biometric token...try later..."),
         "homeScreenSettingsEntry":
@@ -42,6 +50,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeScreenUserInfoEntry": MessageLookupByLibrary.simpleMessage("User"),
         "homeScreenUserInfoTitle":
             MessageLookupByLibrary.simpleMessage("User Info"),
+        "invalidBiometricToken": MessageLookupByLibrary.simpleMessage(
+            "Biometric token is not valid...please log-in using username/password and try to enroll again"),
         "invalidEmail":
             MessageLookupByLibrary.simpleMessage("Email is not valid"),
         "loginButton": MessageLookupByLibrary.simpleMessage("Login"),

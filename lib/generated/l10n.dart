@@ -187,6 +187,16 @@ class S {
     );
   }
 
+  /// `Error`
+  String get dialogErrorTitle {
+    return Intl.message(
+      'Error',
+      name: 'dialogErrorTitle',
+      desc: 'Sets the alert dialog title in case of error.',
+      args: [],
+    );
+  }
+
   /// `Registration`
   String get registrationDialogTitle {
     return Intl.message(
@@ -432,10 +442,10 @@ class S {
     );
   }
 
-  /// `Biometrics`
+  /// `Biometric Authentication`
   String get biometricsScreenTitle {
     return Intl.message(
-      'Biometrics',
+      'Biometric Authentication',
       name: 'biometricsScreenTitle',
       desc: 'Sets the title for the biometric screen',
       args: [],
@@ -469,6 +479,46 @@ class S {
       name: 'getBiometricTokenFailure',
       desc:
           'Sets the error message when the server is unable to generate a biometric token.',
+      args: [],
+    );
+  }
+
+  /// `Failed to decrypt biometric token...please log-in using username/password and try to enroll again`
+  String get decryptRSAFailure {
+    return Intl.message(
+      'Failed to decrypt biometric token...please log-in using username/password and try to enroll again',
+      name: 'decryptRSAFailure',
+      desc: 'Sets the error message when the RSA decryption fails',
+      args: [],
+    );
+  }
+
+  /// `Biometric token is not valid...please log-in using username/password and try to enroll again`
+  String get invalidBiometricToken {
+    return Intl.message(
+      'Biometric token is not valid...please log-in using username/password and try to enroll again',
+      name: 'invalidBiometricToken',
+      desc: 'Sets the error message when the biometric token is not valid',
+      args: [],
+    );
+  }
+
+  /// `Enable biometric authentication`
+  String get enableBiometricAuthenticationEntry {
+    return Intl.message(
+      'Enable biometric authentication',
+      name: 'enableBiometricAuthenticationEntry',
+      desc: 'Sets the text for the biometric\'s settings entry',
+      args: [],
+    );
+  }
+
+  /// `Login using biometrics`
+  String get biometricLoginText {
+    return Intl.message(
+      'Login using biometrics',
+      name: 'biometricLoginText',
+      desc: 'Sets the text for the biometric\'s login button',
       args: [],
     );
   }

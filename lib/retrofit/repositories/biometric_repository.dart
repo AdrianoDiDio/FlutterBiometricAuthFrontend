@@ -64,7 +64,7 @@ class BiometricRepositoryImplementation extends BaseRepository
     } on DioError catch (e) {
       if (e.response != null) {
         if (e.response!.statusCode == 401) {
-          return const Left(Failure.loginFailure());
+          return const Left(Failure.biometricTokenLoginFailure());
         }
       }
       return const Left(Failure.serverFailure());
