@@ -17,6 +17,7 @@ import 'package:biometric_auth_frontend/views/login/login_form.dart';
 import 'package:biometric_auth_frontend/views/register/register_view.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_biometrics/flutter_biometrics.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -81,21 +82,15 @@ class LoginScreenBody extends StatelessWidget {
     if (biometricToken != null &&
         biometricUserId != null &&
         biometricPrivateKey != null) {
-      Either<Failure, Uint8List> decryptedBiometricToken =
-          BiometricUtils.decryptRSA(biometricPrivateKey, biometricToken);
-      decryptedBiometricToken.fold((l) async {
-        String error = ErrorObject.mapFailureToErrorObject(failure: l).message;
-        logger.d(error);
-        Provider.of<BiometricProvider>(context, listen: false).cancel();
-        context.pop();
-        await _showErrorDialog(context, error);
-      }, (r) async {
-        var base64DecodedToken = base64.encode(r);
-        logger.d("Decrypted token $base64DecodedToken");
+      await FlutterBiometrics()
+          .decrypt(
+              ciphertext: biometricToken,
+              reason: "Authenticated to decrypt the token")
+          .then((value) async {
         BiometricRepositoryImplementation biometricRepositoryImplementation =
             BiometricRepositoryImplementation();
         var response = await biometricRepositoryImplementation
-            .biometricLogin(int.parse(biometricUserId), base64DecodedToken)
+            .biometricLogin(int.parse(biometricUserId), value)
             .whenComplete(() => context.pop());
         response.fold((l) async {
           String error =

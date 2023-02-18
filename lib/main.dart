@@ -10,6 +10,7 @@ import 'package:biometric_auth_frontend/utils/storage_keys.dart';
 import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:biometric_auth_frontend/views/login/login_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_biometrics/flutter_biometrics.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'
     hide ChangeNotifierProvider, Consumer, Provider;

@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pointycastle/export.dart' hide State, Padding;
 import 'package:provider/provider.dart';
+import 'package:flutter_biometrics/flutter_biometrics.dart';
 
 class BiometricSettingsView extends StatelessWidget {
   static String routeName = "biometrics";
@@ -77,6 +78,8 @@ class BiometricSettingsView extends StatelessWidget {
         builder: (context) {
           return const Center(child: CircularProgressIndicator(strokeWidth: 2));
         });
+    await FlutterBiometrics().deleteKeys().then((value) => logger.d(value));
+    logger.d("Deleted previous keys");
     Either<Failure, BiometricTokenChallengeResponse>
         biometricChallengeResponse =
         await biometricRepositoryImplementation.getBiometricChallenge();
@@ -93,35 +96,37 @@ class BiometricSettingsView extends StatelessWidget {
       var nonce = random.nextInt(4294967296);
       String decodedChallengeWithNonce = decodedChallenge + nonce.toString();
       //Generate RSA key-pair
-      BiometricUtils.generateRSAKeyPair().then((value) async {
-        logger.d(
-            "Public Key:${BiometricUtils.encodePublicKeyToPemPKCS1(value.publicKey as RSAPublicKey)}");
-        logger.d("Nonce:$nonce");
-        RSASignature sign = BiometricUtils.signRSA(
-            value.privateKey as RSAPrivateKey,
-            Uint8List.fromList(decodedChallengeWithNonce.codeUnits));
-        final sentSign = base64Encode(sign.bytes);
-        logger.d("sign $sentSign");
-        var biometricTokenResponse =
-            await biometricRepositoryImplementation.getBiometricToken(
-                sentSign,
-                nonce,
-                BiometricUtils.encodePublicKeyToPemPKCS1(
-                    value.publicKey as RSAPublicKey));
-        biometricTokenResponse.fold((l) {
-          _enrollBiometricFailed(context);
-          logger.d(
-              "Error:${ErrorObject.mapFailureToErrorObject(failure: l).message}");
-        }, (r) {
-          Provider.of<BiometricProvider>(context, listen: false).enroll(
-              r.biometricToken,
-              BiometricUtils.encodePrivateKeyToPemPKCS1(
-                  value.privateKey as RSAPrivateKey),
-              r.userId);
-          context.pop();
-          // setState(() {
-          //   _biometricStatus = true;
-          // });
+      FlutterBiometrics()
+          .createKeys(reason: "Authenticate to create keys")
+          .then((publicKey) {
+        FlutterBiometrics()
+            .sign(
+                payload: base64.encode(utf8.encode(decodedChallengeWithNonce)),
+                reason: "Authenticate to sign the string")
+            .then((signedChallenge) async {
+          // BiometricUtils.generateRSAKeyPair().then((value) async {
+          // logger.d(
+          // "Public Key:${BiometricUtils.encodePublicKeyToPemPKCS1(value.publicKey as RSAPublicKey)}");
+          logger.d("Nonce:$nonce");
+          // RSASignature sign = BiometricUtils.signRSA(
+          //     value.privateKey as RSAPrivateKey,
+          //     Uint8List.fromList(decodedChallengeWithNonce.codeUnits));
+          // final sentSign = base64Encode(sign.bytes);
+          // logger.d("sign $sentSign");
+          var biometricTokenResponse = await biometricRepositoryImplementation
+              .getBiometricToken(signedChallenge, nonce, publicKey);
+          biometricTokenResponse.fold((l) {
+            _enrollBiometricFailed(context);
+            logger.d(
+                "Error:${ErrorObject.mapFailureToErrorObject(failure: l).message}");
+          }, (r) {
+            Provider.of<BiometricProvider>(context, listen: false)
+                .enroll(r.biometricToken, "biometric", r.userId);
+            context.pop();
+            // setState(() {
+            //   _biometricStatus = true;
+            // });
+          });
         });
       });
     });
