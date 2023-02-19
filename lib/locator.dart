@@ -1,4 +1,4 @@
-import 'package:biometric_auth_frontend/biometrics/biometrics_utils.dart';
+import 'package:biometric_auth_frontend/biometrics/biometric_utils.dart';
 import 'package:biometric_auth_frontend/interceptors/bearer_token_interceptor.dart';
 import 'package:biometric_auth_frontend/retrofit/rest_client.dart';
 import 'package:biometric_auth_frontend/retrofit/rest_endpoints.dart';

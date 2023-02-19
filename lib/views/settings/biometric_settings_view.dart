@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
-import 'dart:typed_data';
-import 'package:biometric_auth_frontend/biometrics/biometrics_utils.dart';
+
 import 'package:biometric_auth_frontend/failures/error_object.dart';
 import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/generated/l10n.dart';
@@ -11,12 +10,10 @@ import 'package:biometric_auth_frontend/retrofit/repositories/biometric_reposito
 import 'package:biometric_auth_frontend/retrofit/responses/biometric_challenge_response.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:dartz/dartz.dart' hide State;
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:pointycastle/export.dart' hide State, Padding;
-import 'package:provider/provider.dart';
 import 'package:flutter_biometrics/flutter_biometrics.dart';
+import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class BiometricSettingsView extends StatelessWidget {
   static String routeName = "biometrics";
@@ -96,9 +93,7 @@ class BiometricSettingsView extends StatelessWidget {
       var nonce = random.nextInt(4294967296);
       String decodedChallengeWithNonce = decodedChallenge + nonce.toString();
       //Generate RSA key-pair
-      FlutterBiometrics()
-          .createKeys(reason: "Authenticate to create keys")
-          .then((publicKey) {
+      FlutterBiometrics().createKeys().then((publicKey) {
         FlutterBiometrics()
             .sign(
                 payload: base64.encode(utf8.encode(decodedChallengeWithNonce)),

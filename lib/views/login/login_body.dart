@@ -1,9 +1,4 @@
-import 'dart:convert';
-import 'dart:typed_data';
-
-import 'package:biometric_auth_frontend/biometrics/biometrics_utils.dart';
 import 'package:biometric_auth_frontend/failures/error_object.dart';
-import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/localizations_ext.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
@@ -15,7 +10,6 @@ import 'package:biometric_auth_frontend/utils/storage_keys.dart';
 import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:biometric_auth_frontend/views/login/login_form.dart';
 import 'package:biometric_auth_frontend/views/register/register_view.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_biometrics/flutter_biometrics.dart';
 import 'package:go_router/go_router.dart';

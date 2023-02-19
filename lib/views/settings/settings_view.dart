@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:biometric_auth_frontend/biometrics/biometrics_utils.dart';
+import 'package:biometric_auth_frontend/biometrics/biometric_utils.dart';
 import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/providers/theme_provider.dart';
@@ -8,10 +8,10 @@ import 'package:biometric_auth_frontend/views/settings/biometric_settings_view.d
 import 'package:biometric_auth_frontend/views/settings/language_settings_view.dart';
 import 'package:biometric_auth_frontend/views/settings/theme_settings_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:settings_ui/settings_ui.dart';
-import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 
 class SettingsView extends StatelessWidget {
   static String routeName = "settings";

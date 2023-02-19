@@ -250,8 +250,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: HEAD
-      resolved-ref: df6141eb691849d580ae5f1a2d89123ae2cc082b
+      ref: "1b1fb72"
+      resolved-ref: "1b1fb72c84b6622e84105e15b758798cfec2161c"
       url: "https://github.com/AdrianoDiDio/flutter_biometrics.git"
     source: git
     version: "0.3.0"
