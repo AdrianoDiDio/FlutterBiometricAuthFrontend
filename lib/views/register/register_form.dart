@@ -2,7 +2,7 @@ import 'package:biometric_auth_frontend/failures/error_object.dart';
 import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/localizations_ext.dart';
 import 'package:biometric_auth_frontend/logger.dart';
-import 'package:biometric_auth_frontend/retrofit/repositories/user_repository.dart';
+import 'package:biometric_auth_frontend/repositories/user_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/register_response.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:biometric_auth_frontend/views/login/login_view.dart';

@@ -198,5 +198,61 @@
     "biometricLoginText": "Login using biometrics",
     "@biometricLoginText": {
         "description":   "Sets the text for the biometric's login button"
-       }
+    },
+    "biometricHint":"Touch sensor to login",
+    "@biometricHint": {
+        "description":   "Sets the text for the biometric's prompt hint"
+    },
+    "biometricNotRecognized":"Fingerprint not recognized...try again",
+    "@biometricNotRecognized": {
+        "description":   "Sets the text for the biometric's prompt when it is not recognized"
+    },
+    "biometricSuccess":"Authentication successful",
+    "@biometricSuccess": {
+        "description":   "Sets the text for the biometric's prompt success text"
+    },
+    "biometricTitle":"Biometric Authentication",
+    "@biometricTitle": {
+        "description":   "Sets the text for the biometric's prompt title"
+    },
+    "biometricSettingsRedirect":"Go to settings",
+    "@biometricSettingsRedirect": {
+        "description":   "Sets the text for the biometric's prompt when it needs to redirect user to settings"
+    },
+    "biometricSettingsRedirectReason":"Biometric authentication is not set up on your device",
+    "@biometricSettingsRedirectReason": {
+        "description":   "Sets the text for the biometric's prompt on why the user has to go to settings"
+    },
+    "biometricLockOut":"Biometric authentication is disabled...try locking and unlocking the screen to enable it",
+    "@biometricLockOut": {
+        "description":   "Sets the text for the biometric's prompt when user is locked out of the device"
+    },
+    "biometricLoginCancel":"Login using username and password",
+    "@biometricLoginCancel": {
+        "description":   "Sets the text for the biometric's prompt when user wish to cancel the login"
+    },
+    "biometricSignCancel":"Cancel biometric authentication",
+    "@biometricSignCancel": {
+        "description":   "Sets the text for the biometric's prompt when user wish to cancel the enroll process"
+    },
+    "biometricGenerateKeysFailure":"Error generating keypair",
+    "@biometricGenerateKeysFailure": {
+        "description": "Sets the error message when generating a new keypair fails"
+    },
+    "biometricSignPayloadFailure":"Error signing payload",
+    "@biometricSignPayloadFailure": {
+        "description": "Sets the error message when signing a payload fails"
+    },
+    "biometricSignReason":"Touch sensor to sign the payload",
+    "@biometricSignReason": {
+        "description": "Sets the text for the biometric's prompt hint when signin a payload"
+    },
+    "biometricDecryptCiphertextFailure":"Error decrypting ciphertext",
+    "@biometricDecryptCiphertextFailure": {
+        "description": "Sets the error message when ciphertext decryption fails."
+    },
+    "biometricDecryptCiphertextCancelled":"Error decrypting ciphertext...user cancelled it",
+    "@biometricDecryptCiphertextCancelled": {
+        "description": "Sets the error message when ciphertext decryption is cancelled by user."
+    }
   }

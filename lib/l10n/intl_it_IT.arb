@@ -44,5 +44,19 @@
     "dialogErrorTitle": "Errore",
     "invalidBiometricToken": "Il token biometrico non è valido...perfavore effettua il log-in usando username/password ed effettua nuovamente il processo di attivazione biometrico",
     "enableBiometricAuthenticationEntry": "Abilita autenticazione biometrica",
-    "biometricLoginText": "Accedi utilizzando i dati biometrici"
+    "biometricLoginText": "Accedi utilizzando i dati biometrici",
+    "biometricSignReason":"Tocca il sensore per effettuare la firma del payload",
+    "biometricHint":"Tocca il sensore per effettuare il login",
+    "biometricNotRecognized":"Impronta non riconosciuta...prova di nuovo",
+    "biometricSuccess":"Autenticazione avvenuta con successo",
+    "biometricTitle":"Autenticazione Biometrica",
+    "biometricSettingsRedirect":"Vai alle impostazioni",
+    "biometricSettingsRedirectReason":"L'autenticazione biometrica non è configurata per questo dispositivo",
+    "biometricLockOut":"L'autenticazione biometrica è disabilitata...prova a bloccare e sbloccare lo schermo per abilitarla",
+    "biometricLoginCancel":"Accedi utilizzando username e password",
+    "biometricSignCancel":"Annulla il processo di autenticazione biometrica",
+    "biometricGenerateKeysFailure":"Errore durante la creazione del KeyPair",
+    "biometricSignPayloadFailure":"Errore durante la firma del payload",
+    "biometricDecryptCiphertextFailure":"Errore durante la decrittazione del ciphertext",
+    "biometricDecryptCiphertextCancelled":"Errore durante la decrittazione del ciphertext...l'utente ha chiuso il dialogo"
   }

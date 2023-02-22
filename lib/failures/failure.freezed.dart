@@ -29,6 +29,10 @@ mixin _$Failure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +49,10 @@ mixin _$Failure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,6 +69,10 @@ mixin _$Failure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) =>
@@ -84,6 +96,14 @@ mixin _$Failure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -104,6 +124,14 @@ mixin _$Failure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -124,6 +152,14 @@ mixin _$Failure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) =>
@@ -196,6 +232,10 @@ class _$ServerFailure extends ServerFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return serverFailure();
@@ -215,6 +255,10 @@ class _$ServerFailure extends ServerFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return serverFailure?.call();
@@ -234,6 +278,10 @@ class _$ServerFailure extends ServerFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -263,6 +311,14 @@ class _$ServerFailure extends ServerFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return serverFailure(this);
@@ -286,6 +342,14 @@ class _$ServerFailure extends ServerFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return serverFailure?.call(this);
@@ -309,6 +373,14 @@ class _$ServerFailure extends ServerFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -373,6 +445,10 @@ class _$LoginFailure extends LoginFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return loginFailure();
@@ -392,6 +468,10 @@ class _$LoginFailure extends LoginFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return loginFailure?.call();
@@ -411,6 +491,10 @@ class _$LoginFailure extends LoginFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -440,6 +524,14 @@ class _$LoginFailure extends LoginFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return loginFailure(this);
@@ -463,6 +555,14 @@ class _$LoginFailure extends LoginFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return loginFailure?.call(this);
@@ -486,6 +586,14 @@ class _$LoginFailure extends LoginFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -553,6 +661,10 @@ class _$BiometricTokenLoginFailure extends BiometricTokenLoginFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return biometricTokenLoginFailure();
@@ -572,6 +684,10 @@ class _$BiometricTokenLoginFailure extends BiometricTokenLoginFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return biometricTokenLoginFailure?.call();
@@ -591,6 +707,10 @@ class _$BiometricTokenLoginFailure extends BiometricTokenLoginFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -620,6 +740,14 @@ class _$BiometricTokenLoginFailure extends BiometricTokenLoginFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return biometricTokenLoginFailure(this);
@@ -643,6 +771,14 @@ class _$BiometricTokenLoginFailure extends BiometricTokenLoginFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return biometricTokenLoginFailure?.call(this);
@@ -666,6 +802,14 @@ class _$BiometricTokenLoginFailure extends BiometricTokenLoginFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -730,6 +874,10 @@ class _$LogoutFailure extends LogoutFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return logoutFailure();
@@ -749,6 +897,10 @@ class _$LogoutFailure extends LogoutFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return logoutFailure?.call();
@@ -768,6 +920,10 @@ class _$LogoutFailure extends LogoutFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -797,6 +953,14 @@ class _$LogoutFailure extends LogoutFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return logoutFailure(this);
@@ -820,6 +984,14 @@ class _$LogoutFailure extends LogoutFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return logoutFailure?.call(this);
@@ -843,6 +1015,14 @@ class _$LogoutFailure extends LogoutFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -909,6 +1089,10 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return refreshAccessTokenFailure();
@@ -928,6 +1112,10 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return refreshAccessTokenFailure?.call();
@@ -947,6 +1135,10 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -976,6 +1168,14 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return refreshAccessTokenFailure(this);
@@ -999,6 +1199,14 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return refreshAccessTokenFailure?.call(this);
@@ -1022,6 +1230,14 @@ class _$RefreshAccessTokenFailure extends RefreshAccessTokenFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1087,6 +1303,10 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return registrationEmailFailure();
@@ -1106,6 +1326,10 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return registrationEmailFailure?.call();
@@ -1125,6 +1349,10 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1154,6 +1382,14 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return registrationEmailFailure(this);
@@ -1177,6 +1413,14 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return registrationEmailFailure?.call(this);
@@ -1200,6 +1444,14 @@ class _$RegistrationEmailFailure extends RegistrationEmailFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1267,6 +1519,10 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return registrationPasswordFailure();
@@ -1286,6 +1542,10 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return registrationPasswordFailure?.call();
@@ -1305,6 +1565,10 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1334,6 +1598,14 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return registrationPasswordFailure(this);
@@ -1357,6 +1629,14 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return registrationPasswordFailure?.call(this);
@@ -1380,6 +1660,14 @@ class _$RegistrationPasswordFailure extends RegistrationPasswordFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1447,6 +1735,10 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return registrationUsernameFailure();
@@ -1466,6 +1758,10 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return registrationUsernameFailure?.call();
@@ -1485,6 +1781,10 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1514,6 +1814,14 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return registrationUsernameFailure(this);
@@ -1537,6 +1845,14 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return registrationUsernameFailure?.call(this);
@@ -1560,6 +1876,14 @@ class _$RegistrationUsernameFailure extends RegistrationUsernameFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1625,6 +1949,10 @@ class _$GetBiometricTokenFailure extends GetBiometricTokenFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return getBiometricTokenFailure();
@@ -1644,6 +1972,10 @@ class _$GetBiometricTokenFailure extends GetBiometricTokenFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return getBiometricTokenFailure?.call();
@@ -1663,6 +1995,10 @@ class _$GetBiometricTokenFailure extends GetBiometricTokenFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1692,6 +2028,14 @@ class _$GetBiometricTokenFailure extends GetBiometricTokenFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return getBiometricTokenFailure(this);
@@ -1715,6 +2059,14 @@ class _$GetBiometricTokenFailure extends GetBiometricTokenFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return getBiometricTokenFailure?.call(this);
@@ -1738,6 +2090,14 @@ class _$GetBiometricTokenFailure extends GetBiometricTokenFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1802,6 +2162,10 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return unauthorizedFailure();
@@ -1821,6 +2185,10 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return unauthorizedFailure?.call();
@@ -1840,6 +2208,10 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1869,6 +2241,14 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return unauthorizedFailure(this);
@@ -1892,6 +2272,14 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return unauthorizedFailure?.call(this);
@@ -1915,6 +2303,14 @@ class _$UnauthorizedFailure extends UnauthorizedFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -1979,6 +2375,10 @@ class _$DecryptRSAFailure extends DecryptRSAFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return decryptRSAFailure();
@@ -1998,6 +2398,10 @@ class _$DecryptRSAFailure extends DecryptRSAFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return decryptRSAFailure?.call();
@@ -2017,6 +2421,10 @@ class _$DecryptRSAFailure extends DecryptRSAFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -2046,6 +2454,14 @@ class _$DecryptRSAFailure extends DecryptRSAFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return decryptRSAFailure(this);
@@ -2069,6 +2485,14 @@ class _$DecryptRSAFailure extends DecryptRSAFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return decryptRSAFailure?.call(this);
@@ -2092,6 +2516,14 @@ class _$DecryptRSAFailure extends DecryptRSAFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {
@@ -2105,6 +2537,874 @@ class _$DecryptRSAFailure extends DecryptRSAFailure {
 abstract class DecryptRSAFailure extends Failure {
   const factory DecryptRSAFailure() = _$DecryptRSAFailure;
   const DecryptRSAFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$$BiometricGenerateKeysFailureCopyWith<$Res> {
+  factory _$$BiometricGenerateKeysFailureCopyWith(
+          _$BiometricGenerateKeysFailure value,
+          $Res Function(_$BiometricGenerateKeysFailure) then) =
+      __$$BiometricGenerateKeysFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BiometricGenerateKeysFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$BiometricGenerateKeysFailure>
+    implements _$$BiometricGenerateKeysFailureCopyWith<$Res> {
+  __$$BiometricGenerateKeysFailureCopyWithImpl(
+      _$BiometricGenerateKeysFailure _value,
+      $Res Function(_$BiometricGenerateKeysFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BiometricGenerateKeysFailure extends BiometricGenerateKeysFailure {
+  const _$BiometricGenerateKeysFailure() : super._();
+
+  @override
+  String toString() {
+    return 'Failure.biometricGenerateKeysFailure()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BiometricGenerateKeysFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverFailure,
+    required TResult Function() loginFailure,
+    required TResult Function() biometricTokenLoginFailure,
+    required TResult Function() logoutFailure,
+    required TResult Function() refreshAccessTokenFailure,
+    required TResult Function() registrationEmailFailure,
+    required TResult Function() registrationPasswordFailure,
+    required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
+    required TResult Function() unauthorizedFailure,
+    required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
+    required TResult Function() unknownFailure,
+  }) {
+    return biometricGenerateKeysFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? serverFailure,
+    TResult? Function()? loginFailure,
+    TResult? Function()? biometricTokenLoginFailure,
+    TResult? Function()? logoutFailure,
+    TResult? Function()? refreshAccessTokenFailure,
+    TResult? Function()? registrationEmailFailure,
+    TResult? Function()? registrationPasswordFailure,
+    TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
+    TResult? Function()? unauthorizedFailure,
+    TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
+    TResult? Function()? unknownFailure,
+  }) {
+    return biometricGenerateKeysFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverFailure,
+    TResult Function()? loginFailure,
+    TResult Function()? biometricTokenLoginFailure,
+    TResult Function()? logoutFailure,
+    TResult Function()? refreshAccessTokenFailure,
+    TResult Function()? registrationEmailFailure,
+    TResult Function()? registrationPasswordFailure,
+    TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
+    TResult Function()? unauthorizedFailure,
+    TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
+    TResult Function()? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (biometricGenerateKeysFailure != null) {
+      return biometricGenerateKeysFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerFailure value) serverFailure,
+    required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(BiometricTokenLoginFailure value)
+        biometricTokenLoginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
+    required TResult Function(RefreshAccessTokenFailure value)
+        refreshAccessTokenFailure,
+    required TResult Function(RegistrationEmailFailure value)
+        registrationEmailFailure,
+    required TResult Function(RegistrationPasswordFailure value)
+        registrationPasswordFailure,
+    required TResult Function(RegistrationUsernameFailure value)
+        registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
+    required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
+    required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
+    required TResult Function(UnknownFailure value) unknownFailure,
+  }) {
+    return biometricGenerateKeysFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerFailure value)? serverFailure,
+    TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(BiometricTokenLoginFailure value)?
+        biometricTokenLoginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
+    TResult? Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult? Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult? Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
+    TResult? Function(UnknownFailure value)? unknownFailure,
+  }) {
+    return biometricGenerateKeysFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerFailure value)? serverFailure,
+    TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(BiometricTokenLoginFailure value)?
+        biometricTokenLoginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
+    TResult Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
+    TResult Function(UnknownFailure value)? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (biometricGenerateKeysFailure != null) {
+      return biometricGenerateKeysFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BiometricGenerateKeysFailure extends Failure {
+  const factory BiometricGenerateKeysFailure() = _$BiometricGenerateKeysFailure;
+  const BiometricGenerateKeysFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$$BiometricSignPayloadFailureCopyWith<$Res> {
+  factory _$$BiometricSignPayloadFailureCopyWith(
+          _$BiometricSignPayloadFailure value,
+          $Res Function(_$BiometricSignPayloadFailure) then) =
+      __$$BiometricSignPayloadFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BiometricSignPayloadFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$BiometricSignPayloadFailure>
+    implements _$$BiometricSignPayloadFailureCopyWith<$Res> {
+  __$$BiometricSignPayloadFailureCopyWithImpl(
+      _$BiometricSignPayloadFailure _value,
+      $Res Function(_$BiometricSignPayloadFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BiometricSignPayloadFailure extends BiometricSignPayloadFailure {
+  const _$BiometricSignPayloadFailure() : super._();
+
+  @override
+  String toString() {
+    return 'Failure.biometricSignPayloadFailure()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BiometricSignPayloadFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverFailure,
+    required TResult Function() loginFailure,
+    required TResult Function() biometricTokenLoginFailure,
+    required TResult Function() logoutFailure,
+    required TResult Function() refreshAccessTokenFailure,
+    required TResult Function() registrationEmailFailure,
+    required TResult Function() registrationPasswordFailure,
+    required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
+    required TResult Function() unauthorizedFailure,
+    required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
+    required TResult Function() unknownFailure,
+  }) {
+    return biometricSignPayloadFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? serverFailure,
+    TResult? Function()? loginFailure,
+    TResult? Function()? biometricTokenLoginFailure,
+    TResult? Function()? logoutFailure,
+    TResult? Function()? refreshAccessTokenFailure,
+    TResult? Function()? registrationEmailFailure,
+    TResult? Function()? registrationPasswordFailure,
+    TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
+    TResult? Function()? unauthorizedFailure,
+    TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
+    TResult? Function()? unknownFailure,
+  }) {
+    return biometricSignPayloadFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverFailure,
+    TResult Function()? loginFailure,
+    TResult Function()? biometricTokenLoginFailure,
+    TResult Function()? logoutFailure,
+    TResult Function()? refreshAccessTokenFailure,
+    TResult Function()? registrationEmailFailure,
+    TResult Function()? registrationPasswordFailure,
+    TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
+    TResult Function()? unauthorizedFailure,
+    TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
+    TResult Function()? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (biometricSignPayloadFailure != null) {
+      return biometricSignPayloadFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerFailure value) serverFailure,
+    required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(BiometricTokenLoginFailure value)
+        biometricTokenLoginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
+    required TResult Function(RefreshAccessTokenFailure value)
+        refreshAccessTokenFailure,
+    required TResult Function(RegistrationEmailFailure value)
+        registrationEmailFailure,
+    required TResult Function(RegistrationPasswordFailure value)
+        registrationPasswordFailure,
+    required TResult Function(RegistrationUsernameFailure value)
+        registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
+    required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
+    required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
+    required TResult Function(UnknownFailure value) unknownFailure,
+  }) {
+    return biometricSignPayloadFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerFailure value)? serverFailure,
+    TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(BiometricTokenLoginFailure value)?
+        biometricTokenLoginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
+    TResult? Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult? Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult? Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
+    TResult? Function(UnknownFailure value)? unknownFailure,
+  }) {
+    return biometricSignPayloadFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerFailure value)? serverFailure,
+    TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(BiometricTokenLoginFailure value)?
+        biometricTokenLoginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
+    TResult Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
+    TResult Function(UnknownFailure value)? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (biometricSignPayloadFailure != null) {
+      return biometricSignPayloadFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BiometricSignPayloadFailure extends Failure {
+  const factory BiometricSignPayloadFailure() = _$BiometricSignPayloadFailure;
+  const BiometricSignPayloadFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$$BiometricDecryptCiphertexFailureCopyWith<$Res> {
+  factory _$$BiometricDecryptCiphertexFailureCopyWith(
+          _$BiometricDecryptCiphertexFailure value,
+          $Res Function(_$BiometricDecryptCiphertexFailure) then) =
+      __$$BiometricDecryptCiphertexFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BiometricDecryptCiphertexFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$BiometricDecryptCiphertexFailure>
+    implements _$$BiometricDecryptCiphertexFailureCopyWith<$Res> {
+  __$$BiometricDecryptCiphertexFailureCopyWithImpl(
+      _$BiometricDecryptCiphertexFailure _value,
+      $Res Function(_$BiometricDecryptCiphertexFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BiometricDecryptCiphertexFailure
+    extends BiometricDecryptCiphertexFailure {
+  const _$BiometricDecryptCiphertexFailure() : super._();
+
+  @override
+  String toString() {
+    return 'Failure.biometricDecryptCiphertextFailure()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BiometricDecryptCiphertexFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverFailure,
+    required TResult Function() loginFailure,
+    required TResult Function() biometricTokenLoginFailure,
+    required TResult Function() logoutFailure,
+    required TResult Function() refreshAccessTokenFailure,
+    required TResult Function() registrationEmailFailure,
+    required TResult Function() registrationPasswordFailure,
+    required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
+    required TResult Function() unauthorizedFailure,
+    required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
+    required TResult Function() unknownFailure,
+  }) {
+    return biometricDecryptCiphertextFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? serverFailure,
+    TResult? Function()? loginFailure,
+    TResult? Function()? biometricTokenLoginFailure,
+    TResult? Function()? logoutFailure,
+    TResult? Function()? refreshAccessTokenFailure,
+    TResult? Function()? registrationEmailFailure,
+    TResult? Function()? registrationPasswordFailure,
+    TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
+    TResult? Function()? unauthorizedFailure,
+    TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
+    TResult? Function()? unknownFailure,
+  }) {
+    return biometricDecryptCiphertextFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverFailure,
+    TResult Function()? loginFailure,
+    TResult Function()? biometricTokenLoginFailure,
+    TResult Function()? logoutFailure,
+    TResult Function()? refreshAccessTokenFailure,
+    TResult Function()? registrationEmailFailure,
+    TResult Function()? registrationPasswordFailure,
+    TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
+    TResult Function()? unauthorizedFailure,
+    TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
+    TResult Function()? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (biometricDecryptCiphertextFailure != null) {
+      return biometricDecryptCiphertextFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerFailure value) serverFailure,
+    required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(BiometricTokenLoginFailure value)
+        biometricTokenLoginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
+    required TResult Function(RefreshAccessTokenFailure value)
+        refreshAccessTokenFailure,
+    required TResult Function(RegistrationEmailFailure value)
+        registrationEmailFailure,
+    required TResult Function(RegistrationPasswordFailure value)
+        registrationPasswordFailure,
+    required TResult Function(RegistrationUsernameFailure value)
+        registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
+    required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
+    required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
+    required TResult Function(UnknownFailure value) unknownFailure,
+  }) {
+    return biometricDecryptCiphertextFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerFailure value)? serverFailure,
+    TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(BiometricTokenLoginFailure value)?
+        biometricTokenLoginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
+    TResult? Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult? Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult? Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
+    TResult? Function(UnknownFailure value)? unknownFailure,
+  }) {
+    return biometricDecryptCiphertextFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerFailure value)? serverFailure,
+    TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(BiometricTokenLoginFailure value)?
+        biometricTokenLoginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
+    TResult Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
+    TResult Function(UnknownFailure value)? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (biometricDecryptCiphertextFailure != null) {
+      return biometricDecryptCiphertextFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BiometricDecryptCiphertexFailure extends Failure {
+  const factory BiometricDecryptCiphertexFailure() =
+      _$BiometricDecryptCiphertexFailure;
+  const BiometricDecryptCiphertexFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$$BiometricDecryptCiphertextCancelledCopyWith<$Res> {
+  factory _$$BiometricDecryptCiphertextCancelledCopyWith(
+          _$BiometricDecryptCiphertextCancelled value,
+          $Res Function(_$BiometricDecryptCiphertextCancelled) then) =
+      __$$BiometricDecryptCiphertextCancelledCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$BiometricDecryptCiphertextCancelledCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$BiometricDecryptCiphertextCancelled>
+    implements _$$BiometricDecryptCiphertextCancelledCopyWith<$Res> {
+  __$$BiometricDecryptCiphertextCancelledCopyWithImpl(
+      _$BiometricDecryptCiphertextCancelled _value,
+      $Res Function(_$BiometricDecryptCiphertextCancelled) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$BiometricDecryptCiphertextCancelled
+    extends BiometricDecryptCiphertextCancelled {
+  const _$BiometricDecryptCiphertextCancelled() : super._();
+
+  @override
+  String toString() {
+    return 'Failure.biometricDecryptCiphertextCancelled()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BiometricDecryptCiphertextCancelled);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() serverFailure,
+    required TResult Function() loginFailure,
+    required TResult Function() biometricTokenLoginFailure,
+    required TResult Function() logoutFailure,
+    required TResult Function() refreshAccessTokenFailure,
+    required TResult Function() registrationEmailFailure,
+    required TResult Function() registrationPasswordFailure,
+    required TResult Function() registrationUsernameFailure,
+    required TResult Function() getBiometricTokenFailure,
+    required TResult Function() unauthorizedFailure,
+    required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
+    required TResult Function() unknownFailure,
+  }) {
+    return biometricDecryptCiphertextCancelled();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? serverFailure,
+    TResult? Function()? loginFailure,
+    TResult? Function()? biometricTokenLoginFailure,
+    TResult? Function()? logoutFailure,
+    TResult? Function()? refreshAccessTokenFailure,
+    TResult? Function()? registrationEmailFailure,
+    TResult? Function()? registrationPasswordFailure,
+    TResult? Function()? registrationUsernameFailure,
+    TResult? Function()? getBiometricTokenFailure,
+    TResult? Function()? unauthorizedFailure,
+    TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
+    TResult? Function()? unknownFailure,
+  }) {
+    return biometricDecryptCiphertextCancelled?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? serverFailure,
+    TResult Function()? loginFailure,
+    TResult Function()? biometricTokenLoginFailure,
+    TResult Function()? logoutFailure,
+    TResult Function()? refreshAccessTokenFailure,
+    TResult Function()? registrationEmailFailure,
+    TResult Function()? registrationPasswordFailure,
+    TResult Function()? registrationUsernameFailure,
+    TResult Function()? getBiometricTokenFailure,
+    TResult Function()? unauthorizedFailure,
+    TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
+    TResult Function()? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (biometricDecryptCiphertextCancelled != null) {
+      return biometricDecryptCiphertextCancelled();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ServerFailure value) serverFailure,
+    required TResult Function(LoginFailure value) loginFailure,
+    required TResult Function(BiometricTokenLoginFailure value)
+        biometricTokenLoginFailure,
+    required TResult Function(LogoutFailure value) logoutFailure,
+    required TResult Function(RefreshAccessTokenFailure value)
+        refreshAccessTokenFailure,
+    required TResult Function(RegistrationEmailFailure value)
+        registrationEmailFailure,
+    required TResult Function(RegistrationPasswordFailure value)
+        registrationPasswordFailure,
+    required TResult Function(RegistrationUsernameFailure value)
+        registrationUsernameFailure,
+    required TResult Function(GetBiometricTokenFailure value)
+        getBiometricTokenFailure,
+    required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
+    required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
+    required TResult Function(UnknownFailure value) unknownFailure,
+  }) {
+    return biometricDecryptCiphertextCancelled(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ServerFailure value)? serverFailure,
+    TResult? Function(LoginFailure value)? loginFailure,
+    TResult? Function(BiometricTokenLoginFailure value)?
+        biometricTokenLoginFailure,
+    TResult? Function(LogoutFailure value)? logoutFailure,
+    TResult? Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult? Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult? Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult? Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
+    TResult? Function(UnknownFailure value)? unknownFailure,
+  }) {
+    return biometricDecryptCiphertextCancelled?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ServerFailure value)? serverFailure,
+    TResult Function(LoginFailure value)? loginFailure,
+    TResult Function(BiometricTokenLoginFailure value)?
+        biometricTokenLoginFailure,
+    TResult Function(LogoutFailure value)? logoutFailure,
+    TResult Function(RefreshAccessTokenFailure value)?
+        refreshAccessTokenFailure,
+    TResult Function(RegistrationEmailFailure value)? registrationEmailFailure,
+    TResult Function(RegistrationPasswordFailure value)?
+        registrationPasswordFailure,
+    TResult Function(RegistrationUsernameFailure value)?
+        registrationUsernameFailure,
+    TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
+    TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
+    TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
+    TResult Function(UnknownFailure value)? unknownFailure,
+    required TResult orElse(),
+  }) {
+    if (biometricDecryptCiphertextCancelled != null) {
+      return biometricDecryptCiphertextCancelled(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BiometricDecryptCiphertextCancelled extends Failure {
+  const factory BiometricDecryptCiphertextCancelled() =
+      _$BiometricDecryptCiphertextCancelled;
+  const BiometricDecryptCiphertextCancelled._() : super._();
 }
 
 /// @nodoc
@@ -2156,6 +3456,10 @@ class _$UnknownFailure extends UnknownFailure {
     required TResult Function() getBiometricTokenFailure,
     required TResult Function() unauthorizedFailure,
     required TResult Function() decryptRSAFailure,
+    required TResult Function() biometricGenerateKeysFailure,
+    required TResult Function() biometricSignPayloadFailure,
+    required TResult Function() biometricDecryptCiphertextFailure,
+    required TResult Function() biometricDecryptCiphertextCancelled,
     required TResult Function() unknownFailure,
   }) {
     return unknownFailure();
@@ -2175,6 +3479,10 @@ class _$UnknownFailure extends UnknownFailure {
     TResult? Function()? getBiometricTokenFailure,
     TResult? Function()? unauthorizedFailure,
     TResult? Function()? decryptRSAFailure,
+    TResult? Function()? biometricGenerateKeysFailure,
+    TResult? Function()? biometricSignPayloadFailure,
+    TResult? Function()? biometricDecryptCiphertextFailure,
+    TResult? Function()? biometricDecryptCiphertextCancelled,
     TResult? Function()? unknownFailure,
   }) {
     return unknownFailure?.call();
@@ -2194,6 +3502,10 @@ class _$UnknownFailure extends UnknownFailure {
     TResult Function()? getBiometricTokenFailure,
     TResult Function()? unauthorizedFailure,
     TResult Function()? decryptRSAFailure,
+    TResult Function()? biometricGenerateKeysFailure,
+    TResult Function()? biometricSignPayloadFailure,
+    TResult Function()? biometricDecryptCiphertextFailure,
+    TResult Function()? biometricDecryptCiphertextCancelled,
     TResult Function()? unknownFailure,
     required TResult orElse(),
   }) {
@@ -2223,6 +3535,14 @@ class _$UnknownFailure extends UnknownFailure {
         getBiometricTokenFailure,
     required TResult Function(UnauthorizedFailure value) unauthorizedFailure,
     required TResult Function(DecryptRSAFailure value) decryptRSAFailure,
+    required TResult Function(BiometricGenerateKeysFailure value)
+        biometricGenerateKeysFailure,
+    required TResult Function(BiometricSignPayloadFailure value)
+        biometricSignPayloadFailure,
+    required TResult Function(BiometricDecryptCiphertexFailure value)
+        biometricDecryptCiphertextFailure,
+    required TResult Function(BiometricDecryptCiphertextCancelled value)
+        biometricDecryptCiphertextCancelled,
     required TResult Function(UnknownFailure value) unknownFailure,
   }) {
     return unknownFailure(this);
@@ -2246,6 +3566,14 @@ class _$UnknownFailure extends UnknownFailure {
     TResult? Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult? Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult? Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult? Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult? Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult? Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult? Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult? Function(UnknownFailure value)? unknownFailure,
   }) {
     return unknownFailure?.call(this);
@@ -2269,6 +3597,14 @@ class _$UnknownFailure extends UnknownFailure {
     TResult Function(GetBiometricTokenFailure value)? getBiometricTokenFailure,
     TResult Function(UnauthorizedFailure value)? unauthorizedFailure,
     TResult Function(DecryptRSAFailure value)? decryptRSAFailure,
+    TResult Function(BiometricGenerateKeysFailure value)?
+        biometricGenerateKeysFailure,
+    TResult Function(BiometricSignPayloadFailure value)?
+        biometricSignPayloadFailure,
+    TResult Function(BiometricDecryptCiphertexFailure value)?
+        biometricDecryptCiphertextFailure,
+    TResult Function(BiometricDecryptCiphertextCancelled value)?
+        biometricDecryptCiphertextCancelled,
     TResult Function(UnknownFailure value)? unknownFailure,
     required TResult orElse(),
   }) {

@@ -1,15 +1,19 @@
+import 'package:biometric_auth_frontend/biometrics/biometric_utils.dart';
 import 'package:biometric_auth_frontend/failures/error_object.dart';
+import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/localizations_ext.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/providers/auth_provider.dart';
 import 'package:biometric_auth_frontend/providers/biometric_provider.dart';
-import 'package:biometric_auth_frontend/retrofit/repositories/biometric_repository.dart';
+import 'package:biometric_auth_frontend/repositories/biometric_auth_repository.dart';
+import 'package:biometric_auth_frontend/repositories/biometric_repository.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:biometric_auth_frontend/utils/storage_keys.dart';
 import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:biometric_auth_frontend/views/login/login_form.dart';
 import 'package:biometric_auth_frontend/views/register/register_view.dart';
+import 'package:biometric_auth_frontend/dialogs/localized_biometric_login_dialog_messages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_biometrics/flutter_biometrics.dart';
 import 'package:go_router/go_router.dart';
@@ -70,21 +74,29 @@ class LoginScreenBody extends StatelessWidget {
         await storageUtils.read(StorageKeys.biometricsToken);
     String? biometricUserId =
         await storageUtils.read(StorageKeys.biometricsUserId);
-    String? biometricPrivateKey =
-        await storageUtils.read(StorageKeys.biometricsPrivateKey);
-
-    if (biometricToken != null &&
-        biometricUserId != null &&
-        biometricPrivateKey != null) {
-      await FlutterBiometrics()
-          .decrypt(
-              ciphertext: biometricToken,
-              reason: "Authenticated to decrypt the token")
-          .then((value) async {
+    if (biometricToken != null && biometricUserId != null) {
+      BiometricAuthRepositoryImplementation
+          biometricAuthRepositoryImplementation =
+          BiometricAuthRepositoryImplementation(
+              biometric: serviceLocator.get<FlutterBiometricsImplementation>());
+      var decryptTokenResponse = await biometricAuthRepositoryImplementation
+          .decryptCiphertext(biometricToken, S.current.biometricLoginText);
+      decryptTokenResponse.fold((failure) async {
+        context.pop();
+        //NOTE(Adriano): Cancel the biometric info only in case of error
+        //               but not when the user cancel it.
+        if (failure != const Failure.biometricDecryptCiphertextCancelled()) {
+          String error =
+              ErrorObject.mapFailureToErrorObject(failure: failure).message;
+          logger.d(error);
+          Provider.of<BiometricProvider>(context, listen: false).cancel();
+          await _showErrorDialog(context, error);
+        }
+      }, (plaintext) async {
         BiometricRepositoryImplementation biometricRepositoryImplementation =
             BiometricRepositoryImplementation();
         var response = await biometricRepositoryImplementation
-            .biometricLogin(int.parse(biometricUserId), value)
+            .biometricLogin(int.parse(biometricUserId), plaintext)
             .whenComplete(() => context.pop());
         response.fold((l) async {
           String error =
@@ -93,18 +105,20 @@ class LoginScreenBody extends StatelessWidget {
           Provider.of<BiometricProvider>(context, listen: false).cancel();
           await _showErrorDialog(context, error);
         }, (r) {
-          logger.d("Login successful...${r.accessToken}");
           Provider.of<AuthProvider>(context, listen: false)
               .login(r.accessToken, r.refreshToken);
         });
       });
+    } else {
+      logger.d(
+          "This shouldn't have happened...storage keys do not exist but we are enrolled?");
     }
   }
 
   Future<void> _showErrorDialog(BuildContext context, String message) async {
     return showDialog(
       context: context,
-      barrierDismissible: false, // user must tap button!
+      barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(S.of(context).dialogErrorTitle),

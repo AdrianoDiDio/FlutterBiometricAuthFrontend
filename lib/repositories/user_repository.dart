@@ -1,5 +1,5 @@
 import 'package:biometric_auth_frontend/failures/failure.dart';
-import 'package:biometric_auth_frontend/retrofit/repositories/base_repository.dart';
+import 'package:biometric_auth_frontend/repositories/base_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/register_failure_response.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/register_response.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/user_response.dart';

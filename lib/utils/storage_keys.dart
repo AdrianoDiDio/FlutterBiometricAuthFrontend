@@ -5,5 +5,4 @@ class StorageKeys {
   static const String localeName = "localeName";
   static const String biometricsToken = "biometricsToken";
   static const String biometricsUserId = "biometricsUserId";
-  static const String biometricsPrivateKey = "biometricsPrivateKey";
 }

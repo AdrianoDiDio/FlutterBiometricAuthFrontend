@@ -4,8 +4,9 @@ import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/providers/auth_provider.dart';
-import 'package:biometric_auth_frontend/retrofit/repositories/auth_repository.dart';
-import 'package:biometric_auth_frontend/retrofit/repositories/user_repository.dart';
+import 'package:biometric_auth_frontend/providers/biometric_provider.dart';
+import 'package:biometric_auth_frontend/repositories/auth_repository.dart';
+import 'package:biometric_auth_frontend/repositories/user_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/user_response.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:biometric_auth_frontend/utils/storage_keys.dart';
@@ -80,6 +81,7 @@ class HomeView extends ConsumerWidget {
                                     context.goNamed(LoginScreen.routeName));
                                 return Container();
                               }, (r) {
+                                _checkEnrolledBiometricsValidity(context, r);
                                 return ConstrainedBox(
                                   constraints: BoxConstraints(
                                       minHeight: constraints.maxHeight),
@@ -106,7 +108,7 @@ class HomeView extends ConsumerWidget {
                                           ],
                                         ),
                                         Padding(
-                                            padding: EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Column(
                                               children: [
                                                 TextFormField(
@@ -169,5 +171,23 @@ class HomeView extends ConsumerWidget {
                             }))
                       ],
                     )))));
+  }
+
+  void _checkEnrolledBiometricsValidity(
+      BuildContext context, UserResponse userResponse) async {
+    String? biometricUserId = await serviceLocator
+        .get<StorageUtils>()
+        .read(StorageKeys.biometricsUserId);
+    if (biometricUserId != null) {
+      if (int.parse(biometricUserId) != userResponse.id) {
+        logger.d("Enrollment was done by another user...cancelling it");
+        if (context.mounted) {
+          logger.d("Cancelling it...");
+          Provider.of<BiometricProvider>(context, listen: false).cancel();
+        }
+      } else {
+        logger.d("All ok");
+      }
+    }
   }
 }

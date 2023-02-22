@@ -1,12 +1,14 @@
 import 'dart:convert';
 import 'dart:math';
 
+import 'package:biometric_auth_frontend/biometrics/biometric_utils.dart';
 import 'package:biometric_auth_frontend/failures/error_object.dart';
 import 'package:biometric_auth_frontend/failures/failure.dart';
 import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/providers/biometric_provider.dart';
-import 'package:biometric_auth_frontend/retrofit/repositories/biometric_repository.dart';
+import 'package:biometric_auth_frontend/repositories/biometric_auth_repository.dart';
+import 'package:biometric_auth_frontend/repositories/biometric_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/biometric_challenge_response.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
 import 'package:dartz/dartz.dart' hide State;
@@ -46,9 +48,6 @@ class BiometricSettingsView extends StatelessWidget {
                               Provider.of<BiometricProvider>(context,
                                       listen: false)
                                   .cancel();
-                              // setState(() {
-                              //   _biometricStatus = false;
-                              // });
                             } else {
                               logger.d("Starting on-board process");
                               _enrollBiometricToken(context);
@@ -61,9 +60,6 @@ class BiometricSettingsView extends StatelessWidget {
 
   void _enrollBiometricFailed(BuildContext context) {
     context.pop();
-    // setState(() {
-    //   _biometricStatus = false;
-    // });
   }
 
   void _enrollBiometricToken(BuildContext context) async {
@@ -75,52 +71,54 @@ class BiometricSettingsView extends StatelessWidget {
         builder: (context) {
           return const Center(child: CircularProgressIndicator(strokeWidth: 2));
         });
-    await FlutterBiometrics().deleteKeys().then((value) => logger.d(value));
-    logger.d("Deleted previous keys");
-    Either<Failure, BiometricTokenChallengeResponse>
-        biometricChallengeResponse =
-        await biometricRepositoryImplementation.getBiometricChallenge();
-    biometricChallengeResponse.fold((l) {
-      ErrorObject errorObject = ErrorObject.mapFailureToErrorObject(failure: l);
-      logger.d("Couldn't generate a challenge...${errorObject.message}");
+    BiometricAuthRepositoryImplementation
+        biometricAuthRepositoryImplementation =
+        BiometricAuthRepositoryImplementation(
+            biometric: FlutterBiometricsImplementation());
+    var createKeyResponse =
+        await biometricAuthRepositoryImplementation.generateKeys();
+    createKeyResponse.fold((generateKeysFailure) {
+      ErrorObject errorObject =
+          ErrorObject.mapFailureToErrorObject(failure: generateKeysFailure);
+      logger.d("Couldn't generate a keypair...${errorObject.message}");
       _enrollBiometricFailed(context);
-    }, (r) async {
-      String decodedChallenge = utf8.decode(base64Decode(r.biometricChallenge));
-      logger.d(
-          "Got challenge ${r.biometricChallenge} decoded to $decodedChallenge");
-      logger.d("Next step!");
-      Random random = Random();
-      var nonce = random.nextInt(4294967296);
-      String decodedChallengeWithNonce = decodedChallenge + nonce.toString();
-      //Generate RSA key-pair
-      FlutterBiometrics().createKeys().then((publicKey) {
-        FlutterBiometrics()
-            .sign(
-                payload: base64.encode(utf8.encode(decodedChallengeWithNonce)),
-                reason: "Authenticate to sign the string")
-            .then((signedChallenge) async {
-          // BiometricUtils.generateRSAKeyPair().then((value) async {
-          // logger.d(
-          // "Public Key:${BiometricUtils.encodePublicKeyToPemPKCS1(value.publicKey as RSAPublicKey)}");
-          logger.d("Nonce:$nonce");
-          // RSASignature sign = BiometricUtils.signRSA(
-          //     value.privateKey as RSAPrivateKey,
-          //     Uint8List.fromList(decodedChallengeWithNonce.codeUnits));
-          // final sentSign = base64Encode(sign.bytes);
-          // logger.d("sign $sentSign");
+    }, (publicKey) async {
+      Either<Failure, BiometricTokenChallengeResponse>
+          biometricChallengeResponse =
+          await biometricRepositoryImplementation.getBiometricChallenge();
+      biometricChallengeResponse.fold((challengeFailure) {
+        ErrorObject errorObject =
+            ErrorObject.mapFailureToErrorObject(failure: challengeFailure);
+        logger.d("Couldn't generate a challenge...${errorObject.message}");
+        _enrollBiometricFailed(context);
+      }, (r) async {
+        String decodedChallenge =
+            utf8.decode(base64Decode(r.biometricChallenge));
+        logger.d(
+            "Got challenge ${r.biometricChallenge} decoded to $decodedChallenge");
+        logger.d("Next step!");
+        Random random = Random();
+        var nonce = random.nextInt(4294967296);
+        String encodedChallengeWithNonce =
+            base64.encode(utf8.encode(decodedChallenge + nonce.toString()));
+        //Generate RSA key-pair
+        var signPayloadResponse =
+            await biometricAuthRepositoryImplementation.signPayload(
+                encodedChallengeWithNonce, S.current.biometricSignReason);
+        signPayloadResponse.fold((signFailure) {
+          logger.d(
+              "Signing failed...${ErrorObject.mapFailureToErrorObject(failure: signFailure).message}");
+          _enrollBiometricFailed(context);
+        }, (signedChallenge) async {
           var biometricTokenResponse = await biometricRepositoryImplementation
-              .getBiometricToken(signedChallenge, nonce, publicKey);
+              .getBiometricToken(signedChallenge, nonce, publicKey)
+              .whenComplete(() => context.pop());
           biometricTokenResponse.fold((l) {
-            _enrollBiometricFailed(context);
             logger.d(
                 "Error:${ErrorObject.mapFailureToErrorObject(failure: l).message}");
           }, (r) {
             Provider.of<BiometricProvider>(context, listen: false)
                 .enroll(r.biometricToken, "biometric", r.userId);
-            context.pop();
-            // setState(() {
-            //   _biometricStatus = true;
-            // });
           });
         });
       });

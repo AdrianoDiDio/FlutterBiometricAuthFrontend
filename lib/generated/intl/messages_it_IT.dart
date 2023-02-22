@@ -25,8 +25,37 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "biometricDecryptCiphertextCancelled": MessageLookupByLibrary.simpleMessage(
+            "Errore durante la decrittazione del ciphertext...l\'utente ha chiuso il dialogo"),
+        "biometricDecryptCiphertextFailure":
+            MessageLookupByLibrary.simpleMessage(
+                "Errore durante la decrittazione del ciphertext"),
+        "biometricGenerateKeysFailure": MessageLookupByLibrary.simpleMessage(
+            "Errore durante la creazione del KeyPair"),
+        "biometricHint": MessageLookupByLibrary.simpleMessage(
+            "Tocca il sensore per effettuare il login"),
+        "biometricLockOut": MessageLookupByLibrary.simpleMessage(
+            "L\'autenticazione biometrica è disabilitata...prova a bloccare e sbloccare lo schermo per abilitarla"),
+        "biometricLoginCancel": MessageLookupByLibrary.simpleMessage(
+            "Accedi utilizzando username e password"),
         "biometricLoginText": MessageLookupByLibrary.simpleMessage(
             "Accedi utilizzando i dati biometrici"),
+        "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
+            "Impronta non riconosciuta...prova di nuovo"),
+        "biometricSettingsRedirect":
+            MessageLookupByLibrary.simpleMessage("Vai alle impostazioni"),
+        "biometricSettingsRedirectReason": MessageLookupByLibrary.simpleMessage(
+            "L\'autenticazione biometrica non è configurata per questo dispositivo"),
+        "biometricSignCancel": MessageLookupByLibrary.simpleMessage(
+            "Annulla il processo di autenticazione biometrica"),
+        "biometricSignPayloadFailure": MessageLookupByLibrary.simpleMessage(
+            "Errore durante la firma del payload"),
+        "biometricSignReason": MessageLookupByLibrary.simpleMessage(
+            "Tocca il sensore per effettuare la firma del payload"),
+        "biometricSuccess": MessageLookupByLibrary.simpleMessage(
+            "Autenticazione avvenuta con successo"),
+        "biometricTitle":
+            MessageLookupByLibrary.simpleMessage("Autenticazione Biometrica"),
         "biometricsScreenTitle":
             MessageLookupByLibrary.simpleMessage("Autenticazione Biometrica"),
         "confirmPasswordHint":

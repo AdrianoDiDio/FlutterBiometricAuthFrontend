@@ -53,8 +53,9 @@ class SettingsView extends StatelessWidget {
                   ),
                   SettingsTile.navigation(
                     leading: const Icon(Icons.lock),
-                    enabled:
-                        serviceLocator.get<BiometricUtils>().biometricSupported,
+                    enabled: serviceLocator
+                        .get<FlutterBiometricsImplementation>()
+                        .biometricSupported,
                     title: Text(S.of(context).settingsScreenBiometricEntry),
                     onPressed: (context) {
                       context.pushNamed(BiometricSettingsView.routeName);

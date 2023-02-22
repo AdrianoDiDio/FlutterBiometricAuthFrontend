@@ -1,3 +1,4 @@
+import 'package:biometric_auth_frontend/biometrics/biometric_utils.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/utils/storage_keys.dart';
@@ -29,17 +30,14 @@ class BiometricProvider with ChangeNotifier {
         .write(StorageKeys.biometricsToken, biometricToken);
     serviceLocator
         .get<StorageUtils>()
-        .write(StorageKeys.biometricsPrivateKey, privateKey);
-    serviceLocator
-        .get<StorageUtils>()
         .write(StorageKeys.biometricsUserId, userId);
     _biometricsEnrolled = true;
     notifyListeners();
   }
 
   void cancel() {
+    serviceLocator.get<FlutterBiometricsImplementation>().deleteKeys();
     serviceLocator.get<StorageUtils>().delete(StorageKeys.biometricsToken);
-    serviceLocator.get<StorageUtils>().delete(StorageKeys.biometricsPrivateKey);
     serviceLocator.get<StorageUtils>().delete(StorageKeys.biometricsUserId);
     _biometricsEnrolled = false;
     notifyListeners();

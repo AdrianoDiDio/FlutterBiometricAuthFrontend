@@ -22,5 +22,6 @@ void setUpLazySingletons() {
   ]);
   serviceLocator.registerLazySingleton<RestClient>(() => RestClient(dio));
   serviceLocator.registerLazySingleton<StorageUtils>(() => StorageUtils());
-  serviceLocator.registerSingleton<BiometricUtils>(BiometricUtils());
+  serviceLocator.registerSingleton<FlutterBiometricsImplementation>(
+      FlutterBiometricsImplementation());
 }

@@ -522,6 +522,154 @@ class S {
       args: [],
     );
   }
+
+  /// `Touch sensor to login`
+  String get biometricHint {
+    return Intl.message(
+      'Touch sensor to login',
+      name: 'biometricHint',
+      desc: 'Sets the text for the biometric\'s prompt hint',
+      args: [],
+    );
+  }
+
+  /// `Fingerprint not recognized...try again`
+  String get biometricNotRecognized {
+    return Intl.message(
+      'Fingerprint not recognized...try again',
+      name: 'biometricNotRecognized',
+      desc:
+          'Sets the text for the biometric\'s prompt when it is not recognized',
+      args: [],
+    );
+  }
+
+  /// `Authentication successful`
+  String get biometricSuccess {
+    return Intl.message(
+      'Authentication successful',
+      name: 'biometricSuccess',
+      desc: 'Sets the text for the biometric\'s prompt success text',
+      args: [],
+    );
+  }
+
+  /// `Biometric Authentication`
+  String get biometricTitle {
+    return Intl.message(
+      'Biometric Authentication',
+      name: 'biometricTitle',
+      desc: 'Sets the text for the biometric\'s prompt title',
+      args: [],
+    );
+  }
+
+  /// `Go to settings`
+  String get biometricSettingsRedirect {
+    return Intl.message(
+      'Go to settings',
+      name: 'biometricSettingsRedirect',
+      desc:
+          'Sets the text for the biometric\'s prompt when it needs to redirect user to settings',
+      args: [],
+    );
+  }
+
+  /// `Biometric authentication is not set up on your device`
+  String get biometricSettingsRedirectReason {
+    return Intl.message(
+      'Biometric authentication is not set up on your device',
+      name: 'biometricSettingsRedirectReason',
+      desc:
+          'Sets the text for the biometric\'s prompt on why the user has to go to settings',
+      args: [],
+    );
+  }
+
+  /// `Biometric authentication is disabled...try locking and unlocking the screen to enable it`
+  String get biometricLockOut {
+    return Intl.message(
+      'Biometric authentication is disabled...try locking and unlocking the screen to enable it',
+      name: 'biometricLockOut',
+      desc:
+          'Sets the text for the biometric\'s prompt when user is locked out of the device',
+      args: [],
+    );
+  }
+
+  /// `Login using username and password`
+  String get biometricLoginCancel {
+    return Intl.message(
+      'Login using username and password',
+      name: 'biometricLoginCancel',
+      desc:
+          'Sets the text for the biometric\'s prompt when user wish to cancel the login',
+      args: [],
+    );
+  }
+
+  /// `Cancel biometric authentication`
+  String get biometricSignCancel {
+    return Intl.message(
+      'Cancel biometric authentication',
+      name: 'biometricSignCancel',
+      desc:
+          'Sets the text for the biometric\'s prompt when user wish to cancel the enroll process',
+      args: [],
+    );
+  }
+
+  /// `Error generating keypair`
+  String get biometricGenerateKeysFailure {
+    return Intl.message(
+      'Error generating keypair',
+      name: 'biometricGenerateKeysFailure',
+      desc: 'Sets the error message when generating a new keypair fails',
+      args: [],
+    );
+  }
+
+  /// `Error signing payload`
+  String get biometricSignPayloadFailure {
+    return Intl.message(
+      'Error signing payload',
+      name: 'biometricSignPayloadFailure',
+      desc: 'Sets the error message when signing a payload fails',
+      args: [],
+    );
+  }
+
+  /// `Touch sensor to sign the payload`
+  String get biometricSignReason {
+    return Intl.message(
+      'Touch sensor to sign the payload',
+      name: 'biometricSignReason',
+      desc:
+          'Sets the text for the biometric\'s prompt hint when signin a payload',
+      args: [],
+    );
+  }
+
+  /// `Error decrypting ciphertext`
+  String get biometricDecryptCiphertextFailure {
+    return Intl.message(
+      'Error decrypting ciphertext',
+      name: 'biometricDecryptCiphertextFailure',
+      desc: 'Sets the error message when ciphertext decryption fails.',
+      args: [],
+    );
+  }
+
+  /// `Error decrypting ciphertext...user cancelled it`
+  String get biometricDecryptCiphertextCancelled {
+    return Intl.message(
+      'Error decrypting ciphertext...user cancelled it',
+      name: 'biometricDecryptCiphertextCancelled',
+      desc:
+          'Sets the error message when ciphertext decryption is cancelled by user.',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -41,6 +41,18 @@ class ErrorObject {
       decryptRSAFailure: () => ErrorObject(
           title: "Error Code: RSA_DECRIPTION_FAILURE",
           message: S.current.decryptRSAFailure),
+      biometricGenerateKeysFailure: () => ErrorObject(
+          title: "Error Code: BIOMETRIC_GENERATE_KEY_ERROR",
+          message: S.current.biometricGenerateKeysFailure),
+      biometricSignPayloadFailure: () => ErrorObject(
+          title: "Error Code: BIOMETRIC_SIGN_PAYLOAD_ERROR",
+          message: S.current.biometricSignPayloadFailure),
+      biometricDecryptCiphertextFailure: () => ErrorObject(
+          title: "Error Code: BIOMETRIC_DECRYPT_CIPHERTEXT_ERROR",
+          message: S.current.biometricDecryptCiphertextFailure),
+      biometricDecryptCiphertextCancelled: () => ErrorObject(
+          title: "Error Code: BIOMETRIC_DECRYPT_CIPHERTEXT_CANCELLED",
+          message: S.current.biometricDecryptCiphertextCancelled),
       logoutFailure: () => ErrorObject(
           title: "Error Code: LOGOUT_FAILED", message: S.current.logoutFailure),
     );

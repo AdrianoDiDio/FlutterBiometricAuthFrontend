@@ -25,8 +25,37 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "biometricDecryptCiphertextCancelled":
+            MessageLookupByLibrary.simpleMessage(
+                "Error decrypting ciphertext...user cancelled it"),
+        "biometricDecryptCiphertextFailure":
+            MessageLookupByLibrary.simpleMessage("Error decrypting ciphertext"),
+        "biometricGenerateKeysFailure":
+            MessageLookupByLibrary.simpleMessage("Error generating keypair"),
+        "biometricHint":
+            MessageLookupByLibrary.simpleMessage("Touch sensor to login"),
+        "biometricLockOut": MessageLookupByLibrary.simpleMessage(
+            "Biometric authentication is disabled...try locking and unlocking the screen to enable it"),
+        "biometricLoginCancel": MessageLookupByLibrary.simpleMessage(
+            "Login using username and password"),
         "biometricLoginText":
             MessageLookupByLibrary.simpleMessage("Login using biometrics"),
+        "biometricNotRecognized": MessageLookupByLibrary.simpleMessage(
+            "Fingerprint not recognized...try again"),
+        "biometricSettingsRedirect":
+            MessageLookupByLibrary.simpleMessage("Go to settings"),
+        "biometricSettingsRedirectReason": MessageLookupByLibrary.simpleMessage(
+            "Biometric authentication is not set up on your device"),
+        "biometricSignCancel": MessageLookupByLibrary.simpleMessage(
+            "Cancel biometric authentication"),
+        "biometricSignPayloadFailure":
+            MessageLookupByLibrary.simpleMessage("Error signing payload"),
+        "biometricSignReason": MessageLookupByLibrary.simpleMessage(
+            "Touch sensor to sign the payload"),
+        "biometricSuccess":
+            MessageLookupByLibrary.simpleMessage("Authentication successful"),
+        "biometricTitle":
+            MessageLookupByLibrary.simpleMessage("Biometric Authentication"),
         "biometricsScreenTitle":
             MessageLookupByLibrary.simpleMessage("Biometric Authentication"),
         "confirmPasswordHint":

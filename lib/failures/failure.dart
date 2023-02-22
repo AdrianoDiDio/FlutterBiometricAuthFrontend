@@ -19,5 +19,13 @@ class Failure with _$Failure {
   const factory Failure.getBiometricTokenFailure() = GetBiometricTokenFailure;
   const factory Failure.unauthorizedFailure() = UnauthorizedFailure;
   const factory Failure.decryptRSAFailure() = DecryptRSAFailure;
+  const factory Failure.biometricGenerateKeysFailure() =
+      BiometricGenerateKeysFailure;
+  const factory Failure.biometricSignPayloadFailure() =
+      BiometricSignPayloadFailure;
+  const factory Failure.biometricDecryptCiphertextFailure() =
+      BiometricDecryptCiphertexFailure;
+  const factory Failure.biometricDecryptCiphertextCancelled() =
+      BiometricDecryptCiphertextCancelled;
   const factory Failure.unknownFailure() = UnknownFailure;
 }

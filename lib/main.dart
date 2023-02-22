@@ -1,22 +1,18 @@
 import 'package:biometric_auth_frontend/locator.dart';
-import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/providers/auth_provider.dart';
 import 'package:biometric_auth_frontend/providers/biometric_provider.dart';
 import 'package:biometric_auth_frontend/providers/language_provider.dart';
 import 'package:biometric_auth_frontend/providers/theme_provider.dart';
 import 'package:biometric_auth_frontend/routes.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
-import 'package:biometric_auth_frontend/utils/storage_keys.dart';
-import 'package:biometric_auth_frontend/utils/storage_utils.dart';
-import 'package:biometric_auth_frontend/views/login/login_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_biometrics/flutter_biometrics.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'
     hide ChangeNotifierProvider, Consumer, Provider;
-import 'generated/l10n.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_localized_locales/flutter_localized_locales.dart';
+
+import 'generated/l10n.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

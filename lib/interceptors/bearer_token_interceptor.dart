@@ -1,7 +1,7 @@
 import 'package:biometric_auth_frontend/failures/error_object.dart';
 import 'package:biometric_auth_frontend/locator.dart';
 import 'package:biometric_auth_frontend/logger.dart';
-import 'package:biometric_auth_frontend/retrofit/repositories/auth_repository.dart';
+import 'package:biometric_auth_frontend/repositories/auth_repository.dart';
 import 'package:biometric_auth_frontend/utils/storage_keys.dart';
 import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:dio/dio.dart';
