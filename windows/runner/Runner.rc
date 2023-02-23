@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "biometric_auth_frontend" "\0"
+            VALUE "FileDescription", "BiometricAuthFrontend" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "biometric_auth_frontend" "\0"
+            VALUE "InternalName", "BiometricAuthFrontend" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
             VALUE "OriginalFilename", "biometric_auth_frontend.exe" "\0"
-            VALUE "ProductName", "biometric_auth_frontend" "\0"
+            VALUE "ProductName", "BiometricAuthFrontend" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
