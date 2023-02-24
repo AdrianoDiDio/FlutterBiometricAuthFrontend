@@ -58,5 +58,7 @@
     "biometricGenerateKeysFailure":"Errore durante la creazione del KeyPair",
     "biometricSignPayloadFailure":"Errore durante la firma del payload",
     "biometricDecryptCiphertextFailure":"Errore durante la decrittazione del ciphertext",
-    "biometricDecryptCiphertextCancelled":"Errore durante la decrittazione del ciphertext...l'utente ha chiuso il dialogo"
+    "biometricDecryptCiphertextCancelled":"Errore durante la decrittazione del ciphertext...l'utente ha chiuso il dialogo",
+    "biometricSignPayloadCancelled":"Errore durante la firma del payload...l'utente ha chiuso il dialogo",
+    "biometricUserNotEnrolledFailure":"L'utente non ha effettuato l'autenticazione biometrica"
   }

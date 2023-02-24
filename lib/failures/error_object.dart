@@ -53,6 +53,12 @@ class ErrorObject {
       biometricDecryptCiphertextCancelled: () => ErrorObject(
           title: "Error Code: BIOMETRIC_DECRYPT_CIPHERTEXT_CANCELLED",
           message: S.current.biometricDecryptCiphertextCancelled),
+      biometricSignPayloadCancelled: () => ErrorObject(
+          title: "Error Code: BIOMETRIC_SIGN_PAYLOAD_CANCELLED",
+          message: S.current.biometricSignPayloadCancelled),
+      biometricUserNotEnrolledFailure: () => ErrorObject(
+          title: "Error Code: BIOMETRIC_USER_NOT_ENROLLED",
+          message: S.current.biometricUserNotEnrolledFailure),
       logoutFailure: () => ErrorObject(
           title: "Error Code: LOGOUT_FAILED", message: S.current.logoutFailure),
     );

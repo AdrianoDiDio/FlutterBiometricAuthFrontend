@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Biometric authentication is not set up on your device"),
         "biometricSignCancel": MessageLookupByLibrary.simpleMessage(
             "Cancel biometric authentication"),
+        "biometricSignPayloadCancelled": MessageLookupByLibrary.simpleMessage(
+            "Error signing payload...user cancelled it"),
         "biometricSignPayloadFailure":
             MessageLookupByLibrary.simpleMessage("Error signing payload"),
         "biometricSignReason": MessageLookupByLibrary.simpleMessage(
@@ -56,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Authentication successful"),
         "biometricTitle":
             MessageLookupByLibrary.simpleMessage("Biometric Authentication"),
+        "biometricUserNotEnrolledFailure":
+            MessageLookupByLibrary.simpleMessage("Error user is not enrolled"),
         "biometricsScreenTitle":
             MessageLookupByLibrary.simpleMessage("Biometric Authentication"),
         "confirmPasswordHint":

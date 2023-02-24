@@ -254,5 +254,13 @@
     "biometricDecryptCiphertextCancelled":"Error decrypting ciphertext...user cancelled it",
     "@biometricDecryptCiphertextCancelled": {
         "description": "Sets the error message when ciphertext decryption is cancelled by user."
+    },
+    "biometricSignPayloadCancelled":"Error signing payload...user cancelled it",
+    "@biometricSignPayloadCancelled": {
+        "description": "Sets the error message when payload signing is cancelled by user"
+    },
+    "biometricUserNotEnrolledFailure":"Error user is not enrolled",
+    "@biometricUserNotEnrolledFailure": {
+        "description": "Sets the error message when trying to perform biometric login without enrollment"
     }
   }

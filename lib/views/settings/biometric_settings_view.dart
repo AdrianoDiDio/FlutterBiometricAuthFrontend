@@ -11,6 +11,7 @@ import 'package:biometric_auth_frontend/repositories/biometric_auth_repository.d
 import 'package:biometric_auth_frontend/repositories/biometric_repository.dart';
 import 'package:biometric_auth_frontend/retrofit/responses/biometric_challenge_response.dart';
 import 'package:biometric_auth_frontend/size_config.dart';
+import 'package:biometric_auth_frontend/utils/dialog_utils.dart';
 import 'package:dartz/dartz.dart' hide State;
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -64,8 +65,17 @@ class BiometricSettingsView extends StatelessWidget {
         builder: (context) {
           return const Center(child: CircularProgressIndicator(strokeWidth: 2));
         });
-    await Provider.of<BiometricProvider>(context, listen: false)
-        .enroll()
-        .whenComplete(() => context.pop());
+    var biometricEnrollResponse =
+        await Provider.of<BiometricProvider>(context, listen: false)
+            .enroll()
+            .whenComplete(() => context.pop());
+    biometricEnrollResponse.fold((l) async {
+      await DialogUtils.showErrorDialog(
+          context, ErrorObject.mapFailureToErrorObject(failure: l).message);
+    }, (r) {
+      if (!r) {
+        logger.d("User cancelled it...");
+      }
+    });
   }
 }

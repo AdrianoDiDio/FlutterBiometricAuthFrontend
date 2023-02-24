@@ -40,6 +40,9 @@ class BiometricAuthRepositoryImplementation extends BiometricAuthRepository {
       String payload, String reason) async {
     try {
       final response = await biometric.signPayload(payload, reason);
+      if (response is bool) {
+        return const Left(Failure.biometricSignPayloadCancelled());
+      }
       return Right(response);
     } on Error {
       return const Left(Failure.biometricSignPayloadFailure());

@@ -670,6 +670,27 @@ class S {
       args: [],
     );
   }
+
+  /// `Error signing payload...user cancelled it`
+  String get biometricSignPayloadCancelled {
+    return Intl.message(
+      'Error signing payload...user cancelled it',
+      name: 'biometricSignPayloadCancelled',
+      desc: 'Sets the error message when payload signing is cancelled by user',
+      args: [],
+    );
+  }
+
+  /// `Error user is not enrolled`
+  String get biometricUserNotEnrolledFailure {
+    return Intl.message(
+      'Error user is not enrolled',
+      name: 'biometricUserNotEnrolledFailure',
+      desc:
+          'Sets the error message when trying to perform biometric login without enrollment',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

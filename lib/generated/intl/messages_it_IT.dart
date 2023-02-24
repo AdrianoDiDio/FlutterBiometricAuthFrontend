@@ -48,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "L\'autenticazione biometrica non è configurata per questo dispositivo"),
         "biometricSignCancel": MessageLookupByLibrary.simpleMessage(
             "Annulla il processo di autenticazione biometrica"),
+        "biometricSignPayloadCancelled": MessageLookupByLibrary.simpleMessage(
+            "Errore durante la firma del payload...l\'utente ha chiuso il dialogo"),
         "biometricSignPayloadFailure": MessageLookupByLibrary.simpleMessage(
             "Errore durante la firma del payload"),
         "biometricSignReason": MessageLookupByLibrary.simpleMessage(
@@ -56,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Autenticazione avvenuta con successo"),
         "biometricTitle":
             MessageLookupByLibrary.simpleMessage("Autenticazione Biometrica"),
+        "biometricUserNotEnrolledFailure": MessageLookupByLibrary.simpleMessage(
+            "L\'utente non ha effettuato l\'autenticazione biometrica"),
         "biometricsScreenTitle":
             MessageLookupByLibrary.simpleMessage("Autenticazione Biometrica"),
         "confirmPasswordHint":

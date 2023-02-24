@@ -27,5 +27,9 @@ class Failure with _$Failure {
       BiometricDecryptCiphertexFailure;
   const factory Failure.biometricDecryptCiphertextCancelled() =
       BiometricDecryptCiphertextCancelled;
+  const factory Failure.biometricSignPayloadCancelled() =
+      BiometricSignPayloadCancelled;
+  const factory Failure.biometricUserNotEnrolledFailure() =
+      BiometricUserNotEnrolledFailure;
   const factory Failure.unknownFailure() = UnknownFailure;
 }
