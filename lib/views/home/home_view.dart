@@ -14,6 +14,7 @@ import 'package:biometric_auth_frontend/utils/storage_utils.dart';
 import 'package:biometric_auth_frontend/views/login/login_view.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' hide Provider;
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart' hide FutureProvider;
@@ -77,8 +78,13 @@ class HomeView extends ConsumerWidget {
                                     ErrorObject.mapFailureToErrorObject(
                                         failure: l);
                                 logger.d("Error....${errorObject.message}");
-                                Future.microtask(() =>
-                                    context.goNamed(LoginScreen.routeName));
+                                SchedulerBinding.instance
+                                    .addPostFrameCallback((_) {
+                                  Provider.of<AuthProvider>(context,
+                                          listen: false)
+                                      .logout();
+                                });
+
                                 return Container();
                               }, (r) {
                                 _checkEnrolledBiometricsValidity(context, r);
