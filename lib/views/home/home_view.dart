@@ -105,7 +105,7 @@ class HomeView extends ConsumerWidget {
                                               style: TextStyle(
                                                   fontSize: SizeConfig
                                                           .blockSizeVertical *
-                                                      8,
+                                                      6,
                                                   fontWeight: FontWeight.bold),
                                             )),
                                             const CircleAvatar(

@@ -38,7 +38,7 @@ class BiometricSettingsView extends StatelessWidget {
                       children: [
                         Text(S.of(context).enableBiometricAuthenticationEntry,
                             style: TextStyle(
-                                fontSize: SizeConfig.blockSizeVertical * 3)),
+                                fontSize: SizeConfig.blockSizeVertical * 2)),
                         Switch(
                           value: Provider.of<BiometricProvider>(context)
                               .areBiometricsEnrolled,

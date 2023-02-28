@@ -8,7 +8,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:get_it/get_it.dart';
 
 final serviceLocator = GetIt.instance;
-void setUpLazySingletons() {
+void setUpSingletons() {
   final dio = Dio()..options = BaseOptions(baseUrl: RestEndpoints.baseURL);
   dio.interceptors.addAll([
     PrettyDioLogger(

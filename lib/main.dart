@@ -14,9 +14,9 @@ import 'package:provider/provider.dart';
 
 import 'generated/l10n.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  setUpLazySingletons();
+void main() async {
+  setUpSingletons();
+  await SizeConfig.ensureScreenSize();
   SizeConfig().init();
   runApp(ProviderScope(child: MyApp()));
 }
