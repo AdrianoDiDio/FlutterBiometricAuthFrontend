@@ -28,19 +28,17 @@ class ThemeProvider with ChangeNotifier {
     return themModeToName(_themeMode);
   }
 
-  ThemeProvider() {
+  ThemeProvider(String? initialTheme) {
     logger.d("Initialization...");
-    _themeMode = ThemeMode.system;
-    _init();
+    _init(initialTheme);
   }
 
-  _init() async {
-    String? result =
-        await serviceLocator.get<StorageUtils>().read(StorageKeys.themeMode);
-    if (result != null) {
-      logger.d(result);
-      _themeMode = ThemeMode.values.byName(result);
+  _init(String? initialTheme) {
+    if (initialTheme != null) {
+      logger.d(initialTheme);
+      _themeMode = ThemeMode.values.byName(initialTheme);
     } else {
+      _themeMode = ThemeMode.system;
       serviceLocator
           .get<StorageUtils>()
           .write(StorageKeys.themeMode, _themeMode.name);

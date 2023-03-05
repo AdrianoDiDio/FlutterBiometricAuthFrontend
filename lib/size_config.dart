@@ -10,17 +10,11 @@ class SizeConfig {
   static late double blockSizeHorizontal;
   static late double blockSizeVertical;
 
-  static Future<void> ensureScreenSize([
-    FlutterView? window,
-    Duration duration = const Duration(milliseconds: 10),
-  ]) async {
-    final binding = WidgetsFlutterBinding.ensureInitialized();
-    window ??= binding.window;
-
+  static Future<void> ensureScreenSize([WidgetsBinding? binding]) async {
     if (window.viewConfiguration.geometry.isEmpty) {
-      return Future.delayed(duration, () async {
-        binding.deferFirstFrame();
-        await ensureScreenSize(window, duration);
+      return Future.delayed(const Duration(milliseconds: 10), () async {
+        binding!.deferFirstFrame();
+        await ensureScreenSize(binding);
         return binding.allowFirstFrame();
       });
     }

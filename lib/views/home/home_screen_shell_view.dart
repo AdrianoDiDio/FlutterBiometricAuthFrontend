@@ -1,10 +1,12 @@
 import 'package:biometric_auth_frontend/generated/l10n.dart';
 import 'package:biometric_auth_frontend/logger.dart';
+import 'package:biometric_auth_frontend/providers/language_provider.dart';
 import 'package:biometric_auth_frontend/views/home/home_screen_item.dart';
 import 'package:biometric_auth_frontend/views/home/home_view.dart';
 import 'package:biometric_auth_frontend/views/settings/settings_view.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreenShellView extends StatefulWidget {
   final Widget child;
@@ -19,7 +21,7 @@ class HomeScreenShellView extends StatefulWidget {
 
 class HomeScreenShellViewState extends State<HomeScreenShellView> {
   int _currentPageIndex = 0;
-  static final List<HomeScreenItem> _pages = [
+  List<HomeScreenItem> _pages = [
     HomeScreenItem(
         widget: const HomeView(),
         routeName: HomeView.routeName,
@@ -31,11 +33,48 @@ class HomeScreenShellViewState extends State<HomeScreenShellView> {
         routeName: SettingsView.routeName,
         bottomNavigationBarItem: BottomNavigationBarItem(
             icon: const Icon(Icons.settings_rounded),
-            label: S.current.homeScreenSettingsEntry)),
+            label: S.current.homeScreenSettingsEntry))
   ];
+  late LanguageProvider _languageProvider;
+  @override
+  void initState() {
+    super.initState();
+
+    _languageProvider = context.read<LanguageProvider>();
+
+    _languageProvider.addListener(_onLanguageChange);
+  }
+
+  bool _localeDirty = false;
+  @override
+  void dispose() {
+    super.dispose();
+    _languageProvider.removeListener(_onLanguageChange);
+  }
+
+  void _onLanguageChange() {
+    _localeDirty = true;
+  }
 
   @override
   Widget build(BuildContext context) {
+    if (_localeDirty) {
+      _pages = [
+        HomeScreenItem(
+            widget: const HomeView(),
+            routeName: HomeView.routeName,
+            bottomNavigationBarItem: BottomNavigationBarItem(
+                icon: const Icon(Icons.person_rounded),
+                label: S.current.homeScreenUserInfoEntry)),
+        HomeScreenItem(
+            widget: const SettingsView(),
+            routeName: SettingsView.routeName,
+            bottomNavigationBarItem: BottomNavigationBarItem(
+                icon: const Icon(Icons.settings_rounded),
+                label: S.current.homeScreenSettingsEntry))
+      ];
+      _localeDirty = false;
+    }
     return Scaffold(
       body: widget.child,
       bottomNavigationBar: BottomNavigationBar(

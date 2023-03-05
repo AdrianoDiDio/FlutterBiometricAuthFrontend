@@ -1,5 +1,6 @@
 import 'package:biometric_auth_frontend/biometrics/biometric_utils.dart';
 import 'package:biometric_auth_frontend/interceptors/bearer_token_interceptor.dart';
+import 'package:biometric_auth_frontend/logger.dart';
 import 'package:biometric_auth_frontend/retrofit/rest_client.dart';
 import 'package:biometric_auth_frontend/retrofit/rest_endpoints.dart';
 import 'package:biometric_auth_frontend/utils/storage_utils.dart';
@@ -12,12 +13,12 @@ void setUpSingletons() {
   final dio = Dio()..options = BaseOptions(baseUrl: RestEndpoints.baseURL);
   dio.interceptors.addAll([
     PrettyDioLogger(
-      requestHeader: true,
-      requestBody: true,
-      responseBody: true,
-      responseHeader: false,
-      compact: false,
-    ),
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: false,
+        compact: false,
+        logPrint: logger.d),
     BearerTokenInterceptor(dio)
   ]);
   serviceLocator.registerLazySingleton<RestClient>(() => RestClient(dio));
