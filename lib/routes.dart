@@ -37,15 +37,17 @@ class MainRouterProvider {
                   navigationShell: navigationShell,
                 ),
             branches: [
-              StatefulShellBranch(routes: [
-                GoRoute(
-                    path: HomeView.routePath,
-                    name: HomeView.routeName,
-                    pageBuilder: (context, state) =>
-                    const NoTransitionPage(child: HomeView()))
+              StatefulShellBranch(
+                  routes: [
+                    GoRoute(
+                        path: HomeView.routePath,
+                        name: HomeView.routeName,
+                        pageBuilder: (context, state) =>
+                        const NoTransitionPage(child: HomeView()))
               ]),
-              StatefulShellBranch(routes: [
-                GoRoute(
+              StatefulShellBranch(
+                  routes: [
+                    GoRoute(
                     path: SettingsView.routePath,
                     name: SettingsView.routeName,
                     pageBuilder: (context, state) =>
