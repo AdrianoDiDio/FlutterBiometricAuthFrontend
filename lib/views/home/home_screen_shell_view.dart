@@ -9,9 +9,9 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreenShellView extends StatefulWidget {
-  final Widget child;
+  final StatefulNavigationShell navigationShell;
 
-  const HomeScreenShellView({super.key, required this.child});
+  const HomeScreenShellView({super.key, required this.navigationShell});
 
   @override
   State<StatefulWidget> createState() {
@@ -20,7 +20,6 @@ class HomeScreenShellView extends StatefulWidget {
 }
 
 class HomeScreenShellViewState extends State<HomeScreenShellView> {
-  int _currentPageIndex = 0;
   List<HomeScreenItem> _pages = [
     HomeScreenItem(
         widget: const HomeView(),
@@ -76,26 +75,17 @@ class HomeScreenShellViewState extends State<HomeScreenShellView> {
       _localeDirty = false;
     }
     return Scaffold(
-      body: widget.child,
+      body: widget.navigationShell,
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentPageIndex,
+          currentIndex: widget.navigationShell.currentIndex,
           onTap: (value) => _onItemTapped(context, value),
           items: _pages.map((e) => e.bottomNavigationBarItem).toList()),
     );
   }
 
   void _onItemTapped(BuildContext context, int index) {
-    if (index == _currentPageIndex) {
-      return;
-    }
-    setState(() {
-      _currentPageIndex = index;
-    });
     logger.d("Going to ${_pages.elementAt(index).routeName}");
-    //NOTE(Adriano): We need to use go since we don't want to push it onto the
-    // stack...however we need a way to preserve the state of the page because
-    // right now every time we tap on a item it will cause a rebuild.
-    // Issue tracking: https://github.com/flutter/flutter/issues/99124
-    context.goNamed(_pages.elementAt(index).routeName);
+    widget.navigationShell.goBranch(index,initialLocation:index ==
+        widget.navigationShell.currentIndex,);
   }
 }
